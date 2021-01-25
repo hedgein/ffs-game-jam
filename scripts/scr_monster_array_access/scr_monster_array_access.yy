@@ -6,7 +6,7 @@
     "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "arr_copy_2d",
+  "name": "scr_monster_array_access",
   "tags": [],
   "resourceType": "GMScript",
 }

@@ -112,6 +112,7 @@ if (player_turn) && (!show_battle_text)  {
 	} else {
 		//Show which options you can roll for
 		if (show_roll_options) {
+			option_total_count = scr_monster_array_access(monster, current_passage, 4);
 			if (keyboard_check_pressed(ord("X"))) {
 				show_roll_options = false;
 			}
@@ -119,7 +120,7 @@ if (player_turn) && (!show_battle_text)  {
 				//Need new system do track which passage your on
 				
 				//If not the last option, go down (to next option)
-				if (roll_option + 1) <= option_total_count {
+				if (roll_option + 1) <= option_total_count - 1 {
 					roll_option++;
 				//Else go back to first option
 				} else {
@@ -134,7 +135,7 @@ if (player_turn) && (!show_battle_text)  {
 					roll_option--;
 					//Else go to bottom
 				} else {
-					roll_option = option_total_count;
+					roll_option = option_total_count - 1;
 				}
 				audio_play_sound(tap, 1, false);
 			} 
@@ -150,21 +151,37 @@ if (player_turn) && (!show_battle_text)  {
 					//Roll Mechanic here
 					roll = scr_roll_mechanic();
 					
-					
-					//After every roll lock
-					if (ds_list_size(ds_roll_input) == 0) {
-						scr_roll_reset();
-						scr_roll_unlock_reset();
+					if (roll < 5){
+						roll_success = true;
+					} else{
+						roll_success = false;
 					}
+					
+					
 				}
 				//Second option
 				if (roll_option == 1) {
+					roll = scr_roll_mechanic();
 					
+					if (roll < 4) {
+						roll_success = true;
+					} else {
+						roll_success = false;
+					}
 				}
 				
+				//After every roll lock
+				if (ds_list_size(ds_roll_input) == 0) {
+					scr_roll_reset();
+					scr_roll_unlock_reset();
+				}
+				
+				
+				ds_messages[| 0] = "Shake the dice!";
+				show_roll_options = false;
 				//Continue Battle
 				show_battle_text = true;
-				show_roll_options = false;
+				
 			}
 			
 				
@@ -214,7 +231,7 @@ if (player_turn) && (!show_battle_text)  {
 						}			
 				}
 				message_timer = 0; 
-				
+
 				//If this is an attack
 				if (battle_option == 0) {
 					if (!player_turn) {
@@ -256,7 +273,7 @@ if (screen_shake == true) {
 #endregion
 
 
-#region ENEMY TURN
+#region DDR TURN
 
 if (!player_turn) && (!show_battle_text){
 	enemy_timer++;
@@ -265,12 +282,21 @@ if (!player_turn) && (!show_battle_text){
 		if (!ds_exists(ds_messages, ds_type_list)) {
 			ds_messages = ds_list_create();
 		}
-		message_counter = 0
 		show_battle_text = true;
+		message_counter = 0
+		
 		enemy_timer = 0;
+		var status_text = "";
+		if (roll_success) {
+			status_text = "SUCCESS!";
+		} else {
+			status_text = "FAIL!";
+		}
 		
 		//Implement new DDR minigame here
-		ds_messages[| 0] = global.battle_snail[0,0];
+		ds_messages[| 0] = "You felt the luck at the touch of your fingers!";
+		ds_messages[| 1] = "And rolled a " + string(roll) + "! " + status_text;
+		ds_messages[| 2] = "You got 1 dice point!"
 		
 		battle_option = 0;
 		

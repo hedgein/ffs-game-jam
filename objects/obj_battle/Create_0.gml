@@ -14,9 +14,9 @@ current_passage = 0;
 next_passage = 0;
 
 monster = "SNAIL";
-monster_array = arr_copy_2d(global.battle_snail);
 
-passage_text = "";
+
+
 
 
 //Dice points
@@ -25,7 +25,7 @@ dice_points = 0;
 //Getting rid of player HP and monster HP stats -> not needed anymore
 
 selected_option = 0; //which option is the arrow on
-player_turn = false;
+player_turn = true;;
 ds_messages = ds_list_create();
 message_counter = 0 ;//Tracks which message we're on
 show_battle_text = false; //Display battle text or not
@@ -44,9 +44,14 @@ battle = true;
 victory = false;
 state = "READY";
 
-//Roll mechanic
+//Roll menu
 show_roll_options = false; //Show roll options/choices or not
 roll_option = 0;
+
+//Roll mechanic
+roll = 0;
+roll_success = false;
+
 
  
 //sound

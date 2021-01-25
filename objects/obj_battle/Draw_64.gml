@@ -9,6 +9,7 @@ if (battle == true) {
 
 	draw_sprite(textbox, 0, guiX - (sprite_get_width(textbox) / 2) - BUFFER, guiY - (sprite_get_height(textbox))- (BUFFER * 2.2));
 
+	passage_text = scr_monster_array_access(monster, current_passage, 0);
 	// DRAW THE OPTIONS
 	optionX = 500;
 	optionY = 360;
@@ -21,7 +22,7 @@ if (battle == true) {
 	
 
 	
-	if (!show_roll_options){
+	if (!show_roll_options) && (!show_battle_text){
 		for (var i = 0; i < array_length_1d(a_text); i++) {
 			if (selected_option == i) {
 				if (player_turn) && (!show_battle_text) {
@@ -31,6 +32,16 @@ if (battle == true) {
 		text = a_text[i];
 		draw_text(optionX + shakeX, optionY + ((fontSize + BUFFER) * i ) + shakeY, text);
 		}
+		
+
+		draw_text_ext(textX + shakeX, textY + shakeY, 
+		passage_text, (fontSize + BUFFER), 
+		sprite_get_width(textbox) - (BUFFER * 6));
+
+		
+		
+		
+		
 	} else {
 		//DRAW TEXT OPTION INSIDE BOX
 		if (show_roll_options) {
@@ -38,8 +49,8 @@ if (battle == true) {
 			inner_text_Y = textY;
 			
 
-				for (var j = 0; j < monster_array[current_passage, 4] ; j++){
-					options_text = monster_array[current_passage, j+1];
+				for (var j = 0; j < scr_monster_array_access(monster, current_passage, 4); j++){
+					options_text = scr_monster_array_access(monster, current_passage, j+1)
 					if  (roll_option == j ){
 						draw_sprite(arrow, 0, inner_text_X - sprite_get_width(arrow), inner_text_Y + 4 + ((fontSize + BUFFER) * (j) * 1.5 ));
 					}
@@ -57,7 +68,7 @@ if (battle == true) {
 //DRAW THE MESSAGES
 
 
-if (show_battle_text) {
+if (show_battle_text){
 	
 	
 	sep = (fontSize + BUFFER);
