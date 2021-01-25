@@ -37,12 +37,20 @@ if (battle == true) {
 			inner_text_X = textX +15;
 			inner_text_Y = textY;
 			
-			for (var j = 0; j < array_length_1d(a_roll_text); j++){
-				text = a_roll_text[j];
-				if  (roll_option == j ){
-					draw_sprite(arrow, 0, inner_text_X - sprite_get_width(arrow), inner_text_Y + ((fontSize + BUFFER + 1) * j * 1.5 ));
+			if (global.battle_snail[0, 2] == "NONE") {
+				a_roll_number = 2;
+			}
+			if (global.battle_snail[0,  3] == "NONE") {
+				a_roll_number = 3;
+			}
+			
+			
+			for (var j = 1; j < a_roll_number; j++){
+				text = global.battle_snail[0, j]
+				if  (roll_option == j - 1 ){
+					draw_sprite(arrow, 0, inner_text_X - sprite_get_width(arrow), inner_text_Y + ((fontSize + BUFFER + 1) * (j-1) * 1.5 ));
 				}
-				draw_text(inner_text_X, inner_text_Y + ((fontSize + BUFFER) * j * 1.5), text);
+				draw_text(inner_text_X, inner_text_Y + ((fontSize + BUFFER) * (j-1) * 1.5), text);
 			}
 		}	
 	}

@@ -18,6 +18,7 @@
     {"id":{"name":"sprite_test1","path":"sprites/sprite_test1/sprite_test1.yy",},"order":4,},
     {"id":{"name":"obj_snail","path":"objects/obj_snail/obj_snail.yy",},"order":2,},
     {"id":{"name":"textbox","path":"sprites/textbox/textbox.yy",},"order":0,},
+    {"id":{"name":"obj_story_arrays","path":"objects/obj_story_arrays/obj_story_arrays.yy",},"order":11,},
     {"id":{"name":"tap","path":"sounds/tap/tap.yy",},"order":1,},
     {"id":{"name":"player_action","path":"sounds/player_action/player_action.yy",},"order":0,},
     {"id":{"name":"snail","path":"sprites/snail/snail.yy",},"order":5,},

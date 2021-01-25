@@ -10,8 +10,7 @@ a_text[2] = "CHECK";
 
 
 //Not necessary, switch later
-a_roll_text[0] = "ROLL";
-a_roll_text[1] = "CHECK";
+
 
 
 //Dice points
@@ -20,7 +19,7 @@ dice_points = 0;
 //Getting rid of player HP and monster HP stats -> not needed anymore
 
 selected_option = 0; //which option is the arrow on
-player_turn = true;
+player_turn = false;
 ds_messages = ds_list_create();
 message_counter = 0 ;//Tracks which message we're on
 show_battle_text = false; //Display battle text or not
@@ -29,7 +28,6 @@ message_timer = 0;
 time_before_button_accepted = 15;
 
 enemy_timer = 0;
-enemy_turn_counter = 0;
 time_til_enemy_attacks = 30; 
 battle_option = 0; //which option has been selected by either monster or player
 

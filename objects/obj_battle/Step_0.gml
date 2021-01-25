@@ -15,8 +15,7 @@ if (state == "INIT") {
 	show_battle_text = false; //Display battle text or not
 
 	message_timer = 0;
-	
-	enemy_turn_counter = 0;
+
 	enemy_timer = 0;
 	battle_option = 0; //which option has been selected by either monster or player
 
@@ -268,6 +267,7 @@ if (!player_turn) && (!show_battle_text){
 		enemy_timer = 0;
 		
 		//Implement new DDR minigame here
+		ds_messages[| 0] = global.battle_snail[0,0];
 		
 		battle_option = 0;
 		
