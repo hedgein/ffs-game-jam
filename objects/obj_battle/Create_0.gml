@@ -2,10 +2,11 @@
 // You can write your code in this editor
 randomize();
 audio_play_sound(monster_chip, 1, true);
-a_text[0] = "ATTACK";
-a_text[1] = "DEFEND";
-a_text[2] = "SPECIAL";
-a_text[3] = "HEAL";
+a_text[0] = "ROLL";
+a_text[1] = "SPEND";
+a_text[2] = "TEST";
+//If there's a need for a fourth option later?
+//a_text[3] = "HEAL";
 
 a_roll_text[0] = "ROLL";
 a_roll_text[1] = "CHECK";
@@ -14,11 +15,7 @@ an_attack_text[0] = "ROLL";
 an_attack_text[1] = "FISTS";
 an_attack_text[2] = "CHECK";
 
-player_HP = 20;
-player_MAX_HP = 20;
-
-monster_HP = 50;
-monster_MAX_HP = 50;
+//Getting rid of player HP and monster HP stats -> not needed anymore
 
 selected_option = 0; //which option is the arrow on
 player_turn = true;

@@ -1,4 +1,13 @@
 if (battle == true) {
+	
+	//Buffer and coordinates
+	var BUFFER = 4;
+	guiX = surface_get_width(application_surface) / 2;
+	guiY = surface_get_height(application_surface);
+	textX = guiX - (sprite_get_width(textbox) / 2) + (BUFFER * 3);
+	textY = guiY - (sprite_get_height(textbox) - (BUFFER * 3));
+
+	draw_sprite(textbox, 0, guiX - (sprite_get_width(textbox) / 2) - BUFFER, guiY - (sprite_get_height(textbox))- (BUFFER * 2.2));
 
 	// DRAW THE OPTIONS
 	optionX = 500;
@@ -9,7 +18,7 @@ if (battle == true) {
 	draw_set_color(c_white);
 
 	fontSize = font_get_size(fnt_battle_text)
-	var BUFFER = 4;
+	
 
 	
 	if (!show_roll_options) && (!show_attack_options) && (!show_heal_options) && (!show_defense_options){
@@ -24,14 +33,15 @@ if (battle == true) {
 		}
 	} else {
 		if (show_roll_options) || (show_defense_options) || (show_heal_options) {
-			var rollX = optionX;
-			var rollY = optionY;
+			inner_text_X = textX +15;
+			inner_text_Y = textY;
+			
 			for (var j = 0; j < array_length_1d(a_roll_text); j++){
 				text = a_roll_text[j];
 				if  (roll_option == j ){
-					draw_sprite(arrow, 0, rollX - sprite_get_width(arrow), rollY + ((fontSize + BUFFER + 1) * j ));
+					draw_sprite(arrow, 0, inner_text_X - sprite_get_width(arrow), inner_text_Y + ((fontSize + BUFFER + 1) * j ));
 				}
-				draw_text(rollX, rollY + ((fontSize + BUFFER) * j), text);
+				draw_text(inner_text_X, inner_text_Y + ((fontSize + BUFFER) * j * 2), text);
 			}
 		}
 		if (show_attack_options) {
@@ -56,14 +66,9 @@ if (battle == true) {
 
 //DRAW THE MESSAGES
 
-guiX = surface_get_width(application_surface) / 2;
-guiY = surface_get_height(application_surface);
-
-draw_sprite(textbox, 0, guiX - (sprite_get_width(textbox) / 2) - BUFFER, guiY - (sprite_get_height(textbox))- (BUFFER * 2.2));
 
 if (show_battle_text) {
-	textX = guiX - (sprite_get_width(textbox) / 2) + (BUFFER * 3);
-	textY = guiY - (sprite_get_height(textbox) - (BUFFER * 3));
+	
 	
 	sep = (fontSize + BUFFER);
 	w = sprite_get_width(textbox) - (BUFFER * 6);
@@ -84,23 +89,5 @@ if (show_battle_text) {
 	
 }
 
-//DRAW MONSTER's HP
-draw_set_valign(fa_top);
-draw_set_halign(fa_left);
-monster_hpX = BUFFER;
-monster_hpY = BUFFER;
-draw_text(monster_hpX + shakeX, monster_hpY + shakeY, "ENEMY HP: " + string(monster_HP) + " / " + string(monster_MAX_HP));
-
-
-
-
-//DRAW PLAYER'S HP
-
-
-draw_set_valign(fa_bottom);
-draw_set_halign(fa_left);
-hpX = BUFFER;
-hpY = surface_get_height(application_surface) - BUFFER;
-draw_text(hpX + shakeX, hpY + shakeY, "HP: " + string(player_HP) + " / " + string(player_MAX_HP));
-
+//No more need for drawing HP's
 }

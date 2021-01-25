@@ -7,8 +7,6 @@ if (state == "INIT") {
 	ds_list_destroy(ds_roll_input);
 	}
 	
-	monster_HP = 20;
-	monster_MAX_HP = 20;
 
 	selected_option = 0; //which option is the arrow on
 	player_turn = true;
@@ -271,19 +269,6 @@ if (player_turn) && (!show_battle_text)  {
 					//Show damage message
 					ds_messages[| 2] = "Player hit for " +  string(roll) + " damage!";
 					
-					//Prevent from monster hp going negative
-					if (monster_HP - roll < 0) {
-						monster_HP = 0;
-					} else {
-						monster_HP -= roll;
-					}
-					
-					
-					//Check if snail is dead
-					if (monster_HP <= 0 ) {
-						victory = true;
-						ds_messages[| 3] = "SNAIL dies...";
-					}
 					
 					if (ds_list_size(ds_roll_input) == 0) {
 						scr_roll_reset();
@@ -299,21 +284,11 @@ if (player_turn) && (!show_battle_text)  {
 					damage = scr_damage(); //Calculates damage
 					
 					
-					//Prevent from monster hp going negative
-					if (monster_HP - damage < 0) {
-						monster_HP = 0;
-					} else {
-						monster_HP -= damage;
-					}
 					
 					//Show first damage message 
 					ds_messages[| 1] = "And hits for " + string(damage) + " damage!";
 					
-					//Check if snail is dead
-					if (monster_HP <= 0 ) {
-						victory = true;
-						ds_messages[| 2] = "SNAIL dies...";
-					}
+					
 				
 				}
 				
@@ -460,11 +435,7 @@ if (player_turn) && (!show_battle_text)  {
 						ds_messages[| 1] = "They rolled a " + string(roll) + "!";
 						ds_messages[| 2] = "Player HEALS for " + string(roll) + " health!";
 						
-						if ((player_HP + roll) > player_MAX_HP) {
-							player_HP = player_MAX_HP;
-						} else {
-							player_HP += roll;
-						}
+					
 						global.heal_counter--
 					} else {
 						ds_messages[| 0] = "Player has no heals left!";
@@ -541,26 +512,17 @@ if (player_turn) && (!show_battle_text)  {
 				if (battle_option == 0) {
 					if (!player_turn) {
 						if (message_counter == 1 || message_counter == 2 || message_counter == 3) && (!defend_boolean) && (player_HP > 0){
-							if ((player_HP - defend_damage) >= 0) {
-								player_HP -= defend_damage;
-							} else {
-								player_HP = 0;
-							}
+							//Player HP damage calculation went here, no longer needed
 							
 							screen_shake = true;
 										
 						}
+						//If defense is successful, no screen shake
 						if (message_counter == 2) && (defend_boolean) {
 							screen_shake = false;
 						}
 					}
 				}
-				
-				//Check if player is dead
-				if (player_HP <= 0) && (!player_dead){
-					player_dead = true;
-					ds_messages[| 2] = "Player dies...";
-				} 
 				
 				//Play Victory Sound
 				if (victory) {
