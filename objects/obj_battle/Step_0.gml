@@ -102,11 +102,10 @@ if (player_turn) && (!show_battle_text)  {
 			//	show_heal_options = true;
 			//}
 		
-			if (selected_option != 2) && (selected_option != 0) && (selected_option != 1) && (selected_option != 3){
+			if (selected_option != 2) && (selected_option != 0) && (selected_option != 1){
 				show_battle_text = true;
 			}
 			
-	
 			audio_play_sound(player_action, 1, false);
 		}
 	} else {
@@ -148,7 +147,7 @@ if (player_turn) && (!show_battle_text)  {
 				//Roll for the option
 				if (roll_option == 0){
 					//Roll Mechanic here
-					roll = scr_roll_mechanic
+					roll = scr_roll_mechanic();
 					
 					//After every roll lock
 					if (ds_list_size(ds_roll_input) == 0) {
@@ -163,24 +162,10 @@ if (player_turn) && (!show_battle_text)  {
 				//Continue Battle
 				show_battle_text = true;
 				show_roll_options = false;
-				roll_defend_boolean = false;
-				
+			
 			}
 			
-
-			}
-			
-
-
-			
-		
-
-
-
-			
-				
-		
-				
+		}
 	}
 }
 
@@ -220,10 +205,7 @@ if (player_turn) && (!show_battle_text)  {
 								ds_list_destroy(ds_messages);
 							}
 							
-						}
-					
-						
-					
+						}			
 				}
 				message_timer = 0; 
 				
@@ -242,17 +224,9 @@ if (player_turn) && (!show_battle_text)  {
 						victory_sound_played = true;
 					}
 				}
-				
-				
-				
-				
 			}
 		}
-		
-
-	
 	}		
-
 
 #endregion
 
@@ -293,11 +267,8 @@ if (!player_turn) && (!show_battle_text){
 		ds_messages[| 0] = "Monster ATTACKS!";
 		battle_option = 0;
 		
-	
 		audio_play_sound(enemy_action, 1, false);
-		}
-		
-
+		}		
 }
 
 #endregion
