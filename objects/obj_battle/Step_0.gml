@@ -49,6 +49,8 @@ if (state == "INIT") {
 
 if (battle == true) && (state == "READY"){
 
+	
+
 #region SELECT OPTION
 
 if (player_turn) && (!show_battle_text)  {
@@ -117,7 +119,7 @@ if (player_turn) && (!show_battle_text)  {
 				//Need new system do track which passage your on
 				
 				//If not the last option, go down (to next option)
-				if (roll_option + 1) <= (array_length_1d(a_roll_text) -1) {
+				if (roll_option + 1) <= option_count {
 					roll_option++;
 				//Else go back to first option
 				} else {
@@ -132,7 +134,7 @@ if (player_turn) && (!show_battle_text)  {
 					roll_option--;
 					//Else go to bottom
 				} else {
-					roll_option = (array_length_1d(a_roll_text) - 1);
+					roll_option = option_count;
 				}
 				audio_play_sound(tap, 1, false);
 			} 
@@ -148,9 +150,6 @@ if (player_turn) && (!show_battle_text)  {
 					//Roll Mechanic here
 					roll = scr_roll_mechanic();
 					
-					with(obj_snail){
-						
-					}
 					
 					//After every roll lock
 					if (ds_list_size(ds_roll_input) == 0) {
@@ -162,15 +161,19 @@ if (player_turn) && (!show_battle_text)  {
 				if (roll_option == 1) {
 					
 				}
+				
 				//Continue Battle
 				show_battle_text = true;
 				show_roll_options = false;
-			
 			}
 			
+				
 		}
+				
 	}
+	
 }
+
 
 #endregion
 

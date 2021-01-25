@@ -37,21 +37,15 @@ if (battle == true) {
 			inner_text_X = textX +15;
 			inner_text_Y = textY;
 			
-			if (global.battle_snail[0, 2] == "NONE") {
-				a_roll_number = 2;
-			}
-			if (global.battle_snail[0,  3] == "NONE") {
-				a_roll_number = 3;
-			}
-			
-			
-			for (var j = 1; j < a_roll_number; j++){
-				text = global.battle_snail[0, j]
-				if  (roll_option == j - 1 ){
-					draw_sprite(arrow, 0, inner_text_X - sprite_get_width(arrow), inner_text_Y + ((fontSize + BUFFER + 1) * (j-1) * 1.5 ));
+
+				for (var j = 0; j < global.battle_snail[passage_counter, 4] ; j++){
+					options_text = global.battle_snail[passage_counter, j+1];
+					if  (roll_option == j ){
+						draw_sprite(arrow, 0, inner_text_X - sprite_get_width(arrow), inner_text_Y + 4 + ((fontSize + BUFFER) * (j) * 1.5 ));
+					}
+					draw_text(inner_text_X, inner_text_Y + ((fontSize + BUFFER) * (j) * 1.5), options_text);
 				}
-				draw_text(inner_text_X, inner_text_Y + ((fontSize + BUFFER) * (j-1) * 1.5), text);
-			}
+			
 		}	
 	}
 

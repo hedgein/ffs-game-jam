@@ -9,7 +9,11 @@ a_text[2] = "CHECK";
 //a_text[3] = "HEAL";
 
 
-//Not necessary, switch later
+//Track which passage we're on
+passage_counter= 0;
+option_count = 1
+
+monster = "SNAIL";
 
 
 
