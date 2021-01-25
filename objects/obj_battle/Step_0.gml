@@ -163,7 +163,7 @@ if (player_turn) && (!show_battle_text)  {
 				if (roll_option == 1) {
 					roll = scr_roll_mechanic();
 					
-					if (roll < 4) {
+					if (roll > 4) {
 						roll_success = true;
 					} else {
 						roll_success = false;

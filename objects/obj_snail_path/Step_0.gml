@@ -1,8 +1,7 @@
 //Passage # includes zero (zero is first)
 with (obj_battle){
-	if(!show_battle_text && !player_turn){
 	current_passage = next_passage;
-	} 
+
 	if (show_roll_options) {
 		if (keyboard_check_pressed(ord("Z"))) {
 			passage_text = global.battle_snail[current_passage, 0];

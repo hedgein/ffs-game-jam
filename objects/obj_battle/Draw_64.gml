@@ -22,7 +22,7 @@ if (battle == true) {
 	
 
 	
-	if (!show_roll_options) && (!show_battle_text){
+	if (!show_roll_options) && (!show_battle_text) && (player_turn) {
 		for (var i = 0; i < array_length_1d(a_text); i++) {
 			if (selected_option == i) {
 				if (player_turn) && (!show_battle_text) {
