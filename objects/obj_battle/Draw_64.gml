@@ -21,7 +21,7 @@ if (battle == true) {
 	
 
 	
-	if (!show_roll_options) && (!show_attack_options) && (!show_heal_options) && (!show_defense_options){
+	if (!show_roll_options){
 		for (var i = 0; i < array_length_1d(a_text); i++) {
 			if (selected_option == i) {
 				if (player_turn) && (!show_battle_text) {
@@ -44,20 +44,7 @@ if (battle == true) {
 				}
 				draw_text(inner_text_X, inner_text_Y + ((fontSize + BUFFER) * j * 2), text);
 			}
-		}
-		if (show_attack_options) {
-			var attackX = optionX;
-			var attackY = optionY;
-			for (var attack_array_index = 0; attack_array_index < array_length_1d(an_attack_text); attack_array_index++){
-				text = an_attack_text[attack_array_index];
-				if  (attack_option == attack_array_index ){
-					draw_sprite(arrow, 0, attackX - sprite_get_width(arrow), attackY + ((fontSize + BUFFER + 1) * attack_array_index ));
-				}
-				draw_text(attackX, attackY + ((fontSize + BUFFER) * attack_array_index), text);
-			}
-		}
-
-		
+		}	
 	}
 
 	

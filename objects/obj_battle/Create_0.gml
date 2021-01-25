@@ -8,12 +8,14 @@ a_text[2] = "CHECK";
 //If there's a need for a fourth option later?
 //a_text[3] = "HEAL";
 
+
+//Not necessary, switch later
 a_roll_text[0] = "ROLL";
 a_roll_text[1] = "CHECK";
 
-an_attack_text[0] = "ROLL";
-an_attack_text[1] = "FISTS";
-an_attack_text[2] = "CHECK";
+
+//Dice points
+dice_points = 0;
 
 //Getting rid of player HP and monster HP stats -> not needed anymore
 
@@ -39,19 +41,10 @@ victory = false;
 state = "READY";
 
 	//Roll mechanic
-	show_roll_options = false; //Show lock menu or not
+	show_roll_options = false; //Show roll options/choices or not
 	roll_option = 0;
 
-	//Attack mechanic
-	show_attack_options = false;
-	attack_option = 0; 
-
-	//Heal Mechanic
-	show_heal_options = false;
-	heal_option = 0;
-	
-	show_defense_options = false;
-
+ 
 //sound
 victory_sound_played = false;
 
@@ -64,6 +57,7 @@ shakeY = 0;
 shake_timer = 0;
 time_til_shake_ends = 30;
 
+//Create list of possible rolls here
 ds_roll_input = ds_list_create();
 ds_roll_input[| 0] = 1;
 ds_roll_input[| 1] = 2;
