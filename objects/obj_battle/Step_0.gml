@@ -87,25 +87,24 @@ if (player_turn) && (!show_battle_text)  {
 				ds_messages = ds_list_create();
 			}
 			
-			//Attack
+			//Roll
 			if(selected_option == 0) {
 				show_attack_options = true;
 			}
 		
-			//Defend
+			//SPEND
 			if (selected_option == 1) {
 				show_defense_options = true;
 			}
 
-			//Roll
-			
+			//CHECK
 			if (selected_option == 2) {
-				show_roll_options = true;
+				check_boolean = true;
 			}
-			//Heal
-			if (selected_option ==3) {
-				show_heal_options = true;
-			}
+			//Fourth menu option not needed, add later?
+			//if (selected_option ==3) {
+			//	show_heal_options = true;
+			//}
 		
 			if (selected_option != 2) && (selected_option != 0) && (selected_option != 1) && (selected_option != 3){
 				show_battle_text = true;
@@ -394,73 +393,9 @@ if (player_turn) && (!show_battle_text)  {
 				roll_defend_boolean = false;	
 			}
 		}	
+			
+				
 		
-		if (show_heal_options) {
-			if (keyboard_check_pressed(ord("X"))) {
-				show_heal_options = false;
-			}
-			if (keyboard_check_pressed(vk_down)){
-				//If not the last option, go down (to next option)
-				if (roll_option + 1) <= (array_length_1d(a_roll_text) -1) {
-					roll_option++;
-				//Else go back to first option
-				} else {
-				 roll_option = 0; 
-				}
-				audio_play_sound(tap, 1, false);
-			}
-
-			if (keyboard_check_pressed(vk_up)) {
-				//If not at top most option, go up 1 (to before option)
-				if (roll_option - 1) >= 0 {
-					roll_option--;
-					//Else go to bottom
-				} else {
-					roll_option = (array_length_1d(a_roll_text) - 1);
-				}
-				audio_play_sound(tap, 1, false);
-			} 
-			
-			if (keyboard_check_pressed(ord("Z"))) {
-				message_counter = 0;
-				//Make sure message lists still exist - sometimes it can be lost
-				if (!ds_exists(ds_messages, ds_type_list)){
-					ds_messages = ds_list_create();
-				}
-				
-				if (roll_option == 0) {
-					if (global.heal_counter > 0) {
-						roll = scr_roll_mechanic("HEAL")
-						ds_messages[| 0] = "Player rolls HEAL dice!";
-						ds_messages[| 1] = "They rolled a " + string(roll) + "!";
-						ds_messages[| 2] = "Player HEALS for " + string(roll) + " health!";
-						
-					
-						global.heal_counter--
-					} else {
-						ds_messages[| 0] = "Player has no heals left!";
-						check_boolean = true;
-					}
-				}
-				
-				if (roll_option == 1) {
-					if (global.heal_counter > 0) {
-						ds_messages[| 0] = "Player has " + string(global.heal_counter) + " heals left!";
-					} else {
-						ds_messages[| 0] = "Player has no heals left!";
-					}
-					check_boolean = true;
-				}
-				
-				//Continue Battle
-				battle_option = 0 //???
-				show_battle_text = true;
-				show_attack_options = false;
-				roll_defend_boolean = false;
-			}
-			
-				
-		}
 				
 	}
 }
@@ -481,7 +416,7 @@ if (player_turn) && (!show_battle_text)  {
 				//Otherwise next actor take their turn
 				} else {
 					//We've shown all the messages
-						if (player_dead) || (victory){
+						if  (victory){
 							battle = false; 
 							//room_goto(rm_died);
 							state = "INIT";
@@ -511,16 +446,8 @@ if (player_turn) && (!show_battle_text)  {
 				//If this is an attack
 				if (battle_option == 0) {
 					if (!player_turn) {
-						if (message_counter == 1 || message_counter == 2 || message_counter == 3) && (!defend_boolean) && (player_HP > 0){
-							//Player HP damage calculation went here, no longer needed
-							
-							screen_shake = true;
-										
-						}
-						//If defense is successful, no screen shake
-						if (message_counter == 2) && (defend_boolean) {
-							screen_shake = false;
-						}
+						//Set screen_shake to true on condition that ds_messages is a specific messgae
+						//(may not need screen shake?)
 					}
 				}
 				
@@ -578,65 +505,12 @@ if (!player_turn) && (!show_battle_text){
 		show_battle_text = true;
 		enemy_timer = 0;
 		
+		//Implement new system here
 		ds_messages[| 0] = "Monster ATTACKS!";
 		battle_option = 0;
 		
-		if (enemy_turn_counter == 5) {
-			//Roll enemy special here
-			enemy_roll = scr_roll_mechanic("SNAIL");
-			ds_messages[| 1] = global.ga_snail_lock[enemy_roll-1, 0];
-			ds_messages[| 2] = "SNAIL does " + string(enemy_roll) + " damage!";
-			
-			if (roll_defend_boolean){
-				defend_damage = scr_defend(roll) + enemy_roll;
-				if (defend_damage < 0) {
-					defend_damage = 0;
-					defend_boolean = true;
-				} else {
-					defend_boolean = false;
-				}
-			} else {
-				defend_damage = enemy_roll;
-				defend_boolean = false;
-			}
-			
-			
-			enemy_turn_counter = 0;
-			audio_play_sound(enemy_action, 1, false);
-			
-			
-		} else {
-			//If player rolled a defense
-			if (roll_defend_boolean) {
-				defend_damage = scr_defend(roll);
-				if (defend_damage < 0) {
-					defend_damage = 0;
-					defend_boolean = true;
-				} else {
-					defend_boolean = false;
-				}
-				ds_messages[| 1] = "And hits for " + string(defend_damage) + " damage!";
-				roll_defend_boolean = false;
-
-			//Otherwise, monster attacks	
-			} else {
-			
-				defend_boolean = chance(20);
-				//If defend successfully chosen with 20% probability, monster misses
-				if (defend_boolean) {
-					ds_messages[| 1] = "But misses! What a close one!";
-				//Otherwise, monster successfully attacks
-				} else {
-					defend_damage = scr_defend(0);
-					ds_messages[| 1] = "And hits for " + string(defend_damage) + " damage!";
-				}
-			
-				}
-				
-				enemy_turn_counter++;
-				
-			}
-			audio_play_sound(enemy_action, 1, false);
+	
+		audio_play_sound(enemy_action, 1, false);
 		}
 		
 

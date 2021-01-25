@@ -4,7 +4,7 @@ randomize();
 audio_play_sound(monster_chip, 1, true);
 a_text[0] = "ROLL";
 a_text[1] = "SPEND";
-a_text[2] = "TEST";
+a_text[2] = "CHECK";
 //If there's a need for a fourth option later?
 //a_text[3] = "HEAL";
 
