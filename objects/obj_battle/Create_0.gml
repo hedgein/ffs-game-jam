@@ -10,11 +10,13 @@ a_text[2] = "CHECK";
 
 
 //Track which passage we're on
-passage_counter= 0;
-option_count = 1
+current_passage = 0;
+next_passage = 0;
 
 monster = "SNAIL";
+monster_array = arr_copy_2d(global.battle_snail);
 
+passage_text = "";
 
 
 //Dice points

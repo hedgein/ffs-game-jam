@@ -38,8 +38,8 @@ if (battle == true) {
 			inner_text_Y = textY;
 			
 
-				for (var j = 0; j < global.battle_snail[passage_counter, 4] ; j++){
-					options_text = global.battle_snail[passage_counter, j+1];
+				for (var j = 0; j < monster_array[current_passage, 4] ; j++){
+					options_text = monster_array[current_passage, j+1];
 					if  (roll_option == j ){
 						draw_sprite(arrow, 0, inner_text_X - sprite_get_width(arrow), inner_text_Y + 4 + ((fontSize + BUFFER) * (j) * 1.5 ));
 					}

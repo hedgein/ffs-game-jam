@@ -119,7 +119,7 @@ if (player_turn) && (!show_battle_text)  {
 				//Need new system do track which passage your on
 				
 				//If not the last option, go down (to next option)
-				if (roll_option + 1) <= option_count {
+				if (roll_option + 1) <= option_total_count {
 					roll_option++;
 				//Else go back to first option
 				} else {
@@ -134,7 +134,7 @@ if (player_turn) && (!show_battle_text)  {
 					roll_option--;
 					//Else go to bottom
 				} else {
-					roll_option = option_count;
+					roll_option = option_total_count;
 				}
 				audio_play_sound(tap, 1, false);
 			} 

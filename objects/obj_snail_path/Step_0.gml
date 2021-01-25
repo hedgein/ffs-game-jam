@@ -1,10 +1,22 @@
-/// @description Insert description here
-// You can write your code in this editor
-if (passage_counter == 0){
-	if (global.battle_snail[passage_counter, 2] != "NONE") {
-		option_count = 1; //technically 2
-	} 
-	if (global.battle_snail[passage_counter, 3] != "NONE"){
-		option_count = 2; //technically 3
+//Passage # includes zero (zero is first)
+with (obj_battle){
+	current_passage = next_passage;
+	passage_text = global.battle_snail[current_passage, 0];
+	switch (current_passage) {
+		case 0: {
+			//
+			switch (roll_option) {
+				case 0: {
+					next_passage = 1;
+					break;
+				}
+				case 1: {
+					next_passage = 2;
+					break;
+				}
+			}
+			break;
+		}
+			
 	}
 }
