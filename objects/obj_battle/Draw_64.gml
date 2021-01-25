@@ -32,6 +32,7 @@ if (battle == true) {
 		draw_text(optionX + shakeX, optionY + ((fontSize + BUFFER) * i ) + shakeY, text);
 		}
 	} else {
+		//DRAW TEXT OPTION INSIDE BOX
 		if (show_roll_options) || (show_defense_options) || (show_heal_options) {
 			inner_text_X = textX +15;
 			inner_text_Y = textY;
