@@ -149,6 +149,10 @@ if (player_turn) && (!show_battle_text)  {
 					//Roll Mechanic here
 					roll = scr_roll_mechanic();
 					
+					with(obj_snail){
+						
+					}
+					
 					//After every roll lock
 					if (ds_list_size(ds_roll_input) == 0) {
 						scr_roll_reset();

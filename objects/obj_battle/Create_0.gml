@@ -40,9 +40,9 @@ battle = true;
 victory = false;
 state = "READY";
 
-	//Roll mechanic
-	show_roll_options = false; //Show roll options/choices or not
-	roll_option = 0;
+//Roll mechanic
+show_roll_options = false; //Show roll options/choices or not
+roll_option = 0;
 
  
 //sound
