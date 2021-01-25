@@ -40,9 +40,9 @@ if (battle == true) {
 			for (var j = 0; j < array_length_1d(a_roll_text); j++){
 				text = a_roll_text[j];
 				if  (roll_option == j ){
-					draw_sprite(arrow, 0, inner_text_X - sprite_get_width(arrow), inner_text_Y + ((fontSize + BUFFER + 1) * j ));
+					draw_sprite(arrow, 0, inner_text_X - sprite_get_width(arrow), inner_text_Y + ((fontSize + BUFFER + 1) * j * 1.5 ));
 				}
-				draw_text(inner_text_X, inner_text_Y + ((fontSize + BUFFER) * j * 2), text);
+				draw_text(inner_text_X, inner_text_Y + ((fontSize + BUFFER) * j * 1.5), text);
 			}
 		}	
 	}
