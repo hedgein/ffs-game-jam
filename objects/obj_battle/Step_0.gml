@@ -191,7 +191,7 @@ if (player_turn) && (!show_battle_text)  {
 					//We've shown all the messages
 						if  (victory){
 							battle = false; 
-							//room_goto(rm_died);
+							//room_goto(rm_overworld????);
 							state = "INIT";
 							show_battle_text = false;
 						
@@ -267,8 +267,8 @@ if (!player_turn) && (!show_battle_text){
 		show_battle_text = true;
 		enemy_timer = 0;
 		
-		//Implement new system here
-		ds_messages[| 0] = "Monster ATTACKS!";
+		//Implement new DDR minigame here
+		
 		battle_option = 0;
 		
 		audio_play_sound(enemy_action, 1, false);
