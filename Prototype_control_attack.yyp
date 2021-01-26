@@ -10,6 +10,7 @@
     {"id":{"name":"obj_stats","path":"objects/obj_stats/obj_stats.yy",},"order":4,},
     {"id":{"name":"scr_monster_array_access","path":"scripts/scr_monster_array_access/scr_monster_array_access.yy",},"order":12,},
     {"id":{"name":"obj_dice_set","path":"objects/obj_dice_set/obj_dice_set.yy",},"order":9,},
+    {"id":{"name":"scr_dice_range_array_access","path":"scripts/scr_dice_range_array_access/scr_dice_range_array_access.yy",},"order":13,},
     {"id":{"name":"obj_story_path","path":"objects/obj_story_path/obj_story_path.yy",},"order":10,},
     {"id":{"name":"fnt_battle_text","path":"fonts/fnt_battle_text/fnt_battle_text.yy",},"order":0,},
     {"id":{"name":"snd_victory","path":"sounds/snd_victory/snd_victory.yy",},"order":3,},

@@ -11,7 +11,7 @@ if (battle == true) {
 
 	passage_text = scr_monster_array_access(monster, current_passage, 0);
 	// DRAW THE OPTIONS
-	optionX = 500;
+	optionX = 540;
 	optionY = 360;
 	draw_set_font(fnt_battle_text);
 	draw_set_halign(fa_left);
@@ -46,6 +46,7 @@ if (battle == true) {
 			inner_text_Y = textY;
 				var sep = (fontSize + BUFFER);
 				var w = sprite_get_width(textbox) - (BUFFER * 6);
+			
 				
 				roll_option_adjuster = 0;
 				var total_message_size = 0;
@@ -58,6 +59,15 @@ if (battle == true) {
 					inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5), 
 					options_text, (fontSize + BUFFER), 
 					sprite_get_width(textbox) - (BUFFER * 6));
+					
+					
+					//Draw roll chances
+					
+					roll_ranges_text = scr_dice_range_array_access(monster, current_passage)
+					draw_text(inner_text_X + shakeX - (string_width(roll_ranges_text[j]) * 2.5), 
+					inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5), 
+					roll_ranges_text[j]);
+					
 					sep = (fontSize + BUFFER);
 					
 					total_message_size += string_height_ext(options_text, sep, w);
@@ -84,7 +94,7 @@ if (show_battle_text){
 	
 	
 	var sep = (fontSize + BUFFER);
-	var w = sprite_get_width(textbox) - (BUFFER * 6);
+	var w = sprite_get_width(textbox) - (BUFFER * 8);
 	
 	var total_message_size = 0;
 	
