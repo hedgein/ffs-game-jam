@@ -81,3 +81,4 @@ ds_options_lock[| 0] = false;
 ds_options_lock[| 1] = false;
 
 last_lock_boolean = false;
+lock_counter = 0;

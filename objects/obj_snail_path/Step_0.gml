@@ -40,6 +40,7 @@ with (obj_battle){
 	
 		current_passage = next_passage;
 		last_lock_boolean = false;
+		lock_counter = 0;
 		if (ds_exists(ds_options_lock, ds_type_list)){
 			ds_list_destroy(ds_options_lock);
 		}

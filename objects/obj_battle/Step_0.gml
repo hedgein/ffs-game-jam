@@ -151,7 +151,7 @@ if (player_turn) && (!show_battle_text)  {
 				
 				if (!ds_exists(ds_options_lock, ds_type_list)){
 					ds_options_lock = ds_list_create();
-					for (var i = 0; i < array_length_1d(roll_ranges_text); i++) {
+					for (var i = 0; i < array_length_1d(roll_ranges_text) - 1; i++) {
 						ds_options_lock[| i] = false;
 					}
 				}
@@ -159,7 +159,7 @@ if (player_turn) && (!show_battle_text)  {
 				
 				
 				if (ds_options_lock[| roll_option]) {
-					ds_messages[|0] = "This is locked!";
+					ds_messages[|0] = "This is locked! ====>" + string(lock_counter);
 					
 					show_roll_options = false;
 					stay_player_turn_boolean = true;
@@ -167,16 +167,22 @@ if (player_turn) && (!show_battle_text)  {
 					show_battle_text = true;
 				//Only roll on false options_lock
 				} else {
+					
+					
 						if (!roll_success) && (!last_lock_boolean){
 							ds_options_lock[| roll_option] = true;
+							lock_counter++;
 							
 						}
 					
-					//find another way to last lock
+					if (lock_counter + 1 >= array_length_1d(roll_ranges_text)) {
+						last_lock_boolean = true;
+					}
 					
 					
 					
-					ds_messages[| 0] = "Shake the dice!  -->" + string(temp_lock_count);
+					
+					ds_messages[| 0] = "Shake the dice!  -->" + string(lock_counter);
 				
 					
 					show_roll_options = false;
@@ -307,7 +313,7 @@ if (!player_turn) && (!show_battle_text){
 			dice_points = 0;
 			ds_messages[| 2] = "Dice reset! Dice points back to 0!"
 		} else {
-			ds_messages[| 2] = "You got 1 dice point!  ==>" + string(ds_list_size(ds_roll_input));
+			ds_messages[| 2] = "You got 1 dice point!";
 		}
 		
 
