@@ -84,24 +84,24 @@ if (player_turn) && (!show_battle_text)  {
 				ds_messages = ds_list_create();
 			}
 			
-			//Roll
-			if(selected_option == 0) {
-				show_roll_options = true;
+			switch (selected_option) {
+				case 0: {
+					show_roll_options = true;
+					break;
+				}
+				
+				case 1: {
+					show_roll_options = true;
+					break;
+				}
+				
+				case 2: {
+					check_boolean = true;
+				}
 			}
-		
-			//SPEND
-			if (selected_option == 1) {
-				show_roll_options = true;
-			}
+			
 
-			//CHECK
-			if (selected_option == 2) {
-				check_boolean = true;
-			}
-			//Fourth menu option not needed, add later?
-			//if (selected_option ==3) {
-			//	show_heal_options = true;
-			//}
+			//if fourth menu option not needed, add later?
 		
 			if (selected_option != 2) && (selected_option != 0) && (selected_option != 1){
 				show_battle_text = true;
@@ -146,29 +146,23 @@ if (player_turn) && (!show_battle_text)  {
 				if (!ds_exists(ds_messages, ds_type_list)){
 					ds_messages = ds_list_create();
 				}
-				//Roll for the option
-				if (roll_option == 0){
-					//Roll Mechanic here
-					roll = scr_roll_mechanic();
-					
-					if (roll < 5){
-						roll_success = true;
-					} else{
-						roll_success = false;
-					}
-					
-					
-				}
-				//Second option
-				if (roll_option == 1) {
-					roll = scr_roll_mechanic();
-					
-					if (roll > 4) {
-						roll_success = true;
-					} else {
-						roll_success = false;
+				
+				if (!ds_exists(ds_options_lock, ds_type_list)){
+					ds_options_lock = ds_list_create();
+					for (var i = 0; i < ds_list_size(ds_options_lock); i++) {
+						ds_options_lock[| i] = false;
 					}
 				}
+				
+				//Roll Mechanic here
+				
+				roll = scr_roll_mechanic();
+				roll_success = scr_roll_success(roll_ranges_text[roll_option], roll);
+				
+				if (!roll_success) {
+					
+				}
+				
 				
 				//After every roll, check if all locks are used then reset dice
 				if (ds_list_size(ds_roll_input) == 0) {
@@ -178,6 +172,8 @@ if (player_turn) && (!show_battle_text)  {
 				
 				
 				ds_messages[| 0] = "Shake the dice!";
+				
+				
 				show_roll_options = false;
 				//Continue Battle
 				show_battle_text = true;
@@ -291,6 +287,7 @@ if (!player_turn) && (!show_battle_text){
 			status_text = "SUCCESS!";
 		} else {
 			status_text = "FAIL!";
+			dice_points = 0;
 		}
 		
 		//Implement new DDR minigame here

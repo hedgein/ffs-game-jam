@@ -10,11 +10,15 @@ with (obj_battle){
 					//
 					switch (roll_option) {
 						case 0: {
-							next_passage = 1;
+							if (roll_success){
+								next_passage = 1;
+							}			
 							break;
 						}
 						case 1: {
+							if (roll_success) {
 							next_passage = 2;
+							}
 							break;
 						}
 					}
