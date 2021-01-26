@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "arrow",
-    "path": "sprites/arrow/arrow.yy",
+    "name": "ddr_arrow",
+    "path": "sprites/ddr_arrow/ddr_arrow.yy",
   },
   "solid": false,
   "visible": true,

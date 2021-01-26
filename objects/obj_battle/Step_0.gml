@@ -219,8 +219,9 @@ if (player_turn) && (!show_battle_text)  {
 				if (message_counter + 1) <= (ds_list_size(ds_messages) - 1) {
 					message_counter++;
 				//Otherwise next actor take their turn
+				//Because we've shown all the messages
 				} else {
-					//We've shown all the messages
+
 						if  (victory){
 							battle = false; 
 							//room_goto(rm_overworld????);
