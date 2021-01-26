@@ -170,7 +170,7 @@ if (player_turn) && (!show_battle_text)  {
 					}
 				}
 				
-				//After every roll lock
+				//After every roll, check if all locks are used then reset dice
 				if (ds_list_size(ds_roll_input) == 0) {
 					scr_roll_reset();
 					scr_roll_unlock_reset();
