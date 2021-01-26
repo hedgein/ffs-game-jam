@@ -1,6 +1,5 @@
 //Passage # includes zero (zero is first)
 with (obj_battle){
-	current_passage = next_passage;
 
 	if (show_roll_options){
 		if (keyboard_check_pressed(ord("Z"))) {
@@ -23,6 +22,8 @@ with (obj_battle){
 					if (ds_exists(ds_options_lock, ds_type_list)){
 						ds_list_destroy(ds_options_lock);
 					}
+					} else {
+						next_passage = current_passage;
 					}
 					break;
 				}

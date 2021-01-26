@@ -37,7 +37,7 @@ enemy_timer = 0;
 time_til_enemy_attacks = 30; 
 battle_option = 0; //which option has been selected by either monster or player
 
-check_boolean = false;
+stay_player_turn_boolean = false;
 
 player_dead = false;
 battle = true; 
@@ -79,3 +79,6 @@ ds_roll_input[| 5] = 6;
 ds_options_lock = ds_list_create();
 ds_options_lock[| 0] = false;
 ds_options_lock[| 1] = false;
+
+last_lock_boolean = false;
+lock_counter = 0;

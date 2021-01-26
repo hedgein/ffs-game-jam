@@ -154,29 +154,47 @@ if (player_turn) && (!show_battle_text)  {
 					}
 				}
 				
-				//Roll Mechanic here
 				
-				roll = scr_roll_mechanic();
-				roll_success = scr_roll_success(roll_ranges_text[roll_option], roll);
+				if (ds_options_lock[| roll_option]) {
+					ds_messages[|0] = "This is locked!";
+					
+					show_roll_options = false;
+					stay_player_turn_boolean = true;
+					
+					show_battle_text = true;
+				} else {
+					//Roll Mechanic here
+					roll = scr_roll_mechanic();
+					roll_success = scr_roll_success(roll_ranges_text[roll_option], roll);
+					
+						if (!roll_success) && (!last_lock_boolean){
+						ds_options_lock[| roll_option] = true;
+						lock_counter++;
+						}
+						
+					
+					//If lock counter is equal to option count
+					if (lock_counter + 1 = scr_monster_array_access(monster, current_passage, 4)) {
+						last_lock_boolean = true;						
+					}
+					
+					//After every roll, check if all locks are used then reset dice
+					if (ds_list_size(ds_roll_input) == 0) {
+						scr_roll_reset();
+						scr_roll_unlock_reset();
+					}
+					
+					ds_messages[| 0] = "Shake the dice!";
 				
-				if (!roll_success) {
-					ds_options_lock[| roll_option] = true;
+				
+					show_roll_options = false;
+					//Continue Battle
+					show_battle_text = true;
+				
 				}
 				
 				
-				//After every roll, check if all locks are used then reset dice
-				if (ds_list_size(ds_roll_input) == 0) {
-					scr_roll_reset();
-					scr_roll_unlock_reset();
-				}
 				
-				
-				ds_messages[| 0] = "Shake the dice!";
-				
-				
-				show_roll_options = false;
-				//Continue Battle
-				show_battle_text = true;
 				
 			}
 			
@@ -211,9 +229,9 @@ if (player_turn) && (!show_battle_text)  {
 							show_battle_text = false;
 						
 						} else {
-							if (check_boolean) {
+							if (stay_player_turn_boolean) {
 								player_turn = true; 
-								check_boolean = false;
+								stay_player_turn_boolean = false;
 							} else {
 								player_turn = !player_turn;
 

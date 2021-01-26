@@ -48,16 +48,15 @@ if (battle == true) {
 				var w = sprite_get_width(textbox) - (BUFFER * 6);
 			
 				
-				roll_option_adjuster = 0;
 				var total_message_size = 0;
-				for (var j = 0 + roll_option_adjuster; j < scr_monster_array_access(monster, current_passage, 4); j++){
+				for (var j = 0 ; j < scr_monster_array_access(monster, current_passage, 4); j++){
 					options_text = scr_monster_array_access(monster, current_passage, j+1)
 					if  (roll_option == j ){
 						draw_sprite(arrow, 0, inner_text_X - sprite_get_width(arrow), inner_text_Y + ((fontSize + BUFFER) * (j) * 1.5 ));
 					}
 					
 					//If the option IS locked, color it red
-					if (ds_options_lock[| 0]) {
+					if (ds_options_lock[| j]) {
 						draw_text_ext_color(inner_text_X + shakeX, 
 						inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5),
 						options_text, (fontSize + BUFFER),
