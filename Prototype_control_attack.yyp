@@ -29,6 +29,7 @@
     {"id":{"name":"player_action","path":"sounds/player_action/player_action.yy",},"order":0,},
     {"id":{"name":"snail","path":"sprites/snail/snail.yy",},"order":5,},
     {"id":{"name":"obj_battle","path":"objects/obj_battle/obj_battle.yy",},"order":0,},
+    {"id":{"name":"arrow_green","path":"sprites/arrow_green/arrow_green.yy",},"order":7,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},
   ],
   "Options": [
