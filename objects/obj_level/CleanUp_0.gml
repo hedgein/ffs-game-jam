@@ -1,0 +1,1 @@
+/// @description Delete allocated memory
