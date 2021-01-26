@@ -55,10 +55,21 @@ if (battle == true) {
 					if  (roll_option == j ){
 						draw_sprite(arrow, 0, inner_text_X - sprite_get_width(arrow), inner_text_Y + ((fontSize + BUFFER) * (j) * 1.5 ));
 					}
-					draw_text_ext(inner_text_X + shakeX, 
-					inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5), 
-					options_text, (fontSize + BUFFER), 
-					sprite_get_width(textbox) - (BUFFER * 6));
+					
+					//If the option IS locked, color it red
+					if (ds_options_lock[| 0]) {
+						draw_text_ext_color(inner_text_X + shakeX, 
+						inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5),
+						options_text, (fontSize + BUFFER),
+						sprite_get_width(textbox) - (BUFFER * 6),
+						c_red, c_red, c_red, c_red, 1);
+					} else{
+						draw_text_ext(inner_text_X + shakeX, 
+						inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5), 
+						options_text, (fontSize + BUFFER), 
+						sprite_get_width(textbox) - (BUFFER * 6));
+					}
+					
 					
 					
 					//Draw roll chances

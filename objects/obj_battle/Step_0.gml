@@ -149,7 +149,7 @@ if (player_turn) && (!show_battle_text)  {
 				
 				if (!ds_exists(ds_options_lock, ds_type_list)){
 					ds_options_lock = ds_list_create();
-					for (var i = 0; i < ds_list_size(ds_options_lock); i++) {
+					for (var i = 0; i < array_length_1d(roll_ranges_text); i++) {
 						ds_options_lock[| i] = false;
 					}
 				}
@@ -160,7 +160,7 @@ if (player_turn) && (!show_battle_text)  {
 				roll_success = scr_roll_success(roll_ranges_text[roll_option], roll);
 				
 				if (!roll_success) {
-					
+					ds_options_lock[| roll_option] = true;
 				}
 				
 				

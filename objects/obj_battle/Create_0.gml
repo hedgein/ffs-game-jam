@@ -74,3 +74,8 @@ ds_roll_input[| 2] = 3;
 ds_roll_input[| 3] = 4;
 ds_roll_input[| 4] = 5;
 ds_roll_input[| 5] = 6;
+
+//Create options lock for first passage (every enemy will have two options at beginning)
+ds_options_lock = ds_list_create();
+ds_options_lock[| 0] = false;
+ds_options_lock[| 1] = false;
