@@ -122,7 +122,7 @@ if (player_turn) && (!show_battle_text)  {
 				//Need new system do track which passage your on
 				
 				//If not the last option, go down (to next option)
-				if (roll_option + 1) <= option_total_count - 1 {
+				if (roll_option+ 1) <= option_total_count - 1 {
 					roll_option++;
 				//Else go back to first option
 				} else {
@@ -186,7 +186,7 @@ if (player_turn) && (!show_battle_text)  {
 						scr_roll_unlock_reset();
 					}
 					
-					ds_messages[| 0] = "Shake the dice!" + string(roll) + "***->" + string(roll_success) ;
+					ds_messages[| 0] = "Shake the dice!" + "Range:" + roll_ranges_text[roll_option] + "//" + string(roll) + "***->" + string(roll_success) ;
 				
 					
 					show_roll_options = false;

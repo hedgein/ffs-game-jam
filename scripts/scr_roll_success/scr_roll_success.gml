@@ -1,6 +1,6 @@
 // roll option doubles as the select and array index
 function scr_roll_success(roll_range, roll){
-	var roll_success = true;
+	var roll_success = false;;
 	switch (roll_range){
 		case "1-2": {
 			if (roll < 3) {
