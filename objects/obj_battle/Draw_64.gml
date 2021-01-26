@@ -73,7 +73,7 @@ if (battle == true) {
 					
 					//Draw roll chances
 					
-					roll_ranges_text = scr_dice_range_array_access(monster, current_passage)
+					roll_ranges_text = scr_dice_range_array_access(monster, current_passage);
 					draw_text(inner_text_X + shakeX - (string_width(roll_ranges_text[j]) * 2.5), 
 					inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5), 
 					roll_ranges_text[j]);

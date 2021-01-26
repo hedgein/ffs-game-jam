@@ -35,7 +35,7 @@ time_before_button_accepted = 15;
 
 enemy_timer = 0;
 time_til_enemy_attacks = 30; 
-battle_option = 0; //which option has been selected by either monster or player
+
 
 stay_player_turn_boolean = false;
 

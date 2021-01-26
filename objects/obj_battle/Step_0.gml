@@ -17,8 +17,7 @@ if (state == "INIT") {
 	message_timer = 0;
 
 	enemy_timer = 0;
-	battle_option = 0; //which option has been selected by either monster or player
-
+	
 	player_dead = false;
 	battle = false; 
 	victory = false;
@@ -96,7 +95,10 @@ if (player_turn) && (!show_battle_text)  {
 				}
 				
 				case 2: {
-					check_boolean = true;
+					//Display dice locks here
+					
+					stay_player_turn_boolean = true;
+					show_battle_text = true;
 				}
 			}
 			
@@ -186,10 +188,11 @@ if (player_turn) && (!show_battle_text)  {
 					
 					ds_messages[| 0] = "Shake the dice!";
 				
-				
+					
 					show_roll_options = false;
 					//Continue Battle
 					show_battle_text = true;
+					current_passage = next_passage; 
 				
 				}
 				
@@ -245,14 +248,6 @@ if (player_turn) && (!show_battle_text)  {
 						}			
 				}
 				message_timer = 0; 
-
-				//If this is an attack
-				if (battle_option == 0) {
-					if (!player_turn) {
-						//Set screen_shake to true on condition that ds_messages is a specific messgae
-						//(may not need screen shake?)
-					}
-				}
 				
 				//Play Victory Sound
 				if (victory) {
@@ -312,8 +307,7 @@ if (!player_turn) && (!show_battle_text){
 		ds_messages[| 0] = "You felt the luck at the touch of your fingers!";
 		ds_messages[| 1] = "And rolled a " + string(roll) + "! " + status_text;
 		ds_messages[| 2] = "You got 1 dice point!"
-		
-		battle_option = 0;
+
 		
 		audio_play_sound(enemy_action, 1, false);
 		}		

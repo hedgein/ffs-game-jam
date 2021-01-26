@@ -1,11 +1,12 @@
 // roll option doubles as the select and array index
 function scr_roll_success(roll_range, roll){
+	var roll_success = true;
 	switch (roll_range){
 		case "1-2": {
 			if (roll < 3) {
-				return true;
+				roll_success = true;
 			} else {
-				return false;
+				roll_success = false;
 			}
 			break;
 		}
@@ -19,11 +20,11 @@ function scr_roll_success(roll_range, roll){
 		}
 		case "5-6": {
 			if (roll > 4) {
-				return true;
+				roll_success = true;
 			} else {
-				return false;
+				roll_success = false;
 			}	
-			break;
+		  break;
 		}
 		
 		case "3-6": {
@@ -36,11 +37,14 @@ function scr_roll_success(roll_range, roll){
 		}
 		case "1-4": {
 			if (roll < 5){
-				return true;
+				roll_success = true;
 			} else {
-				return false;
+				roll_success = false;
 			}
 			break;
+		
 		}
 	}
+	
+	return roll_success;
 }
