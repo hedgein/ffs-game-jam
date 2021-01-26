@@ -11,7 +11,7 @@ if (battle == true) {
 
 	passage_text = scr_monster_array_access(monster, current_passage, 0);
 	// DRAW THE OPTIONS
-	optionX = 540;
+	optionX = 550;
 	optionY = 360;
 	draw_set_font(fnt_battle_text);
 	draw_set_halign(fa_left);
@@ -26,11 +26,11 @@ if (battle == true) {
 		for (var i = 0; i < array_length_1d(a_text); i++) {
 			if (selected_option == i) {
 				if (player_turn) && (!show_battle_text) {
-					draw_sprite(arrow, 0, optionX - sprite_get_width(arrow), optionY + ((fontSize + BUFFER + 1) * i ));
+					draw_sprite(arrow, 0, optionX - sprite_get_width(arrow) + BUFFER, optionY + 10  + ((fontSize + BUFFER + 1)* i ));
 				}
 			}
 		text = a_text[i];
-		draw_text(optionX + shakeX, optionY + ((fontSize + BUFFER) * i ) + shakeY, text);
+		draw_text(optionX + shakeX, optionY + ((fontSize + BUFFER + 1) * i ) + shakeY, text);
 		}
 		
 		draw_text_ext(textX + shakeX, textY + shakeY, 
@@ -42,7 +42,7 @@ if (battle == true) {
 	} else {
 		//DRAW TEXT OPTION INSIDE BOX
 		if (show_roll_options) {
-			inner_text_X = textX +15;
+			inner_text_X = textX + 20;
 			inner_text_Y = textY;
 				var sep = (fontSize + BUFFER);
 				var w = sprite_get_width(textbox) - (BUFFER * 6);
@@ -52,7 +52,7 @@ if (battle == true) {
 				for (var j = 0 ; j < scr_monster_array_access(monster, current_passage, 4); j++){
 					options_text = scr_monster_array_access(monster, current_passage, j+1)
 					if  (roll_option == j ){
-						draw_sprite(arrow, 0, inner_text_X - sprite_get_width(arrow), inner_text_Y + ((fontSize + BUFFER) * (j) * 1.5 ));
+						draw_sprite(arrow, 0, inner_text_X - sprite_get_width(arrow) + BUFFER, inner_text_Y + 10 + ((fontSize + BUFFER) * (j) * 1.5 ));
 					}
 					
 					//If the option IS locked, color it red

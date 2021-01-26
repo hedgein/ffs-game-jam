@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "arrow",
+    "path": "sprites/arrow/arrow.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
@@ -18,8 +21,8 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_shake_ddr","path":"objects/obj_shake_ddr/obj_shake_ddr.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":2,"collisionObjectId":null,"parent":{"name":"obj_shake_ddr","path":"objects/obj_shake_ddr/obj_shake_ddr.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_ddr_button","path":"objects/obj_ddr_button/obj_ddr_button.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"obj_ddr_button","path":"objects/obj_ddr_button/obj_ddr_button.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
@@ -28,7 +31,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_shake_ddr",
+  "name": "obj_ddr_button",
   "tags": [],
   "resourceType": "GMObject",
 }
