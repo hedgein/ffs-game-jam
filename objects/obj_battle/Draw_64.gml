@@ -5,7 +5,7 @@ if (battle == true) {
 	guiX = surface_get_width(application_surface) / 2;
 	guiY = surface_get_height(application_surface);
 	textX = guiX - (sprite_get_width(textbox) / 2) + (BUFFER * 3);
-	textY = guiY - (sprite_get_height(textbox) - (BUFFER * 3));
+	textY = guiY - (sprite_get_height(textbox) - (BUFFER));
 
 	draw_sprite(textbox, 0, guiX - (sprite_get_width(textbox) / 2) - BUFFER, guiY - (sprite_get_height(textbox))- (BUFFER * 2.2));
 
@@ -33,29 +33,41 @@ if (battle == true) {
 		draw_text(optionX + shakeX, optionY + ((fontSize + BUFFER) * i ) + shakeY, text);
 		}
 		
-
 		draw_text_ext(textX + shakeX, textY + shakeY, 
 		passage_text, (fontSize + BUFFER), 
 		sprite_get_width(textbox) - (BUFFER * 6));
+		sep = (fontSize + BUFFER);
 
-		
-		
-		
 		
 	} else {
 		//DRAW TEXT OPTION INSIDE BOX
 		if (show_roll_options) {
 			inner_text_X = textX +15;
 			inner_text_Y = textY;
-			
-
-				for (var j = 0; j < scr_monster_array_access(monster, current_passage, 4); j++){
+				var sep = (fontSize + BUFFER);
+				var w = sprite_get_width(textbox) - (BUFFER * 6);
+				
+				roll_option_adjuster = 0;
+				var total_message_size = 0;
+				for (var j = 0 + roll_option_adjuster; j < scr_monster_array_access(monster, current_passage, 4); j++){
 					options_text = scr_monster_array_access(monster, current_passage, j+1)
 					if  (roll_option == j ){
-						draw_sprite(arrow, 0, inner_text_X - sprite_get_width(arrow), inner_text_Y + 4 + ((fontSize + BUFFER) * (j) * 1.5 ));
+						draw_sprite(arrow, 0, inner_text_X - sprite_get_width(arrow), inner_text_Y + ((fontSize + BUFFER) * (j) * 1.5 ));
 					}
-					draw_text(inner_text_X, inner_text_Y + ((fontSize + BUFFER) * (j) * 1.5), options_text);
+					draw_text_ext(inner_text_X + shakeX, 
+					inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5), 
+					options_text, (fontSize + BUFFER), 
+					sprite_get_width(textbox) - (BUFFER * 6));
+					sep = (fontSize + BUFFER);
+					
+					total_message_size += string_height_ext(options_text, sep, w);
 				}
+				
+				max_message_height = sprite_get_height(textbox) - (BUFFER * 6) ;
+				if (total_message_size > max_message_height) {
+					total_message_size -= string_height_ext(scr_monster_array_access(monster, current_passage, roll_option_adjuster +  1), sep, w);
+					roll_option_adjuster += 1;
+				} 
 			
 		}	
 	}
@@ -71,8 +83,8 @@ if (battle == true) {
 if (show_battle_text){
 	
 	
-	sep = (fontSize + BUFFER);
-	w = sprite_get_width(textbox) - (BUFFER * 6);
+	var sep = (fontSize + BUFFER);
+	var w = sprite_get_width(textbox) - (BUFFER * 6);
 	
 	var total_message_size = 0;
 	
