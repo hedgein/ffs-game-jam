@@ -165,9 +165,6 @@ if (player_turn) && (!show_battle_text)  {
 					
 					show_battle_text = true;
 				} else {
-					//Roll Mechanic here
-					roll = scr_roll_mechanic();
-					
 					
 						if (!roll_success) && (!last_lock_boolean){
 						ds_options_lock[| roll_option] = true;

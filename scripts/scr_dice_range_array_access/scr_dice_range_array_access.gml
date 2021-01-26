@@ -6,7 +6,7 @@ function scr_dice_range_array_access(monster, current_passage){
 	switch (range_selector) {
 		case 1: {
 			return global.ga_dice_range_even;
-			break
+			break;
 		}
 		case 2: {
 			return global.ga_dice_range_hard;

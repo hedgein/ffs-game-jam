@@ -17,7 +17,7 @@ global.ga_dice_lock[6, 1] = "UNLOCKED";
 
 global.ga_dice_range_even[0] = "1-2"
 global.ga_dice_range_even[1] = "3-4"
-global.ga_dice_range_even[3] = "5-6"
+global.ga_dice_range_even[2] = "5-6"
 
 global.ga_dice_range_hard[0] = "1-4";
 global.ga_dice_range_hard[1] = "5-6";

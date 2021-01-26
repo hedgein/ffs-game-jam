@@ -1,8 +1,9 @@
 //Passage # includes zero (zero is first)
 with (obj_battle){
 
-	if (show_roll_options) && (keyboard_check_pressed(ord("Z"))) {
-			//Roll success script here
+	if (!show_battle_text) && (show_roll_options) && (keyboard_check_pressed(ord("Z"))) {
+			//Roll mechanic here
+			roll = scr_roll_mechanic();
 			roll_success = scr_roll_success(roll_ranges_text[roll_option], roll);
 			
 			passage_text = global.battle_snail[current_passage, 0];
