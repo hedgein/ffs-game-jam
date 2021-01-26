@@ -167,7 +167,7 @@ if (player_turn) && (!show_battle_text)  {
 				} else {
 					//Roll Mechanic here
 					roll = scr_roll_mechanic();
-					roll_success = scr_roll_success(roll_ranges_text[roll_option], roll);
+					
 					
 						if (!roll_success) && (!last_lock_boolean){
 						ds_options_lock[| roll_option] = true;
@@ -186,7 +186,7 @@ if (player_turn) && (!show_battle_text)  {
 						scr_roll_unlock_reset();
 					}
 					
-					ds_messages[| 0] = "Shake the dice!";
+					ds_messages[| 0] = "Shake the dice!" + string(roll) + "***->" + string(roll_success) ;
 				
 					
 					show_roll_options = false;

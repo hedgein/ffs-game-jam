@@ -2,10 +2,11 @@
 with (obj_battle){
 
 	if (show_roll_options) && (keyboard_check_pressed(ord("Z"))) {
-		if  (roll_success){
+			//Roll success script here
+			roll_success = scr_roll_success(roll_ranges_text[roll_option], roll);
 			
 			passage_text = global.battle_snail[current_passage, 0];
-
+			if (roll_success) {
 			switch (current_passage) {
 				//Start
 				case 0: {
@@ -31,16 +32,16 @@ with (obj_battle){
 								
 							}
 						}	
-					
+					}
 					break;
-				}
+	
 				
 				//Case 2
 			
 			}
-			
-			
 	
-		}
+	
+	}		
+		
 	}	
 }
