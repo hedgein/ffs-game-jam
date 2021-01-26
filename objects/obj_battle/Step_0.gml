@@ -96,7 +96,7 @@ if (player_turn) && (!show_battle_text)  {
 				
 				case 2: {
 					//Display dice locks here
-					
+					show_roll_options = false;
 					stay_player_turn_boolean = true;
 					show_battle_text = true;
 				}
@@ -157,6 +157,7 @@ if (player_turn) && (!show_battle_text)  {
 				}
 				
 				
+				
 				if (ds_options_lock[| roll_option]) {
 					ds_messages[|0] = "This is locked!";
 					
@@ -164,26 +165,18 @@ if (player_turn) && (!show_battle_text)  {
 					stay_player_turn_boolean = true;
 					
 					show_battle_text = true;
+				//Only roll on false options_lock
 				} else {
-					
 						if (!roll_success) && (!last_lock_boolean){
-						ds_options_lock[| roll_option] = true;
-						lock_counter++;
+							ds_options_lock[| roll_option] = true;
+							
 						}
-						
 					
-					//If lock counter is equal to option count
-					if (lock_counter + 1 = scr_monster_array_access(monster, current_passage, 4)) {
-						last_lock_boolean = true;						
-					}
+					//find another way to last lock
 					
-					//After every roll, check if all locks are used then reset dice
-					if (ds_list_size(ds_roll_input) == 0) {
-						scr_roll_reset();
-						scr_roll_unlock_reset();
-					}
 					
-					ds_messages[| 0] = "Shake the dice!" + "Range:" + roll_ranges_text[roll_option] + "//" + string(roll) + "***->" + string(roll_success) ;
+					
+					ds_messages[| 0] = "Shake the dice!  -->" + string(temp_lock_count);
 				
 					
 					show_roll_options = false;
@@ -290,6 +283,8 @@ if (!player_turn) && (!show_battle_text){
 		}
 		show_battle_text = true;
 		message_counter = 0
+	
+		
 		
 		enemy_timer = 0;
 		var status_text = "";
@@ -297,13 +292,24 @@ if (!player_turn) && (!show_battle_text){
 			status_text = "SUCCESS!";
 		} else {
 			status_text = "FAIL!";
-			dice_points = 0;
 		}
 		
-		//Implement new DDR minigame here
 		ds_messages[| 0] = "You felt the luck at the touch of your fingers!";
 		ds_messages[| 1] = "And rolled a " + string(roll) + "! " + status_text;
-		ds_messages[| 2] = "You got 1 dice point!"
+		
+		//Implement new DDR minigame here
+		
+		
+		//After every roll, check if all locks are used then reset dice and dice pts
+		if (ds_list_size(ds_roll_input) == 0) {
+			scr_roll_reset();
+			scr_roll_unlock_reset();
+			dice_points = 0;
+			ds_messages[| 2] = "Dice reset! Dice points back to 0!"
+		} else {
+			ds_messages[| 2] = "You got 1 dice point!  ==>" + string(ds_list_size(ds_roll_input));
+		}
+		
 
 		
 		audio_play_sound(enemy_action, 1, false);
