@@ -68,7 +68,7 @@ with (obj_battle){
 							}
 							//switch to knock knock
 							case 3: {
-								next_passage = 1
+								next_passage = 1;
 								break;
 							}
 						}

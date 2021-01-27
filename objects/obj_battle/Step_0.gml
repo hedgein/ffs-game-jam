@@ -215,11 +215,6 @@ if (player_turn) && (!show_battle_text)  {
 				//Continue Battle
 					show_roll_options = false;
 					show_battle_text = true;
-					current_passage = next_passage; 
-				
-				
-				
-				
 				
 			}
 			
