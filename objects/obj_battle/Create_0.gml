@@ -89,3 +89,6 @@ lock_counter = 0;
 spend_ready = false;
 //Time when to turn ddr off and on
 ddr_start = false;
+
+//tmp
+check_boolean= false;

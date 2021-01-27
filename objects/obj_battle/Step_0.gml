@@ -97,9 +97,16 @@ if (player_turn) && (!show_battle_text)  {
 				}
 				
 				case 2: {
+					//temp check boolean
+			
+					for (var i = 0; i < 6 ; i++) {
+						ds_messages[| i] = "Roll " + string(i+1) + " is " + global.ga_dice_lock[i, 1];
+					}		
+			
 					//Display dice locks here
 					show_roll_options = false;
 					stay_player_turn_boolean = true;
+					check_boolean = true;
 					show_battle_text = true;
 				}
 			}
@@ -237,6 +244,7 @@ if (player_turn) && (!show_battle_text)  {
 		
 		if (message_timer >= time_before_button_accepted){
 			if (keyboard_check_pressed(ord("Z"))) && (!ddr_start) &&(!instance_exists(obj_ddr_button)){
+				
 				//Go to next message if there is one
 				if (message_counter + 1) <= (ds_list_size(ds_messages) - 1) {
 					message_counter++;
@@ -265,9 +273,10 @@ if (player_turn) && (!show_battle_text)  {
 								//Calculate dice points based on percentage of steps correct
 								dice_points_earned = scr_ddr_dice_pts(ddr_steps, 10);
 								scr_ddr_instance_end();	
-								
-								
 							}
+							
+							
+							 
 							
 							if (ds_exists(ds_messages, ds_type_list)) {
 								ds_list_destroy(ds_messages);	

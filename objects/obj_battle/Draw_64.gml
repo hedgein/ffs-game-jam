@@ -39,6 +39,7 @@ if (battle == true) {
 
 		
 	} else {
+		var total_message_size = 0;
 		//DRAW TEXT OPTION INSIDE BOX
 		if (show_roll_options) {
 			inner_text_X = textX + 15;
@@ -47,7 +48,7 @@ if (battle == true) {
 				var w = sprite_get_width(textbox) - (BUFFER * 6);
 			
 				
-				var total_message_size = 0;
+				
 				for (var j = 0 ; j < scr_monster_array_access(monster, current_passage, 4); j++){
 					//
 					options_text = scr_monster_array_access(monster, current_passage, j+1)
@@ -102,7 +103,9 @@ if (battle == true) {
 				draw_text_ext(optionX + shakeX, optionY + shakeY, 
 				dice_pts_display, (fontSize + BUFFER), 25);
 			
-		}	
+		}
+		
+		
 	}
 
 	
@@ -120,7 +123,7 @@ if (show_battle_text){
 	var w = sprite_get_width(textbox) - (BUFFER * 8);
 	
 	var total_message_size = 0;
-	
+
 	for (var a = 0; a <= message_counter; a++) {
 		draw_text_ext(textX + shakeX, textY + total_message_size + shakeY, ds_messages[| a], (fontSize + BUFFER), sprite_get_width(textbox) - (BUFFER * 6));
 		total_message_size += string_height_ext(ds_messages[| a], sep, w);
@@ -132,6 +135,7 @@ if (show_battle_text){
 		ds_list_delete(ds_messages, 0);
 		message_counter--; 
 	}
+	
 	
 }
 
