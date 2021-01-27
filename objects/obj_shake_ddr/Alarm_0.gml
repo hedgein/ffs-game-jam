@@ -9,10 +9,11 @@ if( instance_counter < 10){
 } else {
 	//Shown all arrows, to end ddr we can turn off ddr_start and destory instance
 	with(obj_battle){
-		ddr_start = false;	
+		ddr_start = false;
+		instance_create_depth(320, 192, 0 , obj_snail);
 	}
+	
 	instance_destroy();
-	instance_create_depth(320, 192, 0 , obj_snail);
 }
 
 //recall it self;

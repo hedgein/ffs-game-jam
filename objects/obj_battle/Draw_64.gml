@@ -1,6 +1,5 @@
 if (battle == true) {
-	instance_create_depth(room_width/2, room_height/2, 0 , obj_snail);
-	
+
 	//Buffer and coordinates
 	var BUFFER = 4;
 	guiX = surface_get_width(application_surface) / 2;

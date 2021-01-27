@@ -159,7 +159,7 @@ if (player_turn) && (!show_battle_text)  {
 				
 				
 				if (ds_options_lock[| roll_option]) {
-					ds_messages[|0] = "This is locked! ====>" + string(lock_counter);
+					ds_messages[|0] = "This is locked!";
 					
 					show_roll_options = false;
 					stay_player_turn_boolean = true;
@@ -182,7 +182,8 @@ if (player_turn) && (!show_battle_text)  {
 					
 					
 					
-					ds_messages[| 0] = "Shake the dice!  -->" + string(lock_counter);
+					ds_messages[| 0] = "Shake the dice!";
+					ddr_start = true;
 					instance_destroy(obj_snail);
 					
 					show_roll_options = false;
