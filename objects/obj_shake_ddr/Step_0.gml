@@ -1,3 +1,4 @@
+with(obj_battle) {
 if (keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"))){
 	var hit = collision_line((room_width/15) *4, 200-(sprite_get_height(ddr_arrow)/2), 
 	(room_width/15) * 4, 200 +(sprite_get_height(ddr_arrow)/2),  obj_ddr_button, false, true);
@@ -34,5 +35,6 @@ if (keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord("D"))){
 		instance_destroy(hit);
 		ddr_steps++;
 	}
+}
 }
 

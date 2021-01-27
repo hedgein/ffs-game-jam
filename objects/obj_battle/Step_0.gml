@@ -318,9 +318,9 @@ if (!player_turn) && (!show_battle_text){
 		ds_messages[| 1] = "And rolled a " + string(roll) + "! " + status_text;
 		
 		//Implement new DDR minigame here
-		with(obj_shake_ddr) {
-			dice_points_earned = scr_ddr_dice_pts(ddr_steps, 10);
-		}
+		
+		dice_points_earned = scr_ddr_dice_pts(ddr_steps, 10);
+		
 		
 		
 		//After every roll, check if all locks are used then reset dice and dice pts

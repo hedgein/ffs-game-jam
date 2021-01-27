@@ -23,6 +23,7 @@ monster = "SNAIL";
 //Dice points
 dice_points = 0;
 dice_points_earned = 0;
+ddr_steps = 0;
 
 //Getting rid of player HP and monster HP stats -> not needed anymore
 
