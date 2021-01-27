@@ -70,14 +70,22 @@ if (battle == true) {
 					
 					
 					
-					//Draw roll chances
-					
 					roll_ranges_text = scr_dice_range_array_access(monster, current_passage);
-					draw_text(inner_text_X + shakeX - (string_width(roll_ranges_text[j]) * 2.5), 
-					inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5), 
-					roll_ranges_text[j]);
+					//Draw roll chances
+					if (!spend_ready) {
+						draw_text(inner_text_X + shakeX - (string_width(roll_ranges_text[j]) * 2.5), 
+						inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5), 
+						roll_ranges_text[j]);
 					
-					total_message_size += string_height_ext(options_text, sep, w);
+						total_message_size += string_height_ext(options_text, sep, w);
+					//Else Draw roll costs
+					} else {
+						roll_cost_text = scr_spend_calculate(roll_ranges_text[j], scr_monster_array_access(monster, current_passage, 5));
+						draw_text(inner_text_X + shakeX - (string_width(roll_ranges_text[j]) * 2.5), 
+						inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5), 
+						roll_cost_text);
+					}
+					
 				}
 				
 				max_message_height = sprite_get_height(textbox) - (BUFFER * 6) ;
