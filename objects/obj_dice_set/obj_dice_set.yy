@@ -23,8 +23,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Prototype_control_attack",
+    "path": "Prototype_control_attack.yyp",
   },
   "resourceVersion": "1.0",
   "name": "obj_dice_set",

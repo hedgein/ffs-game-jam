@@ -1,5 +1,5 @@
-y += ddr_speed * 2;
+y += ddr_speed * 3;
 
-if (y > room_height + sprite_height) {
+if (y > surface_get_height(application_surface) + sprite_height) {
 	instance_destroy();
 }

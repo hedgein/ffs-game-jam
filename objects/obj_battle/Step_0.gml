@@ -183,8 +183,9 @@ if (player_turn) && (!show_battle_text)  {
 					
 					
 					ds_messages[| 0] = "Shake the dice!";
-					ddr_start = true;
 					instance_destroy(obj_snail);
+					var ddr = instance_create_depth(0, 0, 0, obj_shake_ddr);
+					
 					
 					show_roll_options = false;
 					//Continue Battle
@@ -216,8 +217,7 @@ if (player_turn) && (!show_battle_text)  {
 		
 		
 		if (message_timer >= time_before_button_accepted){
-			object_set_visible(obj_snail, false);
-			if (keyboard_check_pressed(ord("Z"))) && (!instance_exists(obj_snail)){
+			if (keyboard_check_pressed(ord("Z"))) && (!instance_exists(obj_shake_ddr)) &&(!instance_exists(obj_ddr_button)){
 				//Go to next message if there is one
 				if (message_counter + 1) <= (ds_list_size(ds_messages) - 1) {
 					message_counter++;
@@ -242,14 +242,14 @@ if (player_turn) && (!show_battle_text)  {
 								player_turn = !player_turn;
 
 							}
-							if (ddr_start) {
-								var ddr = instance_create_depth(0, 0, 0, obj_shake_ddr);
-							} else {
+								
+
 								show_battle_text = false;
 								message_counter = 0;
+								instance_create_depth(320, 192, 0, obj_snail);
 								if (ds_exists(ds_messages, ds_type_list)) {
 									ds_list_destroy(ds_messages);
-								}
+								
 							}
 							
 							
