@@ -6,6 +6,7 @@
     {"id":{"name":"arrow_down","path":"sprites/arrow_down/arrow_down.yy",},"order":8,},
     {"id":{"name":"slime_temp","path":"sprites/slime_temp/slime_temp.yy",},"order":2,},
     {"id":{"name":"arrow_left","path":"sprites/arrow_left/arrow_left.yy",},"order":12,},
+    {"id":{"name":"obj_ddr_steps","path":"objects/obj_ddr_steps/obj_ddr_steps.yy",},"order":17,},
     {"id":{"name":"monster_chip","path":"sounds/monster_chip/monster_chip.yy",},"order":4,},
     {"id":{"name":"arrow","path":"sprites/arrow/arrow.yy",},"order":15,},
     {"id":{"name":"scr_roll_defend","path":"scripts/scr_roll_defend/scr_roll_defend.yy",},"order":4,},
