@@ -10,7 +10,6 @@
     {"id":{"name":"arrow","path":"sprites/arrow/arrow.yy",},"order":15,},
     {"id":{"name":"scr_roll_defend","path":"scripts/scr_roll_defend/scr_roll_defend.yy",},"order":4,},
     {"id":{"name":"obj_snail_path","path":"objects/obj_snail_path/obj_snail_path.yy",},"order":12,},
-    {"id":{"name":"obj_stats","path":"objects/obj_stats/obj_stats.yy",},"order":4,},
     {"id":{"name":"scr_monster_array_access","path":"scripts/scr_monster_array_access/scr_monster_array_access.yy",},"order":12,},
     {"id":{"name":"Sprite13","path":"sprites/Sprite13/Sprite13.yy",},"order":16,},
     {"id":{"name":"obj_dice_set","path":"objects/obj_dice_set/obj_dice_set.yy",},"order":9,},

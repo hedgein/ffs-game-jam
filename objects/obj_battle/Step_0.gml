@@ -183,7 +183,7 @@ if (player_turn) && (!show_battle_text)  {
 					
 					
 					ds_messages[| 0] = "Shake the dice!  -->" + string(lock_counter);
-				
+					instance_destroy(obj_snail);
 					
 					show_roll_options = false;
 					//Continue Battle
@@ -213,15 +213,18 @@ if (player_turn) && (!show_battle_text)  {
 	if (show_battle_text) {
 		message_timer++;
 		
+		
 		if (message_timer >= time_before_button_accepted){
-			if (keyboard_check_pressed(ord("Z"))) {
+			object_set_visible(obj_snail, false);
+			if (keyboard_check_pressed(ord("Z"))) && (!instance_exists(obj_snail)){
 				//Go to next message if there is one
 				if (message_counter + 1) <= (ds_list_size(ds_messages) - 1) {
 					message_counter++;
 				//Otherwise next actor take their turn
 				//Because we've shown all the messages
 				} else {
-
+					
+					
 						if  (victory){
 							battle = false; 
 							//room_goto(rm_overworld????);
@@ -229,6 +232,8 @@ if (player_turn) && (!show_battle_text)  {
 							show_battle_text = false;
 						
 						} else {
+							
+				
 							if (stay_player_turn_boolean) {
 								player_turn = true; 
 								stay_player_turn_boolean = false;
@@ -236,11 +241,16 @@ if (player_turn) && (!show_battle_text)  {
 								player_turn = !player_turn;
 
 							}
-							show_battle_text = false;
-							message_counter = 0;
-							if (ds_exists(ds_messages, ds_type_list)) {
-								ds_list_destroy(ds_messages);
+							if (ddr_start) {
+								var ddr = instance_create_depth(0, 0, 0, obj_shake_ddr);
+							} else {
+								show_battle_text = false;
+								message_counter = 0;
+								if (ds_exists(ds_messages, ds_type_list)) {
+									ds_list_destroy(ds_messages);
+								}
 							}
+							
 							
 						}			
 				}
