@@ -22,3 +22,10 @@ global.battle_snail[2, 3] = "Would you like to talk?";
 global.battle_snail[2, 4] = 3; //Option count, not including zero
 global.battle_snail[2 ,5] = 1;//even
 
+global.battle_snail[3, 0] = "No! Stop! Please don't crack my shell! It's the only place I feel safe!";
+global.battle_snail[3, 1] = "The right thing isn't always the easy thing.";
+global.battle_snail[3, 2] = "This'll hurt me more than it'll hurt you.";
+global.battle_snail[3, 3] = "Would you like to talk?";
+global.battle_snail[3, 4] = 3; //Option count, not including zero
+global.battle_snail[3 ,5] = 1;//even
+

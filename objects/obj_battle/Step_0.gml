@@ -159,17 +159,8 @@ if (player_turn) && (!show_battle_text)  {
 				}
 				
 				
-				//If user tries to select locked roll_option
-				if (ds_options_lock[| roll_option]) {
-					ds_messages[|0] = "This is locked!";
-					
-					show_roll_options = false;
-					stay_player_turn_boolean = true;
-					
-					show_battle_text = true;
-				//Only roll on false options_lock
-				}
-				//If they are on the spend option, then 
+			
+				//If they are on the spend option, 
 				if (spend_ready = true){
 					spend = scr_spend_calculate(roll_ranges_text[roll_option], scr_monster_array_access(monster, current_passage, 5));
 					var spend_ok = scr_spend_ok(spend, dice_points);
@@ -184,25 +175,39 @@ if (player_turn) && (!show_battle_text)  {
 						ds_messages[| 0] = "You don't have enough dice points!";
 						stay_player_turn_boolean = true;
 					}
+				//Else do a regular roll
 				} else {	
-						//Lock the option if the roll fails
-						if (!roll_success) && (!last_lock_boolean){
-							ds_options_lock[| roll_option] = true;
-							lock_counter++;			
+					
+						//If user tries to select locked roll_option
+						if (ds_options_lock[| roll_option]) {
+							ds_messages[|0] = "This is locked!";
+					
+							show_roll_options = false;
+							stay_player_turn_boolean = true;
+					
+							show_battle_text = true;
+						//Only roll on false options_lock
+						} else {
+							//Lock the option if the roll fails
+							if (!roll_success) && (!last_lock_boolean){
+								ds_options_lock[| roll_option] = true;
+								lock_counter++;			
+							}
+					
+							//If the number of locks is enough, turn on last lock boolean to keep
+							//one option open
+							if (lock_counter + 1 >= array_length_1d(roll_ranges_text)) {
+								last_lock_boolean = true;
+							}
+
+
+							//Start DDR after first message 
+							scr_ddr_instance_start();
+							//Tell user to shake dice
+							ds_messages[| 0] = "Shake the dice!";
+							
 						}
-					
-					//If the number of locks is enough, turn on last lock boolean to keep
-					//one option open
-					if (lock_counter + 1 >= array_length_1d(roll_ranges_text)) {
-						last_lock_boolean = true;
-					}
-					//Tell user to shake dice
-					ds_messages[| 0] = "Shake the dice!";
-					
-					//Start DDR after first message
-					
-					scr_ddr_instance_start();
-					
+						
 					
 								
 				}
@@ -235,7 +240,7 @@ if (player_turn) && (!show_battle_text)  {
 		
 		
 		if (message_timer >= time_before_button_accepted){
-			if (keyboard_check_pressed(ord("Z"))) && (!instance_exists(obj_shake_ddr)) &&(!instance_exists(obj_ddr_button)){
+			if (keyboard_check_pressed(ord("Z"))) && (!ddr_start) &&(!instance_exists(obj_ddr_button)){
 				//Go to next message if there is one
 				if (message_counter + 1) <= (ds_list_size(ds_messages) - 1) {
 					message_counter++;
@@ -246,7 +251,7 @@ if (player_turn) && (!show_battle_text)  {
 					
 						if  (victory){
 							battle = false; 
-							//room_goto(rm_overworld????);
+							//room_goto(rm_overworld????)
 							state = "INIT";
 							show_battle_text = false;
 						
@@ -258,9 +263,13 @@ if (player_turn) && (!show_battle_text)  {
 								player_turn = !player_turn;
 
 							}
-							
-							if (!spend_ready)  {
+						
+							//If we're rolling
+							if (!spend_ready) && (!instance_exists(obj_snail)) {
+								//Calculate dice points based on percentage of steps correct
+								dice_points_earned = scr_ddr_dice_pts(ddr_steps, 10);
 								scr_ddr_instance_end();	
+								
 							}
 							
 							if (ds_exists(ds_messages, ds_type_list)) {
@@ -316,28 +325,26 @@ if (!player_turn) && (!show_battle_text){
 		if (!ds_exists(ds_messages, ds_type_list)) {
 			ds_messages = ds_list_create();
 		}
-		show_battle_text = true;
-		message_counter = 0
-		roll_option = 0;
-	
-		
-		
 		enemy_timer = 0;
 		var status_text = "";
+		
 		if (roll_success) {
 			status_text = "SUCCESS!";
 		} else {
 			status_text = "FAIL!";
 		}
 		
+	
+		//No roll!
 		if (spend_ready){
 			ds_messages[| 0] = "You have " + string(dice_points) + " point(s) left!"
+			
+		//Roll!
 		} else {
 			ds_messages[| 0] = "You felt the luck at the touch of your fingers!";
 			ds_messages[| 1] = "And rolled a " + string(roll) + "! " + status_text;
 		
-			//Calculate dice points based on percentage of steps correct
-			dice_points_earned = scr_ddr_dice_pts(ddr_steps, 10);
+			
 			
 			//After every roll, check if all locks are used then reset dice and dice pts
 			if (ds_list_size(ds_roll_input) == 0) && (!spend_ready){
@@ -347,12 +354,16 @@ if (!player_turn) && (!show_battle_text){
 				ds_messages[| 2] = "Dice reset! Dice points back to 0!"
 			} else {
 				ds_messages[| 2] = "You got " + string(dice_points_earned) +" dice point(s)!";
-			
-				//Add points and reset dice_points earned for next ddr
+				
+				//Add points
 				dice_points += dice_points_earned;
-				dice_points_earned = 0;
+				
 			}
 		}
+		
+		show_battle_text = true;
+		message_counter = 0
+		roll_option = 0;
 		
 
 		audio_play_sound(enemy_action, 1, false);

@@ -4,4 +4,6 @@ function scr_ddr_instance_start(){
 	instance_destroy(obj_snail);
 	instance_create_depth(0, 0, 0, obj_shake_ddr);
 	instance_create_depth(0, 0, 0, obj_ddr_steps);
+	ddr_start = true;
+	ddr_steps = 0;
 }
