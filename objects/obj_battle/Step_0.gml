@@ -184,6 +184,7 @@ if (player_turn) && (!show_battle_text)  {
 					
 							show_roll_options = false;
 							stay_player_turn_boolean = true;
+							spend_ready = false;
 					
 							show_battle_text = true;
 						//Only roll on false options_lock
@@ -270,6 +271,7 @@ if (player_turn) && (!show_battle_text)  {
 								dice_points_earned = scr_ddr_dice_pts(ddr_steps, 10);
 								scr_ddr_instance_end();	
 								
+								
 							}
 							
 							if (ds_exists(ds_messages, ds_type_list)) {
@@ -351,9 +353,9 @@ if (!player_turn) && (!show_battle_text){
 				scr_roll_reset();
 				scr_roll_unlock_reset();
 				dice_points = 0;
-				ds_messages[| 2] = "Dice reset! Dice points back to 0!"
+				ds_messages[| 2] = "Dice reset! Lucky points back to 0!"
 			} else {
-				ds_messages[| 2] = "You got " + string(dice_points_earned) +" dice point(s)!";
+				ds_messages[| 2] = "You got " + string(dice_points_earned) +" lucky point(s)!";
 				
 				//Add points
 				dice_points += dice_points_earned;

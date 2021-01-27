@@ -95,7 +95,7 @@ if (battle == true) {
 				} 
 				
 				//Draw Dice Points on screen
-				dice_pts_display = "Dice Points: " + string(dice_points);
+				dice_pts_display = "Lucky Points: " + string(dice_points);
 				draw_text_ext(optionX + shakeX, optionY + shakeY, 
 				dice_pts_display, (fontSize + BUFFER), 25);
 			

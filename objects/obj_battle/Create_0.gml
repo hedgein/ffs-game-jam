@@ -85,6 +85,7 @@ ds_options_lock[| 1] = false;
 
 last_lock_boolean = false;
 lock_counter = 0;
-
+//If player is spend option or not
 spend_ready = false;
+//Time when to turn ddr off and on
 ddr_start = false;
