@@ -49,7 +49,9 @@ if (battle == true) {
 				
 				var total_message_size = 0;
 				for (var j = 0 ; j < scr_monster_array_access(monster, current_passage, 4); j++){
+					//
 					options_text = scr_monster_array_access(monster, current_passage, j+1)
+					//draw arrow according to selected roll_option
 					if  (roll_option == j ){
 						draw_sprite(arrow, 0, inner_text_X - sprite_get_width(arrow) - BUFFER, inner_text_Y + ((fontSize + BUFFER) * (j) * 1.5 ));
 					}
@@ -61,6 +63,7 @@ if (battle == true) {
 						options_text, (fontSize + BUFFER),
 						sprite_get_width(textbox) - (BUFFER * 6),
 						c_red, c_red, c_red, c_red, 1);
+					//Else just leave it white
 					} else{
 						draw_text_ext(inner_text_X + shakeX, 
 						inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5), 

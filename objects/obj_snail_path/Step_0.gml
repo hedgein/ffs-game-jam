@@ -10,11 +10,15 @@ with (obj_battle){
 			if (!spend_ready){
 				roll = scr_roll_mechanic();
 				roll_success = scr_roll_success(roll_ranges_text[roll_option], roll);
-			} 
+			//Allow to "roll"
+			//Basically move to next passage
+			} else {
+				roll_success = true;
+			}
 
 			passage_text = global.battle_snail[current_passage, 0];
 			
-			if (roll_success) || (spend_ready) {
+			if (roll_success) {
 				switch (current_passage) {
 					//Start
 					case 0: {
@@ -46,7 +50,7 @@ with (obj_battle){
 								break
 							}
 							//switch to grab the hammer
-							case 3: {
+							case 2: {
 								next_passage = 2;
 								break;
 							}
@@ -67,7 +71,7 @@ with (obj_battle){
 								break
 							}
 							//switch to knock knock
-							case 3: {
+							case 2: {
 								next_passage = 1;
 								break;
 							}

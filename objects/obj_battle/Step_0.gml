@@ -86,6 +86,7 @@ if (player_turn) && (!show_battle_text)  {
 			switch (selected_option) {
 				case 0: {
 					show_roll_options = true;
+					roll_success = false;
 					break;
 				}
 				
@@ -124,7 +125,7 @@ if (player_turn) && (!show_battle_text)  {
 				//Need new system do track which passage your on
 				
 				//If not the last option, go down (to next option)
-				if (roll_option+ 1) <= option_total_count - 1 {
+				if (roll_option + 1 <= option_total_count - 1) {
 					roll_option++;
 				//Else go back to first option
 				} else {
@@ -135,7 +136,7 @@ if (player_turn) && (!show_battle_text)  {
 
 			if (keyboard_check_pressed(vk_up)) {
 				//If not at top most option, go up 1 (to before option)
-				if (roll_option - 1) >= 0 {
+				if (roll_option - 1 >= 0) {
 					roll_option--;
 					//Else go to bottom
 				} else {
@@ -171,6 +172,7 @@ if (player_turn) && (!show_battle_text)  {
 							dice_points -= spend;
 						}
 						ds_messages[| 0] = "You spent " + string(spend) + " dice points!";
+						
 					} else {
 						ds_messages[| 0] = "You don't have enough dice points!";
 						stay_player_turn_boolean = true;
@@ -184,8 +186,6 @@ if (player_turn) && (!show_battle_text)  {
 					
 							show_roll_options = false;
 							stay_player_turn_boolean = true;
-							spend_ready = false;
-					
 							show_battle_text = true;
 						//Only roll on false options_lock
 						} else {

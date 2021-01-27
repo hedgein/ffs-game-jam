@@ -5,7 +5,13 @@ function scr_spend_calculate(roll_range, difficulty){
 	switch (roll_range){
 		case "1-2": {
 			if (difficulty > 1){
-				points_spent = 4;
+				//hard flip
+				if (difficulty == 3) {
+					points_spent = 4;
+				} else {
+					points_spent = 2;
+				}
+				
 			} else {
 				points_spent = 2;
 			}
@@ -18,13 +24,15 @@ function scr_spend_calculate(roll_range, difficulty){
 		}
 		case "5-6": {
 			if (difficulty > 1){
-				points_spent = 2;
-			} else {
-				if (difficulty == 1){
+				// hard
+				if (difficulty == 2) {
 					points_spent = 2;
 				} else {
 					points_spent = 4;
 				}
+				
+			} else {
+				points_spent = 2;
 				
 			}
 		  break;
