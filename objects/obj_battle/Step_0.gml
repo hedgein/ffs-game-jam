@@ -118,6 +118,7 @@ if (player_turn) && (!show_battle_text)  {
 			option_total_count = scr_monster_array_access(monster, current_passage, 4);
 			if (keyboard_check_pressed(ord("X"))) {
 				show_roll_options = false;
+				spend_ready = false;
 			}
 			if (keyboard_check_pressed(vk_down)){
 				//Need new system do track which passage your on
@@ -183,7 +184,6 @@ if (player_turn) && (!show_battle_text)  {
 						ds_messages[| 0] = "You don't have enough dice points!";
 						stay_player_turn_boolean = true;
 					}
-					spend_ready = false;
 				} else {	
 						//Lock the option if the roll fails
 						if (!roll_success) && (!last_lock_boolean){
@@ -196,9 +196,11 @@ if (player_turn) && (!show_battle_text)  {
 					if (lock_counter + 1 >= array_length_1d(roll_ranges_text)) {
 						last_lock_boolean = true;
 					}
-					//Tell user to shake die
+					//Tell user to shake dice
 					ds_messages[| 0] = "Shake the dice!";
+					
 					//Start DDR after first message
+					
 					scr_ddr_instance_start();
 					
 					
@@ -249,8 +251,6 @@ if (player_turn) && (!show_battle_text)  {
 							show_battle_text = false;
 						
 						} else {
-							
-				
 							if (stay_player_turn_boolean) {
 								player_turn = true; 
 								stay_player_turn_boolean = false;
@@ -258,16 +258,16 @@ if (player_turn) && (!show_battle_text)  {
 								player_turn = !player_turn;
 
 							}
-								
-
-								show_battle_text = false;
-								message_counter = 0;
-								instance_destroy(obj_ddr_steps);
-								instance_create_depth(320, 192, 0, obj_snail);
-								if (ds_exists(ds_messages, ds_type_list)) {
-									ds_list_destroy(ds_messages);
-								
+							
+							if (!spend_ready)  {
+								scr_ddr_instance_end();	
 							}
+							
+							if (ds_exists(ds_messages, ds_type_list)) {
+								ds_list_destroy(ds_messages);	
+							}
+							show_battle_text = false;
+							message_counter = 0;
 							
 							
 						}			
@@ -318,6 +318,7 @@ if (!player_turn) && (!show_battle_text){
 		}
 		show_battle_text = true;
 		message_counter = 0
+		roll_option = 0;
 	
 		
 		
@@ -329,33 +330,33 @@ if (!player_turn) && (!show_battle_text){
 			status_text = "FAIL!";
 		}
 		
-		ds_messages[| 0] = "You felt the luck at the touch of your fingers!";
-		ds_messages[| 1] = "And rolled a " + string(roll) + "! " + status_text;
-		
-		//Calculate dice points based on percentage of step correct
-		
-		dice_points_earned = scr_ddr_dice_pts(ddr_steps, 10);
-		
-		
-		
-		//After every roll, check if all locks are used then reset dice and dice pts
-		if (ds_list_size(ds_roll_input) == 0) {
-			scr_roll_reset();
-			scr_roll_unlock_reset();
-			dice_points = 0;
-			ds_messages[| 2] = "Dice reset! Dice points back to 0!"
+		if (spend_ready){
+			ds_messages[| 0] = "You have " + string(dice_points) + " point(s) left!"
 		} else {
-			ds_messages[| 2] = "You got " + string(dice_points_earned) +" dice point(s)!";
+			ds_messages[| 0] = "You felt the luck at the touch of your fingers!";
+			ds_messages[| 1] = "And rolled a " + string(roll) + "! " + status_text;
+		
+			//Calculate dice points based on percentage of steps correct
+			dice_points_earned = scr_ddr_dice_pts(ddr_steps, 10);
 			
-			//Add points and reset dice_points earned for next ddr
-			dice_points += dice_points_earned;
-			dice_points_earned = 0;
+			//After every roll, check if all locks are used then reset dice and dice pts
+			if (ds_list_size(ds_roll_input) == 0) && (!spend_ready){
+				scr_roll_reset();
+				scr_roll_unlock_reset();
+				dice_points = 0;
+				ds_messages[| 2] = "Dice reset! Dice points back to 0!"
+			} else {
+				ds_messages[| 2] = "You got " + string(dice_points_earned) +" dice point(s)!";
+			
+				//Add points and reset dice_points earned for next ddr
+				dice_points += dice_points_earned;
+				dice_points_earned = 0;
+			}
 		}
 		
 
-		
 		audio_play_sound(enemy_action, 1, false);
-		}		
+	}		
 }
 
 #endregion

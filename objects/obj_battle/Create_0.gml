@@ -21,7 +21,7 @@ monster = "SNAIL";
 
 
 //Dice points
-dice_points = 0;
+dice_points = 5;
 dice_points_earned = 0;
 ddr_steps = 0;
 
