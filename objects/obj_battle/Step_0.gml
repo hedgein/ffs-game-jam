@@ -183,10 +183,8 @@ if (player_turn) && (!show_battle_text)  {
 					
 					
 					ds_messages[| 0] = "Shake the dice!";
-					instance_destroy(obj_snail);
-					instance_create_depth(0, 0, 0, obj_shake_ddr);
-					instance_create_depth(0, 0, 0, obj_ddr_steps);
-					
+					//Start DDR after first message
+					scr_ddr_instance_start();
 					
 					show_roll_options = false;
 					//Continue Battle
@@ -317,7 +315,7 @@ if (!player_turn) && (!show_battle_text){
 		ds_messages[| 0] = "You felt the luck at the touch of your fingers!";
 		ds_messages[| 1] = "And rolled a " + string(roll) + "! " + status_text;
 		
-		//Implement new DDR minigame here
+		//Calculate dice points based on percentage of step correct
 		
 		dice_points_earned = scr_ddr_dice_pts(ddr_steps, 10);
 		
