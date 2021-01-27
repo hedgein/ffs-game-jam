@@ -4,9 +4,7 @@ if (keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"))){
 
 	if (hit){
 		instance_destroy(hit);
-		with(obj_battle) {
-		 
-		}
+		ddr_steps++;
 	}
 }
 if (keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"))){
@@ -15,6 +13,7 @@ if (keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"))){
 
 	if (hit){
 		instance_destroy(hit);
+		ddr_steps++;
 	}
 }
 if (keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("A"))){
@@ -23,6 +22,7 @@ if (keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("A"))){
 
 	if (hit){
 		instance_destroy(hit);
+		ddr_steps++;
 	}
 }
 if (keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord("D"))){
@@ -31,5 +31,7 @@ if (keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord("D"))){
 
 	if (hit){
 		instance_destroy(hit);
+		ddr_steps++;
 	}
 }
+

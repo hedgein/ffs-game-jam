@@ -325,7 +325,11 @@ if (!player_turn) && (!show_battle_text){
 			dice_points = 0;
 			ds_messages[| 2] = "Dice reset! Dice points back to 0!"
 		} else {
-			ds_messages[| 2] = "You got 1 dice point!";
+			ds_messages[| 2] = "You got " + string(dice_points_earned) +" dice point(s)!";
+			
+			//Add points and reset dice_points earned for next ddr
+			dice_points += dice_points_earned;
+			dice_points_earned = 0;
 		}
 		
 
