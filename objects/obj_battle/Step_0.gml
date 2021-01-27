@@ -170,10 +170,20 @@ if (player_turn) && (!show_battle_text)  {
 				}
 				//If they are on the spend option, then 
 				if (spend_ready = true){
-					var spend_ok = scr_roll_success(roll_ranges_text[roll_option], dice_points);
+					spend = scr_spend_calculate(roll_ranges_text[roll_option], scr_monster_array_access(monster, current_passage, 5));
+					var spend_ok = scr_spend_ok(spend, dice_points);
 					if(spend_ok){
-						dice_points -= 
+						if ( dice_points - spend < 0 ){
+							dice_points = 0;
+						} else {
+							dice_points -= spend;
+						}
+						ds_messages[| 0] = "You spent " + string(spend) + " dice points!";
+					} else {
+						ds_messages[| 0] = "You don't have enough dice points!";
+						stay_player_turn_boolean = true;
 					}
+					spend_ready = false;
 				} else {	
 						//Lock the option if the roll fails
 						if (!roll_success) && (!last_lock_boolean){
@@ -186,18 +196,19 @@ if (player_turn) && (!show_battle_text)  {
 					if (lock_counter + 1 >= array_length_1d(roll_ranges_text)) {
 						last_lock_boolean = true;
 					}
-					
-								
-				}
-				//Tell user to shake die
+					//Tell user to shake die
 					ds_messages[| 0] = "Shake the dice!";
 					//Start DDR after first message
 					scr_ddr_instance_start();
 					
-					//Continue Battle
+					
+								
+				}
+				//Continue Battle
 					show_roll_options = false;
 					show_battle_text = true;
 					current_passage = next_passage; 
+				
 				
 				
 				

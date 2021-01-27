@@ -5,8 +5,13 @@ with (obj_battle){
 	//and we select it with "Z"
 	if (show_roll_options) && (keyboard_check_pressed(ord("Z"))) && (!ds_options_lock[| roll_option]) {
 			//Roll mechanic here
-			roll = scr_roll_mechanic();
-			roll_success = scr_roll_success(roll_ranges_text[roll_option], roll);
+			if (!spend_ready){
+				roll = scr_roll_mechanic();
+				roll_success = scr_roll_success(roll_ranges_text[roll_option], roll);
+			} else {
+				
+			}
+			
 			
 			passage_text = global.battle_snail[current_passage, 0];
 			
