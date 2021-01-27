@@ -36,7 +36,6 @@ if (battle == true) {
 		draw_text_ext(textX + shakeX, textY + shakeY, 
 		passage_text, (fontSize + BUFFER), 
 		sprite_get_width(textbox) - (BUFFER * 6));
-		sep = (fontSize + BUFFER);
 
 		
 	} else {
@@ -78,8 +77,6 @@ if (battle == true) {
 					inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5), 
 					roll_ranges_text[j]);
 					
-					sep = (fontSize + BUFFER);
-					
 					total_message_size += string_height_ext(options_text, sep, w);
 				}
 				
@@ -88,6 +85,11 @@ if (battle == true) {
 					total_message_size -= string_height_ext(scr_monster_array_access(monster, current_passage, roll_option_adjuster +  1), sep, w);
 					roll_option_adjuster += 1;
 				} 
+				
+				//Draw Dice Points on screen
+				dice_pts_display = "Dice Points: " + string(dice_points);
+				draw_text_ext(optionX + shakeX, optionY + shakeY, 
+				dice_pts_display, (fontSize + BUFFER), 25);
 			
 		}	
 	}

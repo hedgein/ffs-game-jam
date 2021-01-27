@@ -9,7 +9,7 @@ if (keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"))){
 	}
 }
 if (keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"))){
-	var hit = collision_line((room_width/15) * 3, 200-(sprite_get_height(ddr_arrow)/2), 
+	var hit = collision_line((room_width/15) * 3, 200-(sprite_get_height(ddr_arrow)), 
 	room_width/15, 200 +sprite_get_height(ddr_arrow),  obj_ddr_button, false, true);
 
 	if (hit){

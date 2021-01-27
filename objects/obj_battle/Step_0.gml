@@ -91,6 +91,7 @@ if (player_turn) && (!show_battle_text)  {
 				
 				case 1: {
 					show_roll_options = true;
+					spend_ready = true; 
 					break;
 				}
 				
@@ -157,7 +158,7 @@ if (player_turn) && (!show_battle_text)  {
 				}
 				
 				
-				
+				//If user tries to select locked roll_option
 				if (ds_options_lock[| roll_option]) {
 					ds_messages[|0] = "This is locked!";
 					
@@ -166,32 +167,37 @@ if (player_turn) && (!show_battle_text)  {
 					
 					show_battle_text = true;
 				//Only roll on false options_lock
-				} else {
-					
-					
+				}
+				//If they are on the spend option, then 
+				if (spend_ready = true){
+					var spend_ok = scr_roll_success(roll_ranges_text[roll_option], dice_points);
+					if(spend_ok){
+						dice_points -= 
+					}
+				} else {	
+						//Lock the option if the roll fails
 						if (!roll_success) && (!last_lock_boolean){
 							ds_options_lock[| roll_option] = true;
-							lock_counter++;
-							
+							lock_counter++;			
 						}
 					
+					//If the number of locks is enough, turn on last lock boolean to keep
+					//one option open
 					if (lock_counter + 1 >= array_length_1d(roll_ranges_text)) {
 						last_lock_boolean = true;
 					}
 					
-					
-					
-					
+								
+				}
+				//Tell user to shake die
 					ds_messages[| 0] = "Shake the dice!";
 					//Start DDR after first message
 					scr_ddr_instance_start();
 					
-					show_roll_options = false;
 					//Continue Battle
+					show_roll_options = false;
 					show_battle_text = true;
 					current_passage = next_passage; 
-				
-				}
 				
 				
 				

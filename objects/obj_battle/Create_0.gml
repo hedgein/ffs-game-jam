@@ -86,4 +86,4 @@ ds_options_lock[| 1] = false;
 last_lock_boolean = false;
 lock_counter = 0;
 
-ddr_start = false;
+spend_ready = false;
