@@ -2,7 +2,7 @@
 // You can write your code in this editor
 randomize();
 audio_play_sound(monster_chip, 1, true);
-instance_create_depth(room_width/2, room_height/2, 0 , obj_snail);
+
 a_text[0] = "ROLL";
 a_text[1] = "SPEND";
 a_text[2] = "CHECK";
