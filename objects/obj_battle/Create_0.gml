@@ -2,7 +2,13 @@
 // You can write your code in this editor
 randomize();
 audio_play_sound(monster_chip, 1, true);
-instance_create_depth(320, 192, 0 , obj_snail);
+
+//Use this function to create snail object 
+//will destroy ddr instance, but there will be none to destory)
+scr_ddr_instance_end();
+
+
+//Create menu texts
 a_text[0] = "ROLL";
 a_text[1] = "SPEND";
 a_text[2] = "CHECK";
@@ -14,6 +20,7 @@ a_text[2] = "CHECK";
 current_passage = 0;
 next_passage = 0;
 
+//Track which monster we're on
 monster = "SNAIL";
 
 

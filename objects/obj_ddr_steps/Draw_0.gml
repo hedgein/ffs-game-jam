@@ -1,3 +1,3 @@
-for (var i = 0; i < 4; i++) {
-	draw_sprite(ddr_arrow, i, (room_width / 15) * (i+2), 200);
+for (var i = 6; i < 10; i++) {
+	draw_sprite(ddr_arrow, i-6, (room_width / 15) * (i), 300);
 }

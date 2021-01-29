@@ -1,7 +1,7 @@
 if (battle == true) {
 
 	//Buffer and coordinates
-	var BUFFER = 4;
+	var BUFFER = 9;
 	guiX = surface_get_width(application_surface) / 2;
 	guiY = surface_get_height(application_surface);
 	textX = guiX - (sprite_get_width(textbox) / 2) + (BUFFER * 3);
@@ -11,8 +11,8 @@ if (battle == true) {
 
 	passage_text = scr_monster_array_access(monster, current_passage, 0);
 	// DRAW THE OPTIONS
-	optionX = 550;
-	optionY = 360;
+	optionX = 1100;
+	optionY = 700;
 	draw_set_font(fnt_battle_text);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
