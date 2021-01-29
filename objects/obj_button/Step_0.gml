@@ -8,5 +8,6 @@ hover = lerp(hover, _hover, 0.1);
 // Execute action if 1.
 if (_click && script >= 0)
 {
+	audio_play_sound(tap, 10, false);
 	script_execute(script);
 }
