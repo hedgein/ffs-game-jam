@@ -5,7 +5,7 @@ if(!gameStart)
 {
 	show_debug_message("Game started!");
 	// Create the character sprite.
-	instance_create_layer(0, 500, "Instances", obj_ow_player);
+	instance_create_depth(0, 500, 0, obj_ow_player);
 	// Set the start location.
 	with (obj_ow_player)
 	{

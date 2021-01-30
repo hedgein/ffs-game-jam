@@ -25,7 +25,7 @@ function scr_create_menu(text_array, fn_array, shift_y){
 			_pos_x, (_pos_y + i*(_btn_height+_SEPARATOR)),
 			_btn_width, _btn_height,
 			text_array[i],
-			"Instances",
+			"GUI",
 			fn_array[i]
 		);
 	}

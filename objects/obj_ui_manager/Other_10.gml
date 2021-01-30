@@ -14,7 +14,7 @@ if (gameStart)
 }
 else
 {
-	instance_create_layer(camera_get_view_width(view_camera[0]) / 2, 50, "Instances", obj_logo);	
+	instance_create_layer(camera_get_view_width(view_camera[0]) / 2, 50, "GUI", obj_logo);	
 }
 
 // Functions mapped to buttons.

@@ -56,3 +56,5 @@ else
 	motion_set(0, 0);
 	image_speed = 0;
 }
+
+depth = -y;
