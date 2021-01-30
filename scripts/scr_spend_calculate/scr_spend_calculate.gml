@@ -38,14 +38,24 @@ function scr_spend_calculate(roll_range, difficulty){
 		  break;
 		}
 		
-		case "3-6": {
+		case "3-6":{
 			points_spent = 2;
 			break;
 		}
+		
 		case "1-4": {
 			points_spent = 2; 
 			break;
+		}
 		
+		case "1-3": {
+			points_spent = 3;
+			break;
+		}
+		
+		case "4-6": {
+			points_spent = 3;
+			break;
 		}
 	}
 	

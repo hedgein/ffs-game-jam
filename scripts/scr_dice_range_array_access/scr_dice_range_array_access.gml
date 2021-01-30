@@ -16,6 +16,9 @@ function scr_dice_range_array_access(monster, current_passage){
 			return global.ga_dice_range_hard_flip;
 			break;
 		}
+		case 4: {
+			return global.ga_dice_range_even_duo;
+		}
 
 	}
 	

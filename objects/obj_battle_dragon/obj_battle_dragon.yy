@@ -17,17 +17,15 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_story_arrays","path":"objects/obj_story_arrays/obj_story_arrays.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Battle Arrays",
+    "path": "folders/Objects/Battle Arrays.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_story_arrays",
+  "name": "obj_battle_dragon",
   "tags": [],
   "resourceType": "GMObject",
 }

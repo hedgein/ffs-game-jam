@@ -23,8 +23,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Monster Paths",
+    "path": "folders/Objects/Monster Paths.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_dragon_path",
