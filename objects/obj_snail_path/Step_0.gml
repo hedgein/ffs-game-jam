@@ -3,21 +3,22 @@ with (obj_battle){
 
 	//We only want to begin rolling is the option is unlocked while the roll option menu is up
 	//and we select it with "Z"
-	if (show_roll_options) && (keyboard_check_pressed(ord("Z"))) && (!ds_options_lock[| roll_option]) {
+	if ((show_roll_options) && (keyboard_check_pressed(ord("Z"))) && (!ds_options_lock[| roll_option])) {
+		
 			//Roll mechanic
 			//Only if spend_ready is false
 			//aka if we're not spending points, no need to roll
-			if (!spend_ready) {
+			if (!spend_ready){ 		
 				roll = scr_roll_mechanic();
-				roll_success = scr_roll_success(roll_ranges_text[roll_option], roll);
+				roll_success = scr_roll_success(scr_dice_range_array_access(monster, current_passage, roll_option), roll);
+			
+			} else {
+				spend = scr_spend_calculate(scr_dice_range_array_access(monster, current_passage, roll_option), scr_monster_array_access(monster, current_passage, 5));
+				spend_ok = scr_spend_ok(dice_points, spend);	
 			}
-			//Allow to "roll"
-			//Basically move to next passage
+		
 			
-
-			passage_text = global.battle_snail[current_passage, 0];
-			
-			if (roll_success) || (spend_ok)   {
+			if ((roll_success) || (spend_ok))  {
 				switch (current_passage) {
 					//Start
 					case 0: {
@@ -240,6 +241,7 @@ with (obj_battle){
 							//middle end
 							case 0: {
 								next_passage = 15;
+								obj_snail.animation_state = "CRACKED";
 								break
 							}
 							//shell not cracked 1
@@ -250,8 +252,11 @@ with (obj_battle){
 							//prelude you crack it
 							case 2: {
 								next_passage = 13;	
+								obj_snail.animation_state = "CRACKED";
+								break;
 							}
 						}
+						ending = true;
 						break;
 					}
 					
@@ -261,14 +266,17 @@ with (obj_battle){
 							//you crack it end 1
 							case 0: {
 								next_passage = 16;
+								
 								break
 							}
 							//you crack it end 2
 							case 1: {
 								next_passage = 17;
+								
 								break;
 							}
 						}
+						ending = true;
 						break;
 					}
 					
@@ -278,37 +286,43 @@ with (obj_battle){
 							//you crack it end 2
 							case 0: {
 								next_passage = 17;
+								
 								break
 							}
 							//you crack it end 1
 							case 1: {
 								next_passage = 16;
+								
 								break;
 							}
 						}
+						ending = true;
 						break;
 					}
 				
 				//ENDING LEVEL
 				//middle end
-					case 15: {
-					state = "INIT";
-					break;
-				}
+				//	case 15: {
+				//		s
+						
+				//	break;
+				//}
 				
-				//you  crack it end 1
-				case 16: {
-					state = "INIT";
-					break;
-				}
+				////you  crack it end 1
+				//case 16: {
+				//	state = "INIT";
+				//	break;
+				//}
 				
-				//you crack it end 2
-				case 17: {
-					state = "INIT";
-					break;
-				}
-			
+				////you crack it end 2
+				//case 17: {
+
+				//	state = "INIT";
+				//	break;
+				//}
+		
 		}
+		passage_text = global.battle_snail[current_passage, 0];
 		current_passage = next_passage;
 		last_lock_boolean = false;
 		lock_counter = 0;

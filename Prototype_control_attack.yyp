@@ -24,7 +24,6 @@
     {"id":{"name":"scr_ddr_instance_start","path":"scripts/scr_ddr_instance_start/scr_ddr_instance_start.yy",},"order":17,},
     {"id":{"name":"scr_dice_range_array_access","path":"scripts/scr_dice_range_array_access/scr_dice_range_array_access.yy",},"order":13,},
     {"id":{"name":"obj_battle_dragon","path":"objects/obj_battle_dragon/obj_battle_dragon.yy",},"order":2,},
-    {"id":{"name":"obj_story_path","path":"objects/obj_story_path/obj_story_path.yy",},"order":2,},
     {"id":{"name":"obj_battle_cultist","path":"objects/obj_battle_cultist/obj_battle_cultist.yy",},"order":1,},
     {"id":{"name":"scr_roll_success","path":"scripts/scr_roll_success/scr_roll_success.yy",},"order":14,},
     {"id":{"name":"fnt_battle_text","path":"fonts/fnt_battle_text/fnt_battle_text.yy",},"order":0,},

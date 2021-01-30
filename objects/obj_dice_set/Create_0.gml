@@ -16,16 +16,3 @@ global.ga_dice_lock[6, 0] = "RESET";
 global.ga_dice_lock[6, 1] = "UNLOCKED";
 
 
-//all two cost
-global.ga_dice_range_even[0] = "1-2"
-global.ga_dice_range_even[1] = "3-4"
-global.ga_dice_range_even[2] = "5-6"
-
-global.ga_dice_range_hard[0] = "1-4"; // 2 cost
-global.ga_dice_range_hard[1] = "5-6"; // 4 cost
-
-global.ga_dice_range_hard_flip[0] = "1-2"; // 4 cost
-global.ga_dice_range_hard_flip[1] = "3-6"; // 2 cost
-
-global.ga_dice_range_even_duo[0] = "1-3"; //3 cost
-global.ga_dice_range_even_duo[1] = "4-6"; //3 cost

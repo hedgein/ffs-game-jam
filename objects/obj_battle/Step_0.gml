@@ -57,6 +57,7 @@ if (battle == true) && (state == "READY"){
 
 if (player_turn) && (!show_battle_text)  {
 
+
 	if (!show_roll_options) {
 		if (keyboard_check_pressed(vk_down)){
 			//If not the last option, go down (to next option)
@@ -81,6 +82,11 @@ if (player_turn) && (!show_battle_text)  {
 		} 
 				//If option is pressed
 		if keyboard_check_pressed(ord("Z")) {
+			if (ending) { 
+				 battle = false;
+				 state = "INIT";
+				 //rm goto
+				}
 			message_counter = 0;
 			if (!ds_exists(ds_messages, ds_type_list)){
 				ds_messages = ds_list_create();
@@ -130,6 +136,7 @@ if (player_turn) && (!show_battle_text)  {
 			if (keyboard_check_pressed(ord("X"))) {
 				show_roll_options = false;
 				spend_ready = false;
+				roll_option = 0;
 			}
 			if (keyboard_check_pressed(vk_down)){
 				//Need new system do track which passage your on
@@ -164,7 +171,7 @@ if (player_turn) && (!show_battle_text)  {
 				
 				if (!ds_exists(ds_options_lock, ds_type_list)){
 					ds_options_lock = ds_list_create();
-					for (var i = 0; i < array_length_1d(roll_ranges_text) - 1; i++) {
+					for (var i = 0; i < scr_monster_array_access(monster, current_passage, 4); i++) {
 						ds_options_lock[| i] = false;
 					}
 				}
@@ -173,6 +180,8 @@ if (player_turn) && (!show_battle_text)  {
 			
 				//If they are on the spend option, 
 				if (spend_ready = true){
+					//spend = scr_spend_calculate(ga_range_hard[0], scr_monster_array_access(monster, current_passage, 5));
+					
 					//If user tries to spend a locked option
 					if (ds_options_lock[| roll_option]) {
 						ds_messages[|0] = "This is locked!";
@@ -182,21 +191,22 @@ if (player_turn) && (!show_battle_text)  {
 							show_battle_text = true;
 					//If option they want to spend is unlocked
 					} else {
-						spend = scr_spend_calculate(roll_ranges_text[roll_option], scr_monster_array_access(monster, current_passage, 5));
-						spend_ok = scr_spend_ok(spend, dice_points);
+						
+						
 						if(spend_ok){
+						
 							if ( dice_points - spend < 0 ){
 								dice_points = 0;
 							} else {
 								dice_points -= spend;
 							}
 							ds_messages[| 0] = "You spent " + string(spend) + " dice points!";
+							spend_ok = false;
 						
 						} else {
 							ds_messages[| 0] = "You don't have enough dice points!";
 							stay_player_turn_boolean = true;
 							spend_ready = false;
-							spend_ok = false;
 						}	
 					}
 					
@@ -220,7 +230,7 @@ if (player_turn) && (!show_battle_text)  {
 					
 							//If the number of locks is enough, turn on last lock boolean to keep
 							//one option open
-							if (lock_counter + 1 >= array_length_1d(roll_ranges_text)) {
+							if (lock_counter + 1 >= scr_monster_array_access(monster, current_passage, 4)) {
 								last_lock_boolean = true;
 							}
 
@@ -238,6 +248,7 @@ if (player_turn) && (!show_battle_text)  {
 				//Continue Battle
 					show_roll_options = false;
 					show_battle_text = true;
+					roll_option = 0;
 				
 			}
 			
@@ -268,23 +279,15 @@ if (player_turn) && (!show_battle_text)  {
 				//Because we've shown all the messages
 				} else {
 					
-					
-						if  (victory){
-							battle = false; 
-							//room_goto(rm_overworld????)
-							state = "INIT";
-							show_battle_text = false;
-						
-						} else {
 							if (stay_player_turn_boolean) {
 								player_turn = true; 
 								stay_player_turn_boolean = false;
 							} else {
+								
 								player_turn = !player_turn;
-
 							}
 						
-							//If we're rolling
+							//only if we're rolling
 							if (!spend_ready) && (!instance_exists(obj_snail)) {
 								//Calculate dice points based on percentage of steps correct
 								dice_points_earned = scr_ddr_dice_pts(ddr_steps, 10);
@@ -301,20 +304,18 @@ if (player_turn) && (!show_battle_text)  {
 							message_counter = 0;
 							
 							
-						}			
+							
 				}
 				message_timer = 0; 
 				
-				//Play Victory Sound
-				if (victory) {
-					if (message_counter == 2) && (!victory_sound_played) {
-						audio_play_sound(snd_victory, 1 , false);
-						victory_sound_played = true;
-					}
-				}
 			}
 		}
-	}		
+	} else {
+		//change snail animation at end
+		if (ending){
+			obj_snail.animation_state = "CRACKED";
+		}
+	}
 
 #endregion
 
@@ -382,6 +383,7 @@ if (!player_turn) && (!show_battle_text){
 				
 			}
 		}
+
 		
 		show_battle_text = true;
 		message_counter = 0

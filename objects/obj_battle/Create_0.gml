@@ -3,6 +3,20 @@
 randomize();
 audio_play_sound(monster_chip, 1, true);
 
+//dice_ranges
+ga_range_even[0] = "1-2"
+ga_range_even[1] = "3-4"
+ga_range_even[2] = "5-6"
+
+ga_range_hard[0] = "1-4"; // 2 cost
+ga_range_hard[1] = "5-6"; // 4 cost
+
+ga_range_hard_flip[0] = "1-2"; // 4 cost
+ga_range_hard_flip[1] = "3-6"; // 2 cost
+
+ga_range_even_duo[0] = "1-3"; //3 cost
+ga_range_even_duo[1] = "4-6"; //3 cost
+
 
 
 //Create menu texts
@@ -29,7 +43,7 @@ scr_ddr_instance_end();
 
 
 //Dice points
-dice_points = 0;
+dice_points = 100;
 dice_points_earned = 0;
 ddr_steps = 0;
 spend_ok = false;
@@ -66,8 +80,6 @@ roll_success = false;
 
 
  
-//sound
-victory_sound_played = false;
 
 //Screenshake
 screen_shake = false;
@@ -101,3 +113,7 @@ ddr_start = false;
 
 //tmp
 check_boolean= false;
+
+//ending
+ending = false;
+
