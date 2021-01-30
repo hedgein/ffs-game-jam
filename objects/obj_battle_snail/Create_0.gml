@@ -105,9 +105,25 @@ global.battle_snail[11 ,5] = 4;//even duo (1-4, ,5-6)
 
 //Prelude level
 //prelude middle end
-global.battle_snail[12, 0] = "OU KNOW WHAT, GIVE ME THAT HAMMER! I WANT TO BE FREE!";
+global.battle_snail[12, 0] = "YOU KNOW WHAT, GIVE ME THAT HAMMER! I WANT TO BE FREE!";
 global.battle_snail[12, 1] = "Yes! That's the energy this world needs!"; //middle end
 global.battle_snail[12, 2] = "Woah, where did this change from?"; //shell not cracked 1 ---REVISE LATER??---
-global.battle_snail[12, 3] = "";
-global.battle_snail[12, 4] = 2; //Option count, not including zero
-global.battle_snail[12 ,5] = 4;//even duo (1-4, ,5-6)
+global.battle_snail[12, 3] = "FREEDOM!";
+global.battle_snail[12, 4] = 3; //Option count, not including zero
+global.battle_snail[12 ,5] = 4;//even (1-2, 4-6 ,5-6)
+
+//prelude you crack it
+global.battle_snail[13, 0] = "*A hardcore dance party begins between you and snail begins!*";
+global.battle_snail[13, 1] = "*The hammer accidentally flies from your hand!*"; //you crack it end 1
+global.battle_snail[13, 2] = "*You whack Snail while they aren't looking!*"; //you crack it end 2
+global.battle_snail[13, 3] = "FREEDOM!";
+global.battle_snail[13, 4] = 3; //Option count, not including zero
+global.battle_snail[13 ,5] = 4;//even (1-2, 4-6 ,5-6)
+
+//prelude you crack it 2
+global.battle_snail[13, 0] = "OU KNOW WHAT, GIVE ME THAT HAMMER! I WANT TO BE FREE!";
+global.battle_snail[13, 1] = "Yes! That's the energy this world needs!"; //middle end
+global.battle_snail[13, 2] = "Woah, where did this change from?"; //shell not cracked 1 ---REVISE LATER??---
+global.battle_snail[13, 3] = "FREEDOM!";
+global.battle_snail[13, 4] = 3; //Option count, not including zero
+global.battle_snail[13 ,5] = 4;//even (1-2, 4-6 ,5-6)
