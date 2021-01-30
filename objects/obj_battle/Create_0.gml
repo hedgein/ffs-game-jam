@@ -3,9 +3,6 @@
 randomize();
 audio_play_sound(monster_chip, 1, true);
 
-//Use this function to create snail object 
-//will destroy ddr instance, but there will be none to destory)
-scr_ddr_instance_end();
 
 
 //Create menu texts
@@ -22,6 +19,10 @@ next_passage = 0;
 
 //Track which monster we're on
 monster = "SNAIL";
+
+//Use this function to create snail object 
+//will destroy ddr instance, but there will be none to destory)
+scr_ddr_instance_end();
 
 
 

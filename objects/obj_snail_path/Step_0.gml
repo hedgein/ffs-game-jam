@@ -31,6 +31,9 @@ with (obj_battle){
 							//grab the hammer
 							case 1: {
 									next_passage = 2;
+									with (obj_snail) {
+										animation_state = "CRACKED";
+									}
 									break;
 							}
 						}

@@ -116,14 +116,38 @@ global.battle_snail[12 ,5] = 4;//even (1-2, 4-6 ,5-6)
 global.battle_snail[13, 0] = "*A hardcore dance party begins between you and snail begins!*";
 global.battle_snail[13, 1] = "*The hammer accidentally flies from your hand!*"; //you crack it end 1
 global.battle_snail[13, 2] = "*You whack Snail while they aren't looking!*"; //you crack it end 2
-global.battle_snail[13, 3] = "FREEDOM!";
-global.battle_snail[13, 4] = 3; //Option count, not including zero
+global.battle_snail[13, 3] = "NONE";
+global.battle_snail[13, 4] = 2; //Option count, not including zero
 global.battle_snail[13 ,5] = 4;//even (1-2, 4-6 ,5-6)
 
 //prelude you crack it 2
-global.battle_snail[13, 0] = "OU KNOW WHAT, GIVE ME THAT HAMMER! I WANT TO BE FREE!";
-global.battle_snail[13, 1] = "Yes! That's the energy this world needs!"; //middle end
-global.battle_snail[13, 2] = "Woah, where did this change from?"; //shell not cracked 1 ---REVISE LATER??---
-global.battle_snail[13, 3] = "FREEDOM!";
-global.battle_snail[13, 4] = 3; //Option count, not including zero
-global.battle_snail[13 ,5] = 4;//even (1-2, 4-6 ,5-6)
+global.battle_snail[14, 0] = "B-b-but!";
+global.battle_snail[14, 1] = "*whack the shell like you're a baseball player*"; // you crack it end 2
+global.battle_snail[14, 2] = "You're fine! *cracks Snail's shell*"; // you crack it end 1
+global.battle_snail[14, 3] = "NONE";
+global.battle_snail[14, 4] = 2; //Option count, not including zero
+global.battle_snail[14 ,5] = 4;//even duo(1-3, 4-6)
+
+//Ending Level
+//middle end 
+global.battle_snail[14, 0] = "I FEEL CRACKED NOW!";
+global.battle_snail[14, 1] = "NONE"; // you crack it end 2
+global.battle_snail[14, 2] = "NONE"; // you crack it end 1
+global.battle_snail[14, 3] = "NONE";
+global.battle_snail[14, 4] = 0; //Option count, not including zero
+global.battle_snail[14 ,5] = 5;//no options- end
+//you crack it end 1
+global.battle_snail[14, 0] = "Oh";
+global.battle_snail[14, 1] = "NONE"; // you crack it end 2
+global.battle_snail[14, 2] = "NONE"; // you crack it end 1
+global.battle_snail[14, 3] = "NONE";
+global.battle_snail[14, 4] = 0; //Option count, not including zero
+global.battle_snail[14 ,5] = 5//no options- end
+
+//you crack ie end 2
+global.battle_snail[14, 0] = "I WASN'T READY!";
+global.battle_snail[14, 1] = "NONE"; // you crack it end 2
+global.battle_snail[14, 2] = "NONE"; // you crack it end 1
+global.battle_snail[14, 3] = "NONE";
+global.battle_snail[14, 4] = 0; //Option count, not including zero
+global.battle_snail[14 ,5] = 5;//no options- end
