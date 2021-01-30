@@ -28,6 +28,9 @@ if (state == "INIT") {
 	
 	//Dice points
 	dice_points = 0;
+	dice_points_earned = 0;
+	ddr_steps = 0;
+	spend_ok = 0;
 
 	
 	ds_roll_input = ds_list_create();
@@ -170,20 +173,33 @@ if (player_turn) && (!show_battle_text)  {
 			
 				//If they are on the spend option, 
 				if (spend_ready = true){
-					spend = scr_spend_calculate(roll_ranges_text[roll_option], scr_monster_array_access(monster, current_passage, 5));
-					var spend_ok = scr_spend_ok(spend, dice_points);
-					if(spend_ok){
-						if ( dice_points - spend < 0 ){
-							dice_points = 0;
-						} else {
-							dice_points -= spend;
-						}
-						ds_messages[| 0] = "You spent " + string(spend) + " dice points!";
-						
+					//If user tries to spend a locked option
+					if (ds_options_lock[| roll_option]) {
+						ds_messages[|0] = "This is locked!";
+					
+							show_roll_options = false;
+							stay_player_turn_boolean = true;
+							show_battle_text = true;
+					//If option they want to spend is unlocked
 					} else {
-						ds_messages[| 0] = "You don't have enough dice points!";
-						stay_player_turn_boolean = true;
+						spend = scr_spend_calculate(roll_ranges_text[roll_option], scr_monster_array_access(monster, current_passage, 5));
+						spend_ok = scr_spend_ok(spend, dice_points);
+						if(spend_ok){
+							if ( dice_points - spend < 0 ){
+								dice_points = 0;
+							} else {
+								dice_points -= spend;
+							}
+							ds_messages[| 0] = "You spent " + string(spend) + " dice points!";
+						
+						} else {
+							ds_messages[| 0] = "You don't have enough dice points!";
+							stay_player_turn_boolean = true;
+							spend_ready = false;
+							spend_ok = false;
+						}	
 					}
+					
 				//Else do a regular roll
 				} else {	
 					

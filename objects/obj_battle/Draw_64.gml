@@ -54,20 +54,20 @@ if (battle == true) {
 					options_text = scr_monster_array_access(monster, current_passage, j+1)
 					//draw arrow according to selected roll_option
 					if  (roll_option == j ){
-						draw_sprite(arrow, 0, inner_text_X - sprite_get_width(arrow) - BUFFER, inner_text_Y + ((fontSize + BUFFER) * (j) * 1.5 ));
+						draw_sprite(arrow, 0, inner_text_X - sprite_get_width(arrow) - BUFFER, floor(inner_text_Y + ((fontSize + BUFFER) * (j) * 1.5 )));
 					}
 					
 					//If the option IS locked, color it red
 					if (ds_options_lock[| j]) {
 						draw_text_ext_color(inner_text_X + shakeX, 
-						inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5),
+						floor(inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5)),
 						options_text, (fontSize + BUFFER),
 						sprite_get_width(textbox) - (BUFFER * 6),
 						c_red, c_red, c_red, c_red, 1);
 					//Else just leave it white
 					} else{
 						draw_text_ext(inner_text_X + shakeX, 
-						inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5), 
+						floor(inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5)), 
 						options_text, (fontSize + BUFFER), 
 						sprite_get_width(textbox) - (BUFFER * 6));
 					}
@@ -78,7 +78,7 @@ if (battle == true) {
 					//Draw roll chances
 					if (!spend_ready) {
 						draw_text(inner_text_X + shakeX - (string_width(roll_ranges_text[j]) * 2.5), 
-						inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5), 
+						floor(inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5)), 
 						roll_ranges_text[j]);
 					
 						total_message_size += string_height_ext(options_text, sep, w);
@@ -86,7 +86,7 @@ if (battle == true) {
 					} else {
 						roll_cost_text = scr_spend_calculate(roll_ranges_text[j], scr_monster_array_access(monster, current_passage, 5));
 						draw_text(inner_text_X + shakeX - (string_width(roll_ranges_text[j]) * 2.5), 
-						inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5), 
+						floor(inner_text_Y + shakeY + ((fontSize + BUFFER) * (j) * 1.5)), 
 						roll_cost_text);
 					}
 					

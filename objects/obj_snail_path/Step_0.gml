@@ -7,18 +7,17 @@ with (obj_battle){
 			//Roll mechanic
 			//Only if spend_ready is false
 			//aka if we're not spending points, no need to roll
-			if (!spend_ready){
+			if (!spend_ready) {
 				roll = scr_roll_mechanic();
 				roll_success = scr_roll_success(roll_ranges_text[roll_option], roll);
+			}
 			//Allow to "roll"
 			//Basically move to next passage
-			} else {
-				roll_success = true;
-			}
+			
 
 			passage_text = global.battle_snail[current_passage, 0];
 			
-			if (roll_success) {
+			if (roll_success) || (spend_ok)   {
 				switch (current_passage) {
 					//Start
 					case 0: {
@@ -137,7 +136,7 @@ with (obj_battle){
 							//middle point
 							case 0: {
 								next_passage = 10;
-								break
+								break;
 							}
 							// you crack it (NOT "lets you crack it (loopback/prelude)"
 							case 1: {
