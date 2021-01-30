@@ -130,24 +130,24 @@ global.battle_snail[14 ,5] = 4;//even duo(1-3, 4-6)
 
 //Ending Level
 //middle end 
-global.battle_snail[14, 0] = "I FEEL CRACKED NOW!";
-global.battle_snail[14, 1] = "NONE"; // you crack it end 2
-global.battle_snail[14, 2] = "NONE"; // you crack it end 1
-global.battle_snail[14, 3] = "NONE";
-global.battle_snail[14, 4] = 0; //Option count, not including zero
-global.battle_snail[14 ,5] = 5;//no options- end
+global.battle_snail[15, 0] = "I FEEL CRACKED NOW!";
+global.battle_snail[15, 1] = "NONE"; // you crack it end 2
+global.battle_snail[15, 2] = "NONE"; // you crack it end 1
+global.battle_snail[15, 3] = "NONE";
+global.battle_snail[15, 4] = 0; //Option count, not including zero
+global.battle_snail[15 ,5] = 5;//no options- end
 //you crack it end 1
-global.battle_snail[14, 0] = "Oh";
-global.battle_snail[14, 1] = "NONE"; // you crack it end 2
-global.battle_snail[14, 2] = "NONE"; // you crack it end 1
-global.battle_snail[14, 3] = "NONE";
-global.battle_snail[14, 4] = 0; //Option count, not including zero
-global.battle_snail[14 ,5] = 5//no options- end
+global.battle_snail[16, 0] = "Oh";
+global.battle_snail[16, 1] = "NONE"; // you crack it end 2
+global.battle_snail[16, 2] = "NONE"; // you crack it end 1
+global.battle_snail[16, 3] = "NONE";
+global.battle_snail[16, 4] = 0; //Option count, not including zero
+global.battle_snail[16 ,5] = 5//no options- end
 
-//you crack ie end 2
-global.battle_snail[14, 0] = "I WASN'T READY!";
-global.battle_snail[14, 1] = "NONE"; // you crack it end 2
-global.battle_snail[14, 2] = "NONE"; // you crack it end 1
-global.battle_snail[14, 3] = "NONE";
-global.battle_snail[14, 4] = 0; //Option count, not including zero
-global.battle_snail[14 ,5] = 5;//no options- end
+//you crack it end 2
+global.battle_snail[17, 0] = "I WASN'T READY!";
+global.battle_snail[17, 1] = "NONE"; // you crack it end 2
+global.battle_snail[17, 2] = "NONE"; // you crack it end 1
+global.battle_snail[17, 3] = "NONE";
+global.battle_snail[17, 4] = 0; //Option count, not including zero
+global.battle_snail[17 ,5] = 5;//no options- end

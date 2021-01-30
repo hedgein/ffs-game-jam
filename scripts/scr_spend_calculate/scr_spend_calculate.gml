@@ -25,7 +25,7 @@ function scr_spend_calculate(roll_range, difficulty){
 		case "5-6": {
 			if (difficulty > 1){
 				// hard
-				if (difficulty == 2) {
+				if (difficulty == 3) {
 					points_spent = 2;
 				} else {
 					points_spent = 4;

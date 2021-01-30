@@ -13,7 +13,7 @@ with (obj_battle){
 			}
 			
 			
-			passage_text = global.battle_snail[current_passage, 0];
+			passage_text = global.battle_cultist[current_passage, 0];
 			
 			if (roll_success) {
 				switch (current_passage) {

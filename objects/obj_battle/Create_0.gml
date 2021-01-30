@@ -29,7 +29,7 @@ scr_ddr_instance_end();
 
 
 //Dice points
-dice_points = 6;
+dice_points = 0;
 dice_points_earned = 0;
 ddr_steps = 0;
 

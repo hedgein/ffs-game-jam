@@ -182,16 +182,141 @@ with (obj_battle){
 						}
 						break;
 					}
-
+					//MIDDLE SECTION
+					//middle point 2
+					case 9: {
+						switch (roll_option) {
+							//prelude middle end
+							case 0: {
+								next_passage = 12;
+								break
+							}
+							//prelude snail lets you crack it end 1 2
+							case 1: {
+								next_passage = 8;
+								break;
+							}
+						}
+						break;
+					}
+					
+					//middle point
+					case 10: {
+						switch (roll_option) {
+							//prelude middle end
+							case 0: {
+								next_passage = 12;
+								break
+							}
+							//prelude you crack it
+							case 1: {
+								next_passage = 13;
+								break;
+							}
+						}
+						break;
+					}
+					
+					//you crack it
+					case 11: {
+						switch (roll_option) {
+							//prelude you crack it
+							case 0: {
+								next_passage = 13;
+								break
+							}
+							//prelude you crack it 2
+							case 1: {
+								next_passage = 14;
+								break;
+							}
+						}
+						break;
+					}
+					
+					//PRELUDE LEVEL
+					//prelude middle end
+					case 12: {
+						switch (roll_option) {
+							//middle end
+							case 0: {
+								next_passage = 15;
+								break
+							}
+							//shell not cracked 1
+							case 1: {
+								next_passage = 3;
+								break;
+							}
+							//prelude you crack it
+							case 2: {
+								next_passage = 13;	
+							}
+						}
+						break;
+					}
+					
+					//prelude you crack it
+					case 13: {
+						switch (roll_option) {
+							//you crack it end 1
+							case 0: {
+								next_passage = 16;
+								break
+							}
+							//you crack it end 2
+							case 1: {
+								next_passage = 17;
+								break;
+							}
+						}
+						break;
+					}
+					
+					//prelude you crack it 2
+					case 14: {
+						switch (roll_option) {
+							//you crack it end 2
+							case 0: {
+								next_passage = 17;
+								break
+							}
+							//you crack it end 1
+							case 1: {
+								next_passage = 16;
+								break;
+							}
+						}
+						break;
+					}
+				
+				//ENDING LEVEL
+				//middle end
+					case 15: {
+					state = "INIT";
+					break;
 				}
-	
-			current_passage = next_passage;
-			last_lock_boolean = false;
-			lock_counter = 0;
-			if (ds_exists(ds_options_lock, ds_type_list)){
-				ds_list_destroy(ds_options_lock);
-			}
+				
+				//you  crack it end 1
+				case 16: {
+					state = "INIT";
+					break;
+				}
+				
+				//you crack it end 2
+				case 17: {
+					state = "INIT";
+					break;
+				}
+			
+		}
+		current_passage = next_passage;
+		last_lock_boolean = false;
+		lock_counter = 0;
+		if (ds_exists(ds_options_lock, ds_type_list)){
+			ds_list_destroy(ds_options_lock);
 		}
 		
 	}	
+}
 }
