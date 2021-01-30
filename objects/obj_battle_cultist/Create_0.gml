@@ -121,4 +121,4 @@ global.battle_cultist[14, 1] = "NONE";
 global.battle_cultist[14, 2] = "NONE";
 global.battle_cultist[14, 3] = "NONE";
 global.battle_cultist[14, 4] = 0; // option count (not including zero)
-global.battle_cultist[14, 5] = 6; //ending
+global.battle_cultist[14, 5] = 5; //ending
