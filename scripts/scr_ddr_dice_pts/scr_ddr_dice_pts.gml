@@ -12,15 +12,15 @@ function scr_ddr_dice_pts(ddr_steps, total_steps){
 		return 1;
 	}
 	if (ddr_score > 0.51 && ddr_score <= 0.68) {
-		return 2;
+		return 1;
 	}
 	if (ddr_score > 0.68 && ddr_score <= 0.84) {
-		return 3;
+		return 2;
 	}
 	if (ddr_score  > 0.84 && ddr_score < 1) {
-		return 4;
+		return 2;
 	}
 	if (ddr_score = 1) {
-		return 5;
+		return 3;
 	}
 }

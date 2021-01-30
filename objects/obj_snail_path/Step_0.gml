@@ -31,14 +31,12 @@ with (obj_battle){
 							//grab the hammer
 							case 1: {
 									next_passage = 2;
-									with (obj_snail) {
-										animation_state = "CRACKED";
-									}
 									break;
 							}
 						}
 						break;
 					}
+					//2ND LEVEL
 					//knock knock	
 					case 1: {
 						switch (roll_option) {
@@ -76,6 +74,109 @@ with (obj_battle){
 							//switch to knock knock
 							case 2: {
 								next_passage = 1;
+								break;
+							}
+						}
+						break;
+					}
+					//3RD LEVEL
+					//shell not cracked 2
+					case 3: {
+						switch (roll_option) {
+							//snail lets you crack it
+							case 0: {
+								next_passage = 7;
+								break
+							}
+							//middle point 2
+							case 1: {
+								next_passage = 9;
+								break;
+							}
+						}
+						break;
+					}
+					
+					//shell not cracked 2;
+					case 4: {
+						switch (roll_option) {
+							//middle point
+							case 0: {
+								next_passage = 10;
+								break
+							}
+							//PRELUDE (or loop back) lets you crack it
+							case 1: {
+								next_passage = 8;
+								break;
+							}
+						}
+						break;
+					}
+					
+					//shell cracked!
+					case 5: {
+						switch (roll_option) {
+							//middle point 2
+							case 0: {
+								next_passage = 9;
+								break
+							}
+							//you crack it (NOT "lets you crack it")
+							case 1: {
+								next_passage = 11;
+								break;
+							}
+						}
+						break;
+					}
+					
+					//shell cracked 2!
+					case 6: {
+						switch (roll_option) {
+							//middle point
+							case 0: {
+								next_passage = 10;
+								break
+							}
+							// you crack it (NOT "lets you crack it (loopback/prelude)"
+							case 1: {
+								next_passage = 11;
+								break;
+							}
+						}
+						break;
+					}
+					
+					//LOOPBACKS
+					//lets you crack it
+					case 7: {
+						switch (roll_option) {
+							//prelude snail lets you crack it  1 2
+							case 0: {
+								next_passage = 8;
+								break
+							}
+							//shell not cracked 2
+							case 1: {
+								next_passage = 4;
+								break;
+							}
+						}
+						break;
+					}
+					
+					//prelude snail lets you crack it 1 2
+					case 8: {
+						switch (roll_option) {
+							//shell not cracked 2
+							case 0: {
+								next_passage = 6;
+								break
+							}
+							//you crack it 
+							case 1: {
+								next_passage = 11;
 								break;
 							}
 						}

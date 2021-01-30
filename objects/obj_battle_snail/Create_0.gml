@@ -30,9 +30,9 @@ global.battle_snail[2 ,5] = 1;//even triple
 
 //3rd level
 //Shell not cracked
-global.battle_snail[3, 0] = "I don't know... I don't think I could ever be as brave as you.";// snail lets you crack it
-global.battle_snail[3, 1] = "Then I'll be brave for the both of us!";  // middle point 2
-global.battle_snail[3, 2] = "You can still be brave even if you're afraid";
+global.battle_snail[3, 0] = "I don't know... I don't think I could ever be as brave as you.";
+global.battle_snail[3, 1] = "Then I'll be brave for the both of us!"; // snail lets you crack it
+global.battle_snail[3, 2] = "You can still be brave even if you're afraid";  // middle point 2
 global.battle_snail[3, 3] = "NONE";
 global.battle_snail[3, 4] = 2; //Option count, not including zero
 global.battle_snail[3 ,5] = 2;//hard 
