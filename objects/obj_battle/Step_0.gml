@@ -107,8 +107,8 @@ if (player_turn) && (!show_battle_text)  {
 				
 				case 2: {
 					//Display dice locks here
-					stay_player_turn_boolean = true;
 					check_boolean = true;
+					spend_ready = false;
 					break;
 				}
 			}
@@ -239,6 +239,7 @@ if (player_turn) && (!show_battle_text)  {
 								
 				}
 				//Continue Battle
+					check_boolean = false;
 					show_roll_options = false;
 					show_battle_text = true;
 					roll_option = 0;
@@ -247,14 +248,17 @@ if (player_turn) && (!show_battle_text)  {
 			
 				
 		}
-		if (check_boolean) {
+			if (check_boolean) {
 			if (keyboard_check_pressed(ord("X"))) {
 				check_boolean = false;
-				roll_option = 0;
+				spend_ready = false;
 			}
+			show_battle_text = false;
+			roll_option = 0;
 		}
 				
 	}
+
 	
 }
 
