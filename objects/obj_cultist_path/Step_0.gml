@@ -257,7 +257,7 @@ with (obj_battle){
 							//ending
 							case 0: {
 								next_passage = 14;
-								ending = true;
+								//ending = true;
 								break;
 							}
 							//distraction 2
