@@ -7,6 +7,7 @@ function scr_monster_array_access(monster, index_1, index_2){
 			break;
 		}
 		case "CULTIST": {
+			return global.battle_cultist[index_1, index_2];
 			break;
 		}
 	}

@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "DDR Mechanic",
+    "path": "folders/Objects/DDR Mechanic.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_shake_ddr",

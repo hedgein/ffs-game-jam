@@ -37,7 +37,7 @@ monster = "SNAIL";
 
 //Use this function to create snail object 
 //will destroy ddr instance, but there will be none to destory)
-scr_ddr_instance_end();
+scr_ddr_instance_end(monster);
 
 
 

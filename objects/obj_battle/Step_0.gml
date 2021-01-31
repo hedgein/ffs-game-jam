@@ -236,7 +236,7 @@ if (player_turn) && (!show_battle_text)  {
 
 
 							//Start DDR after first message 
-							scr_ddr_instance_start();
+							scr_ddr_instance_start(monster);
 							//Tell user to shake dice
 							ds_messages[| 0] = "Shake the dice!";
 							
@@ -291,7 +291,7 @@ if (player_turn) && (!show_battle_text)  {
 							if (!spend_ready) && (!instance_exists(obj_snail)) {
 								//Calculate dice points based on percentage of steps correct
 								dice_points_earned = scr_ddr_dice_pts(ddr_steps, 10);
-								scr_ddr_instance_end();	
+								scr_ddr_instance_end(monster);	
 							}
 							
 							
