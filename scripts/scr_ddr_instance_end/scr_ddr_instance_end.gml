@@ -11,7 +11,7 @@ function scr_ddr_instance_end(monster){
 			break;
 		}
 		case "CULTIST": {
-			instance_create_depth(monsterX_Y, monsterX_Y, 0, obj_cultist);
+			instance_create_depth(monsterX_Y, monsterX_Y + 80, 0, obj_cultist);
 			break;
 		}
 		case "DRAGON": {

@@ -3,7 +3,7 @@ with (obj_battle){
 
 	//We only want to begin rolling is the option is unlocked while the roll option menu is up
 	//and we select it with "Z"
-	if ((show_roll_options) && (keyboard_check_pressed(ord("Z"))) && (!ds_options_lock[| roll_option])) {
+	if ((show_roll_options) && (keyboard_check_pressed(ord("Z"))) && (!ds_options_lock[| roll_option])) && (monster == "SNAIL"){
 		
 			//Roll mechanic
 			//Only if spend_ready is false
