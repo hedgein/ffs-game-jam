@@ -32,7 +32,7 @@ current_passage = 0;
 next_passage = 0;
 
 //Track which monster we're on
-monster = "CULTIST";
+monster = "DRAGON";
 
 
 //Use this function to create snail object 

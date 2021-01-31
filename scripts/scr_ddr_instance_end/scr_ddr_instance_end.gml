@@ -15,7 +15,7 @@ function scr_ddr_instance_end(monster){
 			break;
 		}
 		case "DRAGON": {
-			instance_create_depth(monsterX_Y, monsterX_Y, 0, obj_dragon);
+			instance_create_depth(monsterX_Y, monsterX_Y + 120, 0, obj_dragon);
 			break;
 		}
 	}

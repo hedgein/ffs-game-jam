@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d905968f-d674-4e81-b2eb-b32f1d5f2277","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Battle GUI",
+    "path": "folders/Sprites/Battle GUI.yy",
   },
   "resourceVersion": "1.0",
   "name": "arrow",

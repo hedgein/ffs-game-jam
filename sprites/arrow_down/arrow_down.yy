@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"5d54552d-26ed-4eb1-82b7-a0a4cbc83ae0","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "DDR",
+    "path": "folders/Sprites/DDR.yy",
   },
   "resourceVersion": "1.0",
   "name": "arrow_down",

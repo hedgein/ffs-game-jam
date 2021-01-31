@@ -80,8 +80,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"8c058ae5-fba4-425e-984e-04aec8b8bfed","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "DDR",
+    "path": "folders/Sprites/DDR.yy",
   },
   "resourceVersion": "1.0",
   "name": "ddr_arrow",

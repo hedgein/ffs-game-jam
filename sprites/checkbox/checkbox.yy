@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"5f916375-b831-4b89-8c10-1609fca983e2","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Battle GUI",
+    "path": "folders/Sprites/Battle GUI.yy",
   },
   "resourceVersion": "1.0",
   "name": "checkbox",

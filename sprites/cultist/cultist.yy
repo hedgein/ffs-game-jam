@@ -92,8 +92,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9e4222e8-6fe2-4982-b47d-04be256740bd","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Monsters",
+    "path": "folders/Sprites/Monsters.yy",
   },
   "resourceVersion": "1.0",
   "name": "cultist",

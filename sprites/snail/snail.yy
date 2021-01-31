@@ -104,8 +104,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"4c6184fc-6196-4131-b687-50125ba54d13","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Monsters",
+    "path": "folders/Sprites/Monsters.yy",
   },
   "resourceVersion": "1.0",
   "name": "snail",

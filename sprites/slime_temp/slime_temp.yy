@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"76baa0e9-5121-40e7-a0d5-72edd1fd63b8","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Monsters",
+    "path": "folders/Sprites/Monsters.yy",
   },
   "resourceVersion": "1.0",
   "name": "slime_temp",
