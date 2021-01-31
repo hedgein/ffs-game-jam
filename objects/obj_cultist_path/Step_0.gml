@@ -1,9 +1,9 @@
 //Passage # includes zero (zero is first)
 with (obj_battle){
-
+if (monster == "CULTIST") {
 	//We only want to begin rolling fs the option is unlocked while the roll option menu is up
 	//and we select it with "Z"
-	if (show_roll_options) && (keyboard_check_pressed(ord("Z"))) && (!ds_options_lock[| roll_option]) && (monster == "CULTIST") {
+	if (show_roll_options) && (keyboard_check_pressed(ord("Z"))) && (!ds_options_lock[| roll_option]) {
 			//Roll mechanic
 			//Only if spend_ready is false
 			//aka if we're not spending points, no need to roll
@@ -281,4 +281,5 @@ with (obj_battle){
 	}
 		
 	}	
+}
 }
