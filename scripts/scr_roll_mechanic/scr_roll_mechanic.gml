@@ -9,8 +9,8 @@ function scr_roll_mechanic(){
 		for (var new_lock_index = 1; new_lock_index < 6; new_lock_index++){
 			if (new_lock == new_lock_index){
 					//Subtract one as array starts at zero
-					global.ga_attack_lock[new_lock_index - 1 , 1] = "LOCKED";
-					global.ga_attack_lock[6, 1] = "LOCKED"
+					global.ga_dice_lock[new_lock_index - 1 , 1] = "LOCKED";
+					global.ga_dice_lock[6, 1] = "LOCKED"
 	
 			}
 		}

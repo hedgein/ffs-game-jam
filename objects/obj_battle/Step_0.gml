@@ -58,7 +58,7 @@ if (battle == true) && (state == "READY"){
 if (player_turn) && (!show_battle_text)  {
 
 
-	if (!show_roll_options) {
+	if (!show_roll_options) && (!check_boolean) {
 		if (keyboard_check_pressed(vk_down)){
 			//If not the last option, go down (to next option)
 			if (selected_option + 1) <= (array_length_1d(a_text) -1) {
@@ -106,17 +106,10 @@ if (player_turn) && (!show_battle_text)  {
 				}
 				
 				case 2: {
-					//temp check boolean
-			
-					for (var i = 0; i < 6 ; i++) {
-						ds_messages[| i] = "Roll " + string(i+1) + " is " + global.ga_dice_lock[i, 1];
-					}		
-			
 					//Display dice locks here
-					show_roll_options = false;
 					stay_player_turn_boolean = true;
 					check_boolean = true;
-					show_battle_text = true;
+					break;
 				}
 			}
 			
@@ -253,6 +246,12 @@ if (player_turn) && (!show_battle_text)  {
 			}
 			
 				
+		}
+		if (check_boolean) {
+			if (keyboard_check_pressed(ord("X"))) {
+				check_boolean = false;
+				roll_option = 0;
+			}
 		}
 				
 	}

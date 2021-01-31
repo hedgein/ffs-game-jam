@@ -12,7 +12,7 @@ if (battle == true) {
 	passage_text = scr_monster_array_access(monster, current_passage, 0);
 	// DRAW THE OPTIONS
 	optionX = 1100;
-	optionY = 700;
+	optionY = guiY - (sprite_get_height(textbox))- (BUFFER * 2.2);
 	draw_set_font(fnt_battle_text);
 	draw_set_halign(fa_left);
 	draw_set_valign(fa_top);
@@ -22,7 +22,7 @@ if (battle == true) {
 	
 
 	
-	if (!show_roll_options) && (!show_battle_text) && (player_turn) {
+	if (!show_roll_options) && (!show_battle_text) && (player_turn) && (!check_boolean){
 		for (var i = 0; i < array_length_1d(a_text); i++) {
 			if (selected_option == i) {
 				if (player_turn) && (!show_battle_text) && (!ending){
@@ -104,6 +104,31 @@ if (battle == true) {
 				draw_text_ext(optionX + shakeX, optionY + shakeY, 
 				dice_pts_display, (fontSize + BUFFER), 25);
 			
+		}
+		//Draw check box!
+		if (check_boolean) {
+			var checkbox_X = guiX - floor(sprite_get_width(checkbox)/3);
+			var checkbox_Y = guiY - sprite_get_height(textbox)- floor(BUFFER * 3.5) - floor(sprite_get_height(checkbox)/8);
+			draw_sprite(checkbox, 0, checkbox_X, checkbox_Y);
+			for (var j = 0; j < 6; j++) {
+				if (global.ga_dice_lock[j,1] == "LOCKED") {
+						draw_text_ext_color(floor(checkbox_X/ 6 *5) + (sprite_get_width(checkbox)/9* (j+1)), 
+						floor(checkbox_Y) + BUFFER,
+						j + 1, 0, 50,c_red, c_red, c_red, c_red, 1);
+					//Else just leave it white
+					} else{
+						draw_text_ext(floor(checkbox_X/6 *5 )  + (sprite_get_width(checkbox)/9 * (j+1)), 
+						floor(checkbox_Y) + BUFFER, 
+						j+1, 0, 50);
+					}
+			}
+			if (global.ga_dice_lock[6,1] == "LOCKED") {
+				var lock_text = "Your dice has locks on it!";
+				draw_text(textX + 15, textY, lock_text);
+			} else {
+				var lock_text = "Your dice is unlocked!";
+				draw_text(textX + 15, textY, lock_text);
+			}
 		}
 		
 		
