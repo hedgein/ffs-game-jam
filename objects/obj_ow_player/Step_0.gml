@@ -1,6 +1,6 @@
 /// @description Move player
 // INPUT.
-input_left     = keyboard_check(ord("A")) || keyboard_check(vk_up);
+input_left     = keyboard_check(ord("A")) || keyboard_check(vk_left);
 input_right    = keyboard_check(ord("D")) || keyboard_check(vk_right);
 input_up       = keyboard_check(ord("W")) || keyboard_check(vk_up);
 input_down     = keyboard_check(ord("S")) || keyboard_check(vk_down);
