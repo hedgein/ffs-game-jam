@@ -1,10 +1,10 @@
 {
-  "option_mac_display_name": "Created with GameMaker Studio 2",
+  "option_mac_display_name": "Roll of Fate",
   "option_mac_app_id": "com.company.game",
   "option_mac_version": "1.0.0.0",
   "option_mac_output_dir": "~/gamemakerstudio2",
   "option_mac_team_id": "",
-  "option_mac_signing_identity": "Developer ID Application:",
+  "option_mac_signing_identity": "hedgejess",
   "option_mac_copyright": "",
   "option_mac_splash_png": "${base_options_dir}/mac/splash/splash.png",
   "option_mac_icon_png": "${base_options_dir}/mac/icons/1024.png",
