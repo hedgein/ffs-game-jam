@@ -263,6 +263,7 @@ if (monster == "DRAGON") {
 						break;
 					}
 					
+
 				}
 		passage_text = global.battle_dragon[current_passage, 0];
 		current_passage = next_passage;

@@ -5,7 +5,7 @@
 //1ST LAYER
 //Start
 global.battle_dragon[0, 0] = "SKREEEE!";
-global.battle_dragon[0, 1] = "Your heart is pounding! But you still step forward!"; //[1] interact 1
+global.battle_dragon[0, 1] = "(Your heart is pounding! But you still step forward!)"; //[1] interact 1
 global.battle_dragon[0, 2] = "H-hey! I wont hurt you!"; //[2] talking 1
 global.battle_dragon[0, 3] = "NONE";
 global.battle_dragon[0, 4] = 2; //option count (not including zero
@@ -20,7 +20,7 @@ global.battle_dragon[1, 4] = 2; //option count (not including zero
 global.battle_dragon[1, 5] = "EVEN DUO"; //1-3, 4-6
 
 //talking 1
-global.battle_dragon[2, 0] = "(The Dragon lowersi ts head and whimpers!)";
+global.battle_dragon[2, 0] = "(The Dragon lowers its head and whimpers!)";
 global.battle_dragon[2, 1] = "Turn that frown, upside down!"// [3] interact 2
 global.battle_dragon[2, 2] = "(You notice tears from its very human-like eyes!)"; // [9] layer 1
 global.battle_dragon[2, 3] = "What's wrong Dragon, sir?"; //[4] talking 2

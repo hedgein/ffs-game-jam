@@ -173,8 +173,6 @@ if (player_turn) && (!show_battle_text)  {
 			
 				//If they are on the spend option, 
 				if (spend_ready = true){
-					//spend = scr_spend_calculate(ga_range_hard[0], scr_monster_array_access(monster, current_passage, 5));
-					
 					//If user tries to spend a locked option
 					if (ds_options_lock[| roll_option]) {
 						ds_messages[|0] = "This is locked!";
