@@ -15,6 +15,7 @@ if (monster == "SNAIL") {
 			} else {
 				spend = scr_spend_calculate(scr_dice_range_array_access(monster, current_passage, roll_option), scr_monster_array_access(monster, current_passage, 5));
 				spend_ok = scr_spend_ok(dice_points, spend);	
+
 			}
 		
 			

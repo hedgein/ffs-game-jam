@@ -389,7 +389,8 @@ if (!player_turn) && (!show_battle_text){
 			}
 		}
 
-		
+		spend_ready = false;
+		spend_ok = false;
 		show_battle_text = true;
 		message_counter = 0
 		roll_option = 0;
