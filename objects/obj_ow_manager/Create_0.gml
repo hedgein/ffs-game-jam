@@ -4,4 +4,4 @@ gameRunning = false;
 // Flag: if true, set up the scene.
 gameStart = false;
 // Set master gain.
-audio_master_gain(1);
+audio_master_gain(0);

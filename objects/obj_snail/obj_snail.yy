@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Objects",
-    "path": "folders/Objects.yy",
+    "name": "Monster Sprites",
+    "path": "folders/Objects/Monster Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_snail",
