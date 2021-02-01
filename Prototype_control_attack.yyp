@@ -79,7 +79,6 @@
     {"id":{"name":"textbox","path":"sprites/textbox/textbox.yy",},"order":5,},
     {"id":{"name":"tap","path":"sounds/tap/tap.yy",},"order":1,},
     {"id":{"name":"player_action","path":"sounds/player_action/player_action.yy",},"order":0,},
-    {"id":{"name":"mockup","path":"rooms/mockup/mockup.yy",},"order":5,},
     {"id":{"name":"ui_text_box","path":"sprites/ui_text_box/ui_text_box.yy",},"order":1,},
     {"id":{"name":"Overworld_Child_0","path":"rooms/Overworld_Child_0/Overworld_Child_0.yy",},"order":3,},
     {"id":{"name":"protag_up","path":"sprites/protag_up/protag_up.yy",},"order":3,},
@@ -108,7 +107,6 @@
     {"roomId":{"name":"Overworld_Child_0","path":"rooms/Overworld_Child_0/Overworld_Child_0.yy",},},
     {"roomId":{"name":"Overworld_Child_1","path":"rooms/Overworld_Child_1/Overworld_Child_1.yy",},},
     {"roomId":{"name":"Battle","path":"rooms/Battle/Battle.yy",},},
-    {"roomId":{"name":"mockup","path":"rooms/mockup/mockup.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":0,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
