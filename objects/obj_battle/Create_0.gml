@@ -70,7 +70,7 @@ message_counter = 0 ;//Tracks which message we're on
 show_battle_text = false; //Display battle text or not
 
 message_timer = 0;
-time_before_button_accepted = 15;
+time_before_button_accepted = room_speed;
 
 enemy_timer = 0;
 time_til_enemy_attacks = 30; 

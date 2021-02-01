@@ -259,7 +259,7 @@ if (player_turn) && (!show_battle_text)  {
 		
 		
 		if (message_timer >= time_before_button_accepted){
-			if ((keyboard_check_pressed(ord("Z"))) && (!ddr_start) &&(!instance_exists(obj_ddr_button))){
+			if ((!ddr_start) &&(!instance_exists(obj_ddr_button))){
 				
 				//Go to next message if there is one
 				if (message_counter + 1) <= (ds_list_size(ds_messages) - 1) {
