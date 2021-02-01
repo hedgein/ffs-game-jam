@@ -45,6 +45,7 @@
     {"id":{"name":"Sprite16","path":"sprites/Sprite16/Sprite16.yy",},"order":17,},
     {"id":{"name":"player_action","path":"sounds/player_action/player_action.yy",},"order":0,},
     {"id":{"name":"scr_ddr_dice_pts","path":"scripts/scr_ddr_dice_pts/scr_ddr_dice_pts.yy",},"order":0,},
+    {"id":{"name":"roll_of_fate","path":"sounds/roll_of_fate/roll_of_fate.yy",},"order":5,},
     {"id":{"name":"obj_battle","path":"objects/obj_battle/obj_battle.yy",},"order":0,},
     {"id":{"name":"dragon","path":"sprites/dragon/dragon.yy",},"order":3,},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},"order":0,},

@@ -1,7 +1,16 @@
 /// @description Insert description here
 // You can write your code in this editor
 randomize();
-audio_play_sound(monster_chip, 1, true);
+
+//Track which monster we're on
+monster = "DRAGON";
+
+if (monster == "DRAGON") {
+	audio_play_sound(roll_of_fate, 1, true);
+} else {
+	audio_play_sound(monster_chip, 1, true);
+}
+
 
 //dice_ranges
 ga_range_even[0] = "1-2"
@@ -31,8 +40,7 @@ a_text[2] = "CHECK";
 current_passage = 0;
 next_passage = 0;
 
-//Track which monster we're on
-monster = "DRAGON";
+
 
 
 //Use this function to create snail object 
