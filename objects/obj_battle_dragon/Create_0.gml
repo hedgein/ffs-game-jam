@@ -111,7 +111,7 @@ global.battle_dragon[11, 5] = "EVEN DUO"; //even duo
 //layer 4
 global.battle_dragon[12, 0] = "(More and more scales begin to fall!)";
 global.battle_dragon[12, 1] = "You're something else entirely...aren't you?"; //[8] layer 0
-global.battle_dragon[12, 2] = "(Peel off all the layers of scales!"; //[13] ending
+global.battle_dragon[12, 2] = "(Peel off all the layers of scales!)"; //[13] ending
 global.battle_dragon[12, 3] = "NONE";
 global.battle_dragon[12, 4] = 2; //option count (not including zero
 global.battle_dragon[12, 5] = "EVEN DUO"; //even duo

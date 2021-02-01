@@ -6,7 +6,6 @@ if (state == "INIT") {
 	if (ds_exists(ds_roll_input, ds_type_list)) {
 	ds_list_destroy(ds_roll_input);
 	}
-	
 
 	selected_option = 0; //which option is the arrow on
 	player_turn = true;
@@ -18,11 +17,10 @@ if (state == "INIT") {
 
 	enemy_timer = 0;
 	
-	player_dead = false;
 	battle = false; 
-	victory = false;
+	ending = false;
 
-	//Roll mechanic
+	//Roll mechanic menu
 	show_roll_options = false; //Show inner box text roll options or not
 	roll_option = 0;
 	
@@ -41,9 +39,6 @@ if (state == "INIT") {
 	ds_roll_input[| 4] = 5;
 	ds_roll_input[| 5] = 6;
 
-	//Screenshake
-
-	shake_timer = 0;
 
 	state = "READY";
 }
@@ -313,7 +308,7 @@ if (player_turn) && (!show_battle_text)  {
 		}
 	} else {
 		//change snail animation at end
-		if (ending){
+		if (ending) && (monster == "SNAIL"){
 			obj_snail.animation_state = "CRACKED";
 		}
 	}
