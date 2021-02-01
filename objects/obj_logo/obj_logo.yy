@@ -7,7 +7,10 @@
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "obj_main_menu",
+    "path": "objects/obj_main_menu/obj_main_menu.yy",
+  },
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -24,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "GUI",
-    "path": "folders/Objects/Overworld/GUI.yy",
+    "name": "menu",
+    "path": "folders/Objects/Overworld/GUI/menu.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_logo",

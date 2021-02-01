@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "enemy1_right",
-    "path": "sprites/enemy1_right/enemy1_right.yy",
-  },
+  "spriteId": null,
   "solid": true,
   "visible": true,
   "spriteMaskId": null,
@@ -23,12 +20,13 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"obj_npc","path":"objects/obj_npc/obj_npc.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"obj_npc","path":"objects/obj_npc/obj_npc.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":4,"eventType":7,"collisionObjectId":null,"parent":{"name":"obj_npc","path":"objects/obj_npc/obj_npc.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Overworld",
-    "path": "folders/Objects/Overworld.yy",
+    "name": "actors",
+    "path": "folders/Objects/Overworld/actors.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_npc",

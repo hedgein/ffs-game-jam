@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"cf66ee1b-fe44-410a-92a1-c66a1e20cf6c","path":"sprites/UI_Pause_Menu_Screen/UI_Pause_Menu_Screen.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"cf66ee1b-fe44-410a-92a1-c66a1e20cf6c","path":"sprites/UI_Pause_Menu_Screen/UI_Pause_Menu_Screen.yy",},"LayerId":{"name":"daf9c37c-634e-460d-99ce-a57a5112a933","path":"sprites/UI_Pause_Menu_Screen/UI_Pause_Menu_Screen.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"UI_Pause_Menu_Screen","path":"sprites/UI_Pause_Menu_Screen/UI_Pause_Menu_Screen.yy",},"resourceVersion":"1.0","name":"cf66ee1b-fe44-410a-92a1-c66a1e20cf6c","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"cf66ee1b-fe44-410a-92a1-c66a1e20cf6c","path":"sprites/ui_pause_menu_screen/ui_pause_menu_screen.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"cf66ee1b-fe44-410a-92a1-c66a1e20cf6c","path":"sprites/ui_pause_menu_screen/ui_pause_menu_screen.yy",},"LayerId":{"name":"daf9c37c-634e-460d-99ce-a57a5112a933","path":"sprites/ui_pause_menu_screen/ui_pause_menu_screen.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"ui_pause_menu_screen","path":"sprites/ui_pause_menu_screen/ui_pause_menu_screen.yy",},"resourceVersion":"1.0","name":"cf66ee1b-fe44-410a-92a1-c66a1e20cf6c","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"UI_Pause_Menu_Screen","path":"sprites/UI_Pause_Menu_Screen/UI_Pause_Menu_Screen.yy",},
+    "spriteId": {"name":"ui_pause_menu_screen","path":"sprites/ui_pause_menu_screen/ui_pause_menu_screen.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"b04e7f8e-efaf-480a-8897-69805c98c97b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"cf66ee1b-fe44-410a-92a1-c66a1e20cf6c","path":"sprites/UI_Pause_Menu_Screen/UI_Pause_Menu_Screen.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"b04e7f8e-efaf-480a-8897-69805c98c97b","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"cf66ee1b-fe44-410a-92a1-c66a1e20cf6c","path":"sprites/ui_pause_menu_screen/ui_pause_menu_screen.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,9 +58,9 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"UI_Pause_Menu_Screen","path":"sprites/UI_Pause_Menu_Screen/UI_Pause_Menu_Screen.yy",},
+    "parent": {"name":"ui_pause_menu_screen","path":"sprites/ui_pause_menu_screen/ui_pause_menu_screen.yy",},
     "resourceVersion": "1.3",
-    "name": "UI_Pause_Menu_Screen",
+    "name": "ui_pause_menu_screen",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -68,11 +68,11 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"daf9c37c-634e-460d-99ce-a57a5112a933","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "GUI",
-    "path": "folders/Sprites/Overworld/GUI.yy",
+    "name": "menu",
+    "path": "folders/Sprites/Overworld/GUI/menu.yy",
   },
   "resourceVersion": "1.0",
-  "name": "UI_Pause_Menu_Screen",
+  "name": "ui_pause_menu_screen",
   "tags": [],
   "resourceType": "GMSprite",
 }

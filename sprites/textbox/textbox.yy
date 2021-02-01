@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ea0b5777-1cce-4d05-9bbe-0399d18489f7","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Battle",
+    "path": "folders/Sprites/Battle.yy",
   },
   "resourceVersion": "1.0",
   "name": "textbox",

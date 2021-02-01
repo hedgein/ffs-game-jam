@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"69876f77-f6b3-4d27-b17d-d7a6427b28c2","path":"sprites/logo/logo.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"69876f77-f6b3-4d27-b17d-d7a6427b28c2","path":"sprites/logo/logo.yy",},"LayerId":{"name":"ec7269bd-0059-4fa9-8773-ef2a6de422ef","path":"sprites/logo/logo.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"logo","path":"sprites/logo/logo.yy",},"resourceVersion":"1.0","name":"69876f77-f6b3-4d27-b17d-d7a6427b28c2","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"ad6cc3b4-b49a-4232-a179-ea85b0d2511e","path":"sprites/logo/logo.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"ad6cc3b4-b49a-4232-a179-ea85b0d2511e","path":"sprites/logo/logo.yy",},"LayerId":{"name":"c2af0862-5c65-43ac-a34e-695329f39f39","path":"sprites/logo/logo.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"logo","path":"sprites/logo/logo.yy",},"resourceVersion":"1.0","name":"ad6cc3b4-b49a-4232-a179-ea85b0d2511e","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"logo","path":"sprites/logo/logo.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"ed48e772-ab7e-4421-b3dd-93468223ec8a","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"69876f77-f6b3-4d27-b17d-d7a6427b28c2","path":"sprites/logo/logo.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"959a226c-99bb-4636-826c-d1f39ea74d09","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ad6cc3b4-b49a-4232-a179-ea85b0d2511e","path":"sprites/logo/logo.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -65,11 +65,11 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ec7269bd-0059-4fa9-8773-ef2a6de422ef","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c2af0862-5c65-43ac-a34e-695329f39f39","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "GUI",
-    "path": "folders/Sprites/Overworld/GUI.yy",
+    "name": "menu",
+    "path": "folders/Sprites/Overworld/GUI/menu.yy",
   },
   "resourceVersion": "1.0",
   "name": "logo",

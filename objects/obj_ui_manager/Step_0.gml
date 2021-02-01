@@ -3,6 +3,7 @@
 if (firstRun) {
 	// Create UI.
 	event_user(0);
+	
 	// Set state.
 	firstRun = false;
 	menuOpen = true;
@@ -10,13 +11,10 @@ if (firstRun) {
 
 // If ESC key pressed, pause and enter menu.
 if (gameStart && keyboard_check_pressed(vk_escape)) {
-	// Toggle flag.
-	menuOpen = !menuOpen;
-	
 	// Play SFX.
 	audio_play_sound(tap, 1, false);
 	
-	if (menuOpen) {
+	if (!menuOpen) {
 		// Pause game.
 		with (obj_ow_manager) {
 			event_user(0);
@@ -33,3 +31,6 @@ if (gameStart && keyboard_check_pressed(vk_escape)) {
 		}
 	}
 }
+
+// Used to limit the amount of clicks.
+global.click_timer--;

@@ -7,15 +7,15 @@
   "edgeFiltering": false,
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
-  "bbox_left": 108,
-  "bbox_right": 1188,
-  "bbox_top": 30,
-  "bbox_bottom": 397,
+  "bbox_left": 0,
+  "bbox_right": 1073,
+  "bbox_top": 0,
+  "bbox_bottom": 235,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 1280,
-  "height": 446,
+  "width": 1074,
+  "height": 236,
   "textureGroupId": {
     "name": "Default",
     "path": "texturegroups/Default",
@@ -24,12 +24,12 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"9862c852-192b-4092-91e5-8214b10dc0b3","path":"sprites/UI_Text_Box/UI_Text_Box.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"9862c852-192b-4092-91e5-8214b10dc0b3","path":"sprites/UI_Text_Box/UI_Text_Box.yy",},"LayerId":{"name":"72dadfed-5d4b-4985-b33e-0395c2be18a9","path":"sprites/UI_Text_Box/UI_Text_Box.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"UI_Text_Box","path":"sprites/UI_Text_Box/UI_Text_Box.yy",},"resourceVersion":"1.0","name":"9862c852-192b-4092-91e5-8214b10dc0b3","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"76e52429-6f22-47c9-a23f-6e7ebe3c7c74","path":"sprites/ui_text_box/ui_text_box.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"76e52429-6f22-47c9-a23f-6e7ebe3c7c74","path":"sprites/ui_text_box/ui_text_box.yy",},"LayerId":{"name":"89a962da-8c2b-400c-b468-73cfef4efc5e","path":"sprites/ui_text_box/ui_text_box.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"ui_text_box","path":"sprites/ui_text_box/ui_text_box.yy",},"resourceVersion":"1.0","name":"76e52429-6f22-47c9-a23f-6e7ebe3c7c74","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"UI_Text_Box","path":"sprites/UI_Text_Box/UI_Text_Box.yy",},
+    "spriteId": {"name":"ui_text_box","path":"sprites/ui_text_box/ui_text_box.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"f1090b02-71f3-44a5-a914-e75e42e0dc48","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"9862c852-192b-4092-91e5-8214b10dc0b3","path":"sprites/UI_Text_Box/UI_Text_Box.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"8b2d15f3-1d95-498d-bc53-361ab26ac31a","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"76e52429-6f22-47c9-a23f-6e7ebe3c7c74","path":"sprites/ui_text_box/ui_text_box.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,21 +58,21 @@
     "yorigin": 0,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"UI_Text_Box","path":"sprites/UI_Text_Box/UI_Text_Box.yy",},
+    "parent": {"name":"ui_text_box","path":"sprites/ui_text_box/ui_text_box.yy",},
     "resourceVersion": "1.3",
-    "name": "UI_Text_Box",
+    "name": "ui_text_box",
     "tags": [],
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"72dadfed-5d4b-4985-b33e-0395c2be18a9","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"89a962da-8c2b-400c-b468-73cfef4efc5e","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
     "name": "GUI",
     "path": "folders/Sprites/Overworld/GUI.yy",
   },
   "resourceVersion": "1.0",
-  "name": "UI_Text_Box",
+  "name": "ui_text_box",
   "tags": [],
   "resourceType": "GMSprite",
 }

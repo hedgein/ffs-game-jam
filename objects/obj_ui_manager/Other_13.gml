@@ -1,26 +1,21 @@
 /// @description Show controls
-// Destroy all instance of the buttons.
-instance_destroy(obj_button);
 
-// Buttons to be drawn (we don't serve classes here, best I can getcha are arrays).
-var _text_array = [
-	"Action: Z",
-	"Cancel: X",
-	"Movement: WASD/Arrow Keys",
-	"Back"
-];
-// Functions mapped to buttons.
-// TODO: Add ability to set custom mappings. For now these callbacks do nothing.
-var _fn_array = [
-	scr_map_controls,
-	scr_map_controls,
-	scr_map_controls,
-	scr_hide_controls
-];
+// Reset visibility.
+event_user(5);
 
-var _shift_y = 150;
+// Enable menu border.
+layer_set_visible(border_layer, true);
+
 if (gameStart)
 {
-	_shift_y = 0;
+	// Disable pause menu.
+	layer_set_visible(pause_layer, false);
 }
-scr_create_menu(_text_array, _fn_array, _shift_y);
+else
+{
+	// Disable start menu.
+	layer_set_visible(main_layer, false);
+}
+
+// Enable controls menu.
+layer_set_visible(controls_layer, true);

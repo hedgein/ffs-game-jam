@@ -1,27 +1,21 @@
-/// @description Create UI
-// Buttons to be drawn (we don't serve classes here, best I can getcha are arrays).
-var _text_array = [
-	"Play", 
-	"Controls", 
-	"Exit"
-];
-// Change "Play" to "Resume" if the game has been started).
-var _shift_y = 150;
+/// @description Show menu
+scr_pause_all_objects(true);
+
+// Reset visibility.
+event_user(5);
+
+// Enable menu border.
+layer_set_visible(border_layer, true);
+
 if (gameStart)
 {
-	_text_array[0] = "Resume";
-	_shift_y = 0;
+	// Enable pause menu.
+	layer_set_visible(pause_layer, true);
 }
 else
 {
-	instance_create_layer(camera_get_view_width(view_camera[0]) / 2, 50, "GUI", obj_logo);	
+	// Enable main menu.
+	layer_set_visible(main_layer, true);
 }
 
-// Functions mapped to buttons.
-var _fn_array = [
-	scr_start_game, 
-	scr_show_controls, 
-	scr_exit
-];
-
-scr_create_menu(_text_array, _fn_array, _shift_y);
+menuOpen = true;

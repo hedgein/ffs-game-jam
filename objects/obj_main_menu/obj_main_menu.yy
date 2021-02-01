@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "UI_Main_Menu_Screen",
-    "path": "sprites/UI_Main_Menu_Screen/UI_Main_Menu_Screen.yy",
+    "name": "ui_main_menu_screen",
+    "path": "sprites/ui_main_menu_screen/ui_main_menu_screen.yy",
   },
   "solid": false,
   "visible": true,
@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "GUI",
-    "path": "folders/Objects/Overworld/GUI.yy",
+    "name": "menu",
+    "path": "folders/Objects/Overworld/GUI/menu.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_main_menu",

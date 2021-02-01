@@ -3,7 +3,6 @@ gameRunning = true;
 // First time running.
 if(!gameStart)
 {
-	show_debug_message("Game started!");
 	// Create the character sprite.
 	instance_create_depth(0, 500, 0, obj_ow_player);
 	// Set the start location.

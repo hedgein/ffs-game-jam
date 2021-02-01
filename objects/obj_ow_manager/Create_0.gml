@@ -3,5 +3,5 @@
 gameRunning = false;
 // Flag: if true, set up the scene.
 gameStart = false;
-// TODO: REMOVE.
-audio_master_gain(0);
+// Set master gain.
+audio_master_gain(1);

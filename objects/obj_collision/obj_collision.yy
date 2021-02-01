@@ -26,8 +26,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Overworld",
-    "path": "folders/Objects/Overworld.yy",
+    "name": "tiles",
+    "path": "folders/Objects/Overworld/tiles.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_collision",
