@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "Monsters",
-    "path": "folders/Sprites/Monsters.yy",
+    "path": "folders/Sprites/Battle/Monsters.yy",
   },
   "resourceVersion": "1.0",
   "name": "slime_temp",

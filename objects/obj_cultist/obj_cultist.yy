@@ -27,7 +27,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Monster Sprites",
-    "path": "folders/Objects/Monster Sprites.yy",
+    "path": "folders/Objects/Battle/Monster Sprites.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_cultist",

@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "Battle GUI",
-    "path": "folders/Sprites/Battle GUI.yy",
+    "path": "folders/Sprites/Battle/Battle GUI.yy",
   },
   "resourceVersion": "1.0",
   "name": "textbox",

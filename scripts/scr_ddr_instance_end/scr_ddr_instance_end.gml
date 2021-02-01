@@ -7,15 +7,15 @@ function scr_ddr_instance_end(monster){
 	instance_destroy(obj_ddr_steps);
 	switch (monster) {
 		case "SNAIL": {
-			instance_create_depth(monsterX_Y, monsterX_Y, 0, obj_snail);
+			instance_create_layer(monsterX_Y, monsterX_Y, "Instances", obj_snail);
 			break;
 		}
 		case "CULTIST": {
-			instance_create_depth(monsterX_Y, monsterX_Y + 80, 0, obj_cultist);
+			instance_create_layer(monsterX_Y, monsterX_Y + 80, "Instances", obj_cultist);
 			break;
 		}
 		case "DRAGON": {
-			instance_create_depth(monsterX_Y, monsterX_Y + 120, 0, obj_dragon);
+			instance_create_layer(monsterX_Y, monsterX_Y + 120, "Instances", obj_dragon);
 			break;
 		}
 	}

@@ -24,7 +24,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Monster Paths",
-    "path": "folders/Objects/Monster Paths.yy",
+    "path": "folders/Objects/Battle/Monster Paths.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_dragon_path",

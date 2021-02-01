@@ -80,8 +80,16 @@ if (player_turn) && (!show_battle_text)  {
 			if (ending) { 
 				 battle = false;
 				 state = "INIT";
-				 //rm goto
-				}
+				 with (obj_ow_player)
+				 {
+					victory_dialogue = true;
+					visible = true;
+					can_move = true;
+				 }
+				 audio_stop_all();
+				 audio_play_sound(overworld, 0, true);
+				 room_goto(return_room);
+			}
 			message_counter = 0;
 			if (!ds_exists(ds_messages, ds_type_list)){
 				ds_messages = ds_list_create();
@@ -266,7 +274,7 @@ if (player_turn) && (!show_battle_text)  {
 		
 		
 		if (message_timer >= time_before_button_accepted){
-			if (keyboard_check_pressed(ord("Z"))) && (!ddr_start) &&(!instance_exists(obj_ddr_button)){
+			if ((keyboard_check_pressed(ord("Z"))) && (!ddr_start) &&(!instance_exists(obj_ddr_button))){
 				
 				//Go to next message if there is one
 				if (message_counter + 1) <= (ds_list_size(ds_messages) - 1) {
@@ -284,11 +292,12 @@ if (player_turn) && (!show_battle_text)  {
 							}
 						
 							//only if we're rolling
-							if (!spend_ready) && (!instance_exists(obj_snail)) {
+							if ((!spend_ready) && (!instance_exists(obj_snail) || !instance_exists(obj_dragon) || !instance_exists(obj_cultist))) {
 								//Calculate dice points based on percentage of steps correct
 								dice_points_earned = scr_ddr_dice_pts(ddr_steps, 10);
 								scr_ddr_instance_end(monster);	
 							}
+							
 							
 							
 							 

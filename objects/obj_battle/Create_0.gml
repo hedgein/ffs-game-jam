@@ -2,9 +2,14 @@
 // You can write your code in this editor
 randomize();
 
-//Track which monster we're on
-monster = "DRAGON";
+// Prevent OW player from moving.
+with (obj_ow_player)
+{
+	can_move = false;	
+}
 
+// Audio.
+audio_stop_all();
 if (monster == "DRAGON") {
 	audio_play_sound(roll_of_fate, 1, true);
 } else {
@@ -52,7 +57,7 @@ scr_ddr_instance_end(monster);
 
 
 //Dice points
-dice_points = 100;
+dice_points = 0;
 dice_points_earned = 0;
 ddr_steps = 0;
 spend_ok = false;
@@ -74,9 +79,7 @@ time_til_enemy_attacks = 30;
 
 stay_player_turn_boolean = false;
 
-player_dead = false;
 battle = true; 
-victory = false;
 state = "READY";
 
 //Roll menu

@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "DDR",
-    "path": "folders/Sprites/DDR.yy",
+    "path": "folders/Sprites/Battle/DDR.yy",
   },
   "resourceVersion": "1.0",
   "name": "arrow_down",

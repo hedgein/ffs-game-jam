@@ -16,8 +16,8 @@ function scr_ddr_instance_start(monster){
 		}
 	}
 	
-	instance_create_depth(0, 0, 0, obj_shake_ddr);
-	instance_create_depth(0, 0, 0, obj_ddr_steps);
+	instance_create_layer(0, 0, "Instances", obj_shake_ddr);
+	instance_create_layer(0, 0, "Instances", obj_ddr_steps);
 	ddr_start = true;
 	ddr_steps = 0;
 }

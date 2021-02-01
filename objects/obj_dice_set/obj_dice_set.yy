@@ -24,7 +24,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Battle System",
-    "path": "folders/Objects/Battle System.yy",
+    "path": "folders/Objects/Battle/Battle System.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_dice_set",

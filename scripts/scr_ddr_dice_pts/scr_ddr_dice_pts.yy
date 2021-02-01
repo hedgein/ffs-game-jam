@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "DDR",
-    "path": "folders/Scripts/DDR.yy",
+    "path": "folders/Scripts/Battle/DDR.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_ddr_dice_pts",

@@ -24,7 +24,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Battle Arrays",
-    "path": "folders/Objects/Battle Arrays.yy",
+    "path": "folders/Objects/Battle/Battle Arrays.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_battle_cultist",

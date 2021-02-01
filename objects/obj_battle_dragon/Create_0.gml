@@ -41,7 +41,7 @@ global.battle_dragon[4, 1] = "That's right, I'm a friend!"; // [5] interact 3
 global.battle_dragon[4, 2] = "(You're not sure what, but something made your heart move..."; // [11] layer 3
 global.battle_dragon[4, 3] = "(Can you say that again?"; //[6] talking 3
 global.battle_dragon[4, 4] = 3; //option count (not including zero
-global.battle_dragon[4, 5] = 1="EVEN"; //even triple
+global.battle_dragon[4, 5] = "EVEN"; //even triple
 
 //interact 3
 global.battle_dragon[5, 0] = "(The Dragon takes a hesitant step forward!)";
@@ -59,13 +59,6 @@ global.battle_dragon[6, 3] = "NONE";
 global.battle_dragon[6, 4] = 2; //option count (not including zero
 global.battle_dragon[6, 5] = "EVEN DUO"; //even duo
 
-//talking 3
-global.battle_dragon[6, 0] = "SKKkkrREEEeeeeeEEE!";
-global.battle_dragon[6, 1] = "(You nod your head in pretend agreement!)"; //[7] interact 4
-global.battle_dragon[6, 2] = "I'm sorry, I don't think I quite understand..."; //[0] start
-global.battle_dragon[6, 3] = "NONE";
-global.battle_dragon[6, 4] = 2; //option count (not including zero
-global.battle_dragon[6, 5] = "EVEN DUO"; //even duo
 
 //interact 4
 global.battle_dragon[7, 0] = "(Yes! The Dragon is drawing even closer now!";

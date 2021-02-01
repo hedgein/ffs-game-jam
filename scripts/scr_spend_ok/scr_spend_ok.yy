@@ -3,7 +3,7 @@
   "isCompatibility": false,
   "parent": {
     "name": "Spending",
-    "path": "folders/Scripts/Spending.yy",
+    "path": "folders/Scripts/Battle/Spending.yy",
   },
   "resourceVersion": "1.0",
   "name": "scr_spend_ok",

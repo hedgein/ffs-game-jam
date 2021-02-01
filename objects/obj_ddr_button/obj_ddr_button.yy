@@ -28,7 +28,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "DDR Mechanic",
-    "path": "folders/Objects/DDR Mechanic.yy",
+    "path": "folders/Objects/Battle/DDR Mechanic.yy",
   },
   "resourceVersion": "1.0",
   "name": "obj_ddr_button",
