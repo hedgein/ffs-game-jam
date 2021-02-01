@@ -36,7 +36,6 @@ ga_range_even_duo[1] = "4-6"; //3 cost
 //Create menu texts
 a_text[0] = "ROLL";
 a_text[1] = "SPEND";
-a_text[2] = "CHECK";
 //If there's a need for a fourth option later?
 //a_text[3] = "HEAL";
 
