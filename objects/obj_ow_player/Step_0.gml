@@ -1,52 +1,75 @@
 /// @description Move player
 // INPUT.
-input_left     = keyboard_check(ord("A")) || keyboard_check(vk_left);
-input_right    = keyboard_check(ord("D")) || keyboard_check(vk_right);
-input_up       = keyboard_check(ord("W")) || keyboard_check(vk_up);
-input_down     = keyboard_check(ord("S")) || keyboard_check(vk_down);
 input_interact = keyboard_check_pressed(ord("Z"));
 
 // MOVEMENT.
 var transition = instance_exists(obj_fade);
-if (reached_start && can_move && !paused && !transition) {
-	// Handle normal movement logic.
-	var RIGHT = 0;
-	var UP = 90;
-	var LEFT = 180;
-	var DOWN = 270;
-	var _collision_speed = player_speed + 5;
-	if (input_left && place_free(x - _collision_speed, y)) {
-		motion_set(LEFT, player_speed);
-		sprite_index = protag_left;
-		image_speed = 1;
+if (reached_start && can_move && !paused && !transition)
+{
+	// Cycle through our 4 directional inputs and if they were pressed this step, add them to our stack.
+	for( var i = 0; i < 2; ++i )
+	{
+		for( var j = 0; j < 4; ++j )
+		{
+		    if( keyboard_check_pressed( InputList[i][j] ) )
+			{
+		        ds_stack_push( InputStack, InputList[i][j] );
+		    }
+		}
 	}
-	else if (input_right && place_free(x + _collision_speed, y)) {
-		motion_set(RIGHT, player_speed);
-		sprite_index = protag_right;
-		image_speed = 1;
+	
+	// Clear out any inputs that have been released.
+	while( !ds_stack_empty( InputStack ) && !keyboard_check( ds_stack_top( InputStack ) ) )
+	{
+	    ds_stack_pop( InputStack );
 	}
-	else if (input_up && place_free(x, y - _collision_speed)) {
-		motion_set(UP, player_speed);
-		sprite_index = protag_up;
-		image_speed = 1;
-	}
-	else if (input_down && place_free(x, y + _collision_speed )) {
-		motion_set(DOWN, player_speed);
-		sprite_index = protag_down;
-		image_speed = 1;
-	}
-	else {
-		// NO MOTION.
-		motion_set(0, 0);
+	
+	// If no inputs are on the stack, pause character.
+	if( ds_stack_empty( InputStack ) )
+	{
 		// Pause when the character is static.
 		if (floor(image_index) == 0 || floor(image_index) == 2)
 		{
 			image_speed = 0;
 		}
 	}
+
+	// If any input is active, move according to the most recent press.
+	var _collision_speed = player_speed + 5;
+	if( !ds_stack_empty( InputStack ) )
+	{
+		image_speed = 1;
+	    switch( ds_stack_top( InputStack ) )
+		{
+			// UP
+	        case InputList[0][0]:
+			case InputList[1][0]:
+				if (place_free(x, y - _collision_speed)) y -= player_speed;
+				sprite_index = protag_up;
+	            break;
+			// DOWN
+	        case InputList[0][1]:
+			case InputList[1][1]:
+	            if (place_free(x, y + _collision_speed)) y += player_speed;
+				sprite_index = protag_down;
+	            break;
+			// LEFT
+	        case InputList[0][2]:
+			case InputList[1][2]:
+				if (place_free(x - _collision_speed, y)) x -= player_speed;
+				sprite_index = protag_left;
+	            break;
+			// RIGHT
+	        case InputList[0][3]:
+			case InputList[1][3]:
+	            if (place_free(x + _collision_speed, y)) x += player_speed;
+				sprite_index = protag_right;
+	            break;
+	    }
+	}
 }
-else if (!reached_start && !transition) {
-	// Check if we have reached the starting position.
+else if (!reached_start && !transition)
+{
 	if ((x == start_x) && (y == start_y)) {
 		reached_start = true;
 		motion_set(0, 0);
@@ -57,12 +80,7 @@ else if (!reached_start && !transition) {
 			point_direction(x, y, start_x, start_y), 
 			player_speed
 		);
-	}
-}
-else
-{
-	motion_set(0, 0);
-	image_speed = 0;
+	}	
 }
 	
 if (!npc_triggered)

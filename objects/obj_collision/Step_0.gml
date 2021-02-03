@@ -1,2 +1,3 @@
 /// @description Insert description here
-visible = false;
+if (!active)
+	solid = false;
