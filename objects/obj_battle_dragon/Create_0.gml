@@ -61,7 +61,7 @@ global.battle_dragon[6, 5] = "EVEN DUO"; //even duo
 
 
 //interact 4
-global.battle_dragon[7, 0] = "(Yes! The Dragon is drawing even closer now!";
+global.battle_dragon[7, 0] = "(Yes! The Dragon is drawing even closer now!)";
 global.battle_dragon[7, 1] = "(You reach out to touch its scales!)"; //[0] Start
 global.battle_dragon[7, 2] = "(Something is churning inside your gut...)"; //[8] layer 0
 global.battle_dragon[7, 3] = "(Try to give it a warm hug!)"; //[1] interact 1

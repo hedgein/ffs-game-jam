@@ -73,8 +73,8 @@ if (battle == true) {
 				//draw arrow according to selected roll_option
 				if (roll_option == j ){
 					draw_sprite(
-						arrow,
-						0,
+							arrow,
+							0,
 						inner_text_X - sprite_get_width(arrow) - BUFFER,
 						floor(inner_text_Y + (sprite_get_height(arrow) / 2) + ((hh + BUFFER) * j))
 					);
