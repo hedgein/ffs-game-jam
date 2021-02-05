@@ -80,11 +80,7 @@ if (battle == true) {
 					);
 				}
 					
-				//If the option IS locked, color it red
-				if (ds_options_lock[| j]) {
-					draw_set_color(c_red);
-				}
-				
+				//Draw roll options normally
 				draw_text_ext(
 					inner_text_X + shakeX,
 					floor(inner_text_Y + shakeY + ((hh + BUFFER) * j)), 

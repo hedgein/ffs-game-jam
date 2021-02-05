@@ -111,12 +111,14 @@ ds_roll_input[| 4] = 5;
 ds_roll_input[| 5] = 6;
 
 //Create options lock for first passage (every enemy will have two options at beginning)
-ds_options_lock = ds_list_create();
-ds_options_lock[| 0] = false;
-ds_options_lock[| 1] = false;
+//ds_options_lock = ds_list_create();
+//ds_options_lock[| 0] = false;
+//ds_options_lock[| 1] = false;
+//last_lock_boolean = false;
+//lock_counter = 0;
 
-last_lock_boolean = false;
-lock_counter = 0;
+//No more options_lock ^^^
+
 //If player is spend option or not
 spend_ready = false;
 //Time when to turn ddr off and on

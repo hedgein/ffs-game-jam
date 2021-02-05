@@ -159,29 +159,12 @@ if (player_turn) && (!show_battle_text)  {
 					ds_messages = ds_list_create();
 				}
 				
-				if (!ds_exists(ds_options_lock, ds_type_list)){
-					ds_options_lock = ds_list_create();
-					for (var i = 0; i < scr_monster_array_access(monster, current_passage, 4); i++) {
-						ds_options_lock[| i] = false;
-					}
-				}
 				
 				
 			
 				//If they are on the spend option, 
-				if (spend_ready = true){
-					//If user tries to spend a locked option
-					if (ds_options_lock[| roll_option]) {
-						ds_messages[|0] = "This is locked!";
-					
-							show_roll_options = false;
-							stay_player_turn_boolean = true;
-							show_battle_text = true;
-					//If option they want to spend is unlocked
-					} else {
-						
-						
-						if(spend_ok){
+				if (spend_ready = true){			
+					if(spend_ok){
 						
 							if ( dice_points - spend < 0 ){
 								dice_points = 0;
@@ -196,39 +179,16 @@ if (player_turn) && (!show_battle_text)  {
 							stay_player_turn_boolean = true;
 							spend_ready = false;
 						}	
-					}
-					
 				//Else do a regular roll
 				} else {	
 					
-						//If user tries to select locked roll_option
-						if (ds_options_lock[| roll_option]) {
-							ds_messages[|0] = "This is locked!";
-					
-							show_roll_options = false;
-							stay_player_turn_boolean = true;
-							show_battle_text = true;
-						//Only roll on false options_lock
-						} else {
-							//Lock the option if the roll fails
-							if (!roll_success) && (!last_lock_boolean){
-								ds_options_lock[| roll_option] = true;
-								lock_counter++;			
-							}
-					
-							//If the number of locks is enough, turn on last lock boolean to keep
-							//one option open
-							if (lock_counter + 1 >= scr_monster_array_access(monster, current_passage, 4)) {
-								last_lock_boolean = true;
-							}
 
-
-							//Start DDR after first message 
-							scr_ddr_instance_start(monster);
-							//Tell user to shake dice
-							ds_messages[| 0] = "Shake the dice!";
-							
-						}
+					//Start DDR after first message 
+					scr_ddr_instance_start(monster);
+					//Tell user to shake dice
+					ds_messages[| 0] = "Shake the dice!";
+						
+					
 						
 					
 								
