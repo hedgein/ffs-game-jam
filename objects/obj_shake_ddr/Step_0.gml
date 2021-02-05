@@ -1,7 +1,19 @@
+
 with(obj_battle){
 obj_shake_ddr.button_timer++;
+
+key_UP = keyboard_check_pressed(vk_up);
+key_W = keyboard_check_pressed(ord("W"));
+key_DOWN = keyboard_check_pressed(vk_down);
+key_S = keyboard_check_pressed(ord("S"));
+key_LEFT = keyboard_check_pressed(vk_left);
+key_A = keyboard_check_pressed(ord("A"));
+key_RIGHT = keyboard_check_pressed(vk_right);
+key_D = keyboard_check_pressed(ord("D"));
+
+
 //UP
-if (keyboard_check_pressed(vk_up)) || (keyboard_check_pressed(ord("W"))){
+if (((key_UP) || (key_W)) && (!key_DOWN) && (!key_S) && (!key_LEFT) && (!key_A) && (!key_RIGHT) && (!key_D)) {
 	var hit = collision_line((room_width/15) * 8.1, 375-(sprite_get_height(ddr_arrow) * 1), 
 	(room_width/15) * 8.1, 375 + (sprite_get_height(ddr_arrow) * 1),  obj_ddr_button, false, true);
 
@@ -15,7 +27,7 @@ if (keyboard_check_pressed(vk_up)) || (keyboard_check_pressed(ord("W"))){
 }
 
 //DOWN
-if (keyboard_check_pressed(vk_down)) || (keyboard_check_pressed(ord("S"))){
+if ((!key_UP) && (!key_W) && ((key_DOWN) || (key_S)) && (!key_LEFT) && (!key_A) && (!key_RIGHT) && (!key_D)){
 	var hit = collision_line((room_width/15) * 7, 375-(sprite_get_height(ddr_arrow) * 1), 
 	(room_width/15) * 7, 375 + (sprite_get_height(ddr_arrow) * 1),  obj_ddr_button, false, true);
 
@@ -28,7 +40,7 @@ if (keyboard_check_pressed(vk_down)) || (keyboard_check_pressed(ord("S"))){
 
 //RIGHT
 
-if (keyboard_check_pressed(vk_right)) || (keyboard_check_pressed(ord("D"))){
+if ((!key_UP) && (!key_W) && (!key_DOWN) && (!key_S) && (!key_LEFT) && (!key_A) && ((key_RIGHT) || (key_D))){
 	var hit = collision_line((room_width/15) * 9, 375-(sprite_get_height(ddr_arrow)*1), 
 	(room_width/15) * 9, 375 +(sprite_get_height(ddr_arrow) * 1),  obj_ddr_button, false, true);
 
@@ -40,7 +52,7 @@ if (keyboard_check_pressed(vk_right)) || (keyboard_check_pressed(ord("D"))){
 }
 
 //LEFT
-if (keyboard_check_pressed(vk_left)) || (keyboard_check_pressed(ord("A"))){
+if ((!key_UP) && (!key_W) && (!key_DOWN) && (!key_S) && ((key_LEFT) || (key_A)) && (!key_RIGHT) && (!key_D)){
 	var hit = collision_line((room_width/15) * 6, 375-(sprite_get_height(ddr_arrow) * 1), 
 	(room_width/15) * 6, 375 +(sprite_get_height(ddr_arrow) * 1),  obj_ddr_button, false, true);
 
